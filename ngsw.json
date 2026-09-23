@@ -1,0 +1,111 @@
+{
+  "configVersion": 1,
+  "timestamp": 1790195583240,
+  "index": "/senshi/index.csr.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/senshi/favicon.ico",
+        "/senshi/index.csr.html",
+        "/senshi/index.html",
+        "/senshi/main-JD3P6ZLP.js",
+        "/senshi/manifest.webmanifest",
+        "/senshi/styles-TS432SWA.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/senshi/assets/fonts/1550.ttf",
+        "/senshi/assets/fonts/Aquifer.ttf",
+        "/senshi/assets/fonts/AssassinNinja.ttf",
+        "/senshi/assets/fonts/Baymanat.ttf",
+        "/senshi/assets/fonts/CAT.ttf",
+        "/senshi/assets/fonts/EndemicRoman.ttf",
+        "/senshi/assets/fonts/ZombieQueen.ttf",
+        "/senshi/assets/icons/Eclipse.svg",
+        "/senshi/assets/icons/Senshi.svg",
+        "/senshi/assets/icons/Senshi.webp",
+        "/senshi/assets/icons/buttonclicked.webp",
+        "/senshi/assets/icons/buttonwhite.webp",
+        "/senshi/icons/android-chrome-192x192.png",
+        "/senshi/icons/android-chrome-512x512.png",
+        "/senshi/icons/apple-touch-icon.png",
+        "/senshi/icons/favicon-16x16.png",
+        "/senshi/icons/favicon-32x32.png",
+        "/senshi/media/1550-6OZ4N3CA.ttf",
+        "/senshi/media/Aquifer-QLY6TROL.ttf",
+        "/senshi/media/AssassinNinja-AAD73KAL.ttf",
+        "/senshi/media/Baymanat-R35BBMSU.ttf",
+        "/senshi/media/CAT-NMT5PWBX.ttf",
+        "/senshi/media/EndemicRoman-E3J6TFAV.ttf",
+        "/senshi/media/ZombieQueen-F7P77KOS.ttf"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/senshi/assets/fonts/1550.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
+    "/senshi/assets/fonts/Aquifer.ttf": "c8d7b542b1921f47a8dc8d942e210e29a77e121d",
+    "/senshi/assets/fonts/AssassinNinja.ttf": "3a4f1a6c61965bf4e8a0488de2b538667e1a6d52",
+    "/senshi/assets/fonts/Baymanat.ttf": "a37c4985dbe8f83bad5049efb3135dd59de4fc4d",
+    "/senshi/assets/fonts/CAT.ttf": "33d880c389fc3233de9a1b6c5bc9cb9be02b2f79",
+    "/senshi/assets/fonts/EndemicRoman.ttf": "142db6e8837ea0223214209ab736d37d2cfc39e4",
+    "/senshi/assets/fonts/ZombieQueen.ttf": "c641045e9a8b5feeaa1df138e9e9140882214103",
+    "/senshi/assets/icons/Eclipse.svg": "af28aea326f26df005074545de8699e88b4d6421",
+    "/senshi/assets/icons/Senshi.svg": "bd1d503fbe78a0f012e475bd3f26dab220a761c6",
+    "/senshi/assets/icons/Senshi.webp": "9b6a0f55f0aeda82d7422bc09fde8181325d302d",
+    "/senshi/assets/icons/buttonclicked.webp": "f67e29b0dfd6cdaf87958ba63b4f59538e0c2551",
+    "/senshi/assets/icons/buttonwhite.webp": "9be392f065b0ab613e8dd965b7634a51b26695dd",
+    "/senshi/favicon.ico": "50b713f3a06736da9ba5b4b57e2de37fad0ba5de",
+    "/senshi/icons/android-chrome-192x192.png": "cbe992da4a236083bf7a24a959553e0741221455",
+    "/senshi/icons/android-chrome-512x512.png": "f96f091ec88bea16fa5b71686a4a6fd7e1eef765",
+    "/senshi/icons/apple-touch-icon.png": "11a12d3f926d798d31ee2f065c480ffa4147afa0",
+    "/senshi/icons/favicon-16x16.png": "379451b36ec4e487fe8c329cf6636d0acc8e3ea3",
+    "/senshi/icons/favicon-32x32.png": "5ecc3c6aaa6241a0506225207b526e3c27858c41",
+    "/senshi/index.csr.html": "23f48d5dba20292308d54f98e8646186698365cd",
+    "/senshi/index.html": "a559f7454720dfa06ec7823c3ea047b34c150879",
+    "/senshi/main-JD3P6ZLP.js": "37bd8cd7b68c7f1580c6bc4cc9e9cf128cea943d",
+    "/senshi/manifest.webmanifest": "5b3afd1f5fc4c371ee722edb74899a540c5762a9",
+    "/senshi/media/1550-6OZ4N3CA.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
+    "/senshi/media/Aquifer-QLY6TROL.ttf": "c8d7b542b1921f47a8dc8d942e210e29a77e121d",
+    "/senshi/media/AssassinNinja-AAD73KAL.ttf": "3a4f1a6c61965bf4e8a0488de2b538667e1a6d52",
+    "/senshi/media/Baymanat-R35BBMSU.ttf": "a37c4985dbe8f83bad5049efb3135dd59de4fc4d",
+    "/senshi/media/CAT-NMT5PWBX.ttf": "33d880c389fc3233de9a1b6c5bc9cb9be02b2f79",
+    "/senshi/media/EndemicRoman-E3J6TFAV.ttf": "142db6e8837ea0223214209ab736d37d2cfc39e4",
+    "/senshi/media/ZombieQueen-F7P77KOS.ttf": "c641045e9a8b5feeaa1df138e9e9140882214103",
+    "/senshi/styles-TS432SWA.css": "e4d47b0257d1b8050b3494827e4a5be1b2dd48e9"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
