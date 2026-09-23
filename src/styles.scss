@@ -1,1 +1,124 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../public/assets/colors';
+
+@font-face {
+    font-family: "1550";
+    src: local("1550"), url(../public/assets/fonts/1550.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "Aquifer";
+    src: local("Aquifer"), url(../public/assets/fonts/Aquifer.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "AssassinNinja";
+    src: local("AssassinNinja"), url(../public/assets/fonts/AssassinNinja.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "Baymanat";
+    src: local("Baymanat"), url(../public/assets/fonts/Baymanat.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "CAT";
+    src: local("CAT"), url(../public/assets/fonts/CAT.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "EndemicRoman";
+    src: local("EndemicRoman"), url(../public/assets/fonts/EndemicRoman.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@font-face {
+    font-family: "ZombieQueen";
+    src: local("ZombieQueen"), url(../public/assets/fonts/ZombieQueen.ttf) format('truetype');
+    font-weight: 100 1000;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0rem) rotate(0deg);
+    }
+    25% {
+        transform: translateX(1rem) rotate(1deg);
+    }
+    50% {
+        transform: translateX(-1rem) rotate(-1deg);
+    }
+    75% {
+        transform: translate(-1rem) rotate(-1deg);
+    }
+    100% {
+        transform: translate(1rem) rotate(1deg);
+    }
+}
+
+::selection {
+    background-color: colors.$dark-red;
+    color: white;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: colors.$red;
+    color: white;
+    font-size: 1.1rem;
+    font-family: 'Aquifer';
+    line-height: 1.3;
+    strong {
+        font-family: 'EndemicRoman';
+    }
+    // letter-spacing: 0.3px;
+
+    h2 {
+        margin: 0rem;
+        font-family: 'AssassinNinja';
+    }
+
+    .shake {
+        &:active {
+            animation: shake 0.1s ease-in-out;
+        }
+    }
+
+    .clickable {
+        background-color: black;
+        color: colors.$red;
+        font-weight: bold;
+        padding: 0.25rem 0.1rem;
+        cursor: pointer;
+        user-select: none;
+        width: max-content;
+        height: min-content;
+        &:not(.header) {
+            font-family: '1550';
+        }
+        &:hover {
+            background-color: colors.$slightly-yellow;
+            color: black;
+        }
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+a {
+    text-decoration: none;
+}

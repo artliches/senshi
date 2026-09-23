@@ -1,9 +1,9 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { SenshiIntro } from './senshi-intro/senshi-intro';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [SenshiIntro],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

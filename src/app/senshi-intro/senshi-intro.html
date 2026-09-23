@@ -1,0 +1,19 @@
+<div class="section-layout">
+    <div class="section-header">
+        <h2>YOU ARE 
+            <div
+                (click)="rerollAllObjects()"
+                class="clickable shake header"
+            >
+                {{ firstNameObj.descrip | uppercase }}
+            </div></h2>
+    </div>
+    <div class="section-body">
+        <div>
+            Bound by Honour and fated to die by it, this blood-soaked island will remember your name:
+            <strong (click)="firstNameObj = reroll(firstNameArray, firstNameObj)" class="clickable shake">{{firstNameObj.descrip}}</strong>
+            <strong (click)="lastNameObj = reroll(lastNameArray, lastNameObj)" class="clickable shake">{{lastNameObj.descrip}}</strong>
+            <strong (click)="nickNameObj = reroll(nickNameArray, nickNameObj)" class="clickable shake">{{nickNameObj.descrip}}</strong>
+        </div>
+    </div>
+</div>

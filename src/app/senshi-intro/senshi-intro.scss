@@ -1,0 +1,17 @@
+.section-header {
+    h2 {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+        align-items: center;
+        justify-content: center;
+    }
+}
+.section-body {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    strong:not(:first-of-type) {
+        margin-left: 0.3rem;
+    }
+}
