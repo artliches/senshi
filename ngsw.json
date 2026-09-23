@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1790195583240,
+  "timestamp": 1790195609633,
   "index": "/senshi/index.csr.html",
   "assetGroups": [
     {
@@ -76,8 +76,8 @@
     "/senshi/icons/apple-touch-icon.png": "11a12d3f926d798d31ee2f065c480ffa4147afa0",
     "/senshi/icons/favicon-16x16.png": "379451b36ec4e487fe8c329cf6636d0acc8e3ea3",
     "/senshi/icons/favicon-32x32.png": "5ecc3c6aaa6241a0506225207b526e3c27858c41",
-    "/senshi/index.csr.html": "23f48d5dba20292308d54f98e8646186698365cd",
-    "/senshi/index.html": "a559f7454720dfa06ec7823c3ea047b34c150879",
+    "/senshi/index.csr.html": "1e0912f68497e4c3795450cf1e733221672d5413",
+    "/senshi/index.html": "088ae5146f0c99c5f04f1ec6a852040242651820",
     "/senshi/main-JD3P6ZLP.js": "37bd8cd7b68c7f1580c6bc4cc9e9cf128cea943d",
     "/senshi/manifest.webmanifest": "5b3afd1f5fc4c371ee722edb74899a540c5762a9",
     "/senshi/media/1550-6OZ4N3CA.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
