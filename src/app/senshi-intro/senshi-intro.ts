@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RandomNumber } from '../random-number';
 import {FIRST_NAME, LAST_NAMES, NICKNAMES} from '../../../public/assets/senshi.constants';
 import { UpperCasePipe } from '@angular/common';
@@ -9,8 +9,10 @@ import { UpperCasePipe } from '@angular/common';
   templateUrl: './senshi-intro.html',
   styleUrl: './senshi-intro.scss',
 })
-export class SenshiIntro implements OnInit {
+export class SenshiIntro implements OnInit, OnChanges {
   private randomNumberService = inject(RandomNumber);
+  currentJobName = input<string>('');
+  triggerReroll = input<boolean>();
 
   firstNameArray: string[] = [];
   firstNameObj = {
@@ -33,6 +35,12 @@ export class SenshiIntro implements OnInit {
   ngOnInit(): void {
     this.shuffleArrays();
     this.rerollAllObjects();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== 'undefined') {
+      this.rerollAllObjects();
+    }
   }
 
   rerollAllObjects() {

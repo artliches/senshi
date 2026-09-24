@@ -58,18 +58,27 @@
         }
     }
     .senshi-body-layout {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-auto-rows: min-content;
         width: 100%;
-        .senshi-body>div {
-            border-top: 3px solid colors.$dark-red;
-            padding: 0.5rem;
+        .senshi-body {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: min-content;
+            >div:not(.honour) {
+                border-top: 3px solid colors.$dark-red;
+                padding: 0.5rem;
+                &.job {
+                    grid-row: 3;
+                }
+                &.intro {
+                    grid-row: 1;
+                }
+                &.honour {
+                    grid-row: 2;
+                }
+            }
         }
     }
     .senshi-footer-layout {
-        // width: 100%;
-
         place-self: end center;
         text-align: center;
         font-size: 0.75rem;
@@ -79,6 +88,22 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .senshi-main-layout {
+        .senshi-body-layout {
+            .senshi-body {
+                grid-template-columns: repeat(2, 1fr);
+                .intro, .honour {
+                    grid-column: 1 / span 2;
+                }
+                .job {
+                    grid-column: 2;
+                }
+            }
         }
     }
 }

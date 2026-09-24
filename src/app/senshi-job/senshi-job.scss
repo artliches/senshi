@@ -1,0 +1,60 @@
+@use '../../../public/assets/colors';
+
+.section-header {
+    transform: rotate(-0.5deg)
+}
+
+.section-body >div {
+    &:nth-child(odd) {
+        transform: rotate(0.5deg);
+    }
+    &:nth-child(even) {
+        transform: rotate(-0.5deg);
+    }
+}
+
+.descrip-section {
+    font-size: 0.8rem;
+}
+
+.tenants-section {
+    transform: unset !important;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: colors.$dark-red;
+    .tenant-card {
+        display: grid;
+        grid-gap: 0.5rem;
+        >div {
+            &:nth-child(odd) {
+                transform: rotate(-0.5deg);
+            }
+            &:nth-child(even) {
+                transform: rotate(0.5deg);
+            }
+        }
+        .tenant {
+            padding: 0.5rem 0.2rem;
+            background-color: black;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-auto-rows: min-content;
+            &-name {
+                place-self: center;
+                color: colors.$slightly-yellow;
+                font-size: 1rem;
+            }
+            &-descrip {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .tenants-section {
+        .tenant-card {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}

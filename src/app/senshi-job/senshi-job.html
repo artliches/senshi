@@ -1,0 +1,25 @@
+<div class="section-layout">
+    <div class="section-header">
+        <h2 (click)="rerollJob()" class="clickable shake header">{{ jobsObjSignal().name | uppercase }}</h2>
+    </div>
+    <div class="section-body">
+        <div class="descrip-section">
+            <em><span [innerHTML]="jobsObjSignal().descrip"></span></em>
+        </div>
+        <div class="tenants-section">
+            <div>You must follow <strong class="underline">{{jobsObjSignal().tenants.title}}</strong></div>
+            <div class="tenant-card">
+                @for (tenant of jobsObjSignal().tenants.honourList; track $index) {
+                    <div class="tenant">
+                        <strong class="tenant-name underline">{{tenant.name}}</strong>
+                        <span class="tenant-descrip">{{tenant.descrip}}</span>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="feature-section">
+            <div (click)="rerollFeature()" class="clickable shake">{{chosenFeatureSignal().title | uppercase}}</div>
+            <div><span [innerHTML]="chosenFeatureSignal().descrip"></span></div>
+        </div>
+    </div>
+</div>

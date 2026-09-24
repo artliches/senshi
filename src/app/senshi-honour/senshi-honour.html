@@ -1,0 +1,15 @@
+<div class="section-layout">
+    <div class="section-body">
+        <div class="tenants-section">
+            <div>You must follow <strong class="underline tenants-title">{{currentTenants()?.title}}</strong></div>
+            <div class="tenant-card">
+                @for (tenant of currentTenants()?.honourList; track $index) {
+                    <div class="tenant">
+                        <strong class="tenant-name underline">{{tenant.name}}</strong>
+                        <span class="tenant-descrip">{{tenant.descrip}}</span>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

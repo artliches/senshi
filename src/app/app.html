@@ -4,7 +4,7 @@
     <span class="main-title-section">
       <img class="senshi-header-icon" src="assets/icons/Senshi.webp" alt="SENSHI">
       <div class="reroll-section">
-        <div class="clickable shake no-print">THIS ONE DIED WITH HONOUR</div>
+        <div (click)="rerollAll()" class="clickable shake no-print">THIS ONE DIED WITH HONOUR</div>
         <img src="assets/icons/Eclipse.svg" alt="">        
       </div>
     </span>
@@ -12,9 +12,25 @@
 
   <span class="senshi-body-layout">
     <div class="senshi-body">
-      <div class="intro">
-        <app-senshi-intro></app-senshi-intro>
+      <div class="job">
+        <app-senshi-job
+          (jobEmitter)="getNewJob($event)"
+          [triggerReroll]="triggerReroll()"
+        ></app-senshi-job>
       </div>
+      
+      <div class="intro">
+        <app-senshi-intro
+          [currentJobName]="currentJob().name"
+          [triggerReroll]="triggerReroll()"
+        ></app-senshi-intro>
+      </div>
+
+      <!-- <div class="honour">
+        <app-senshi-honour
+          [currentTenants]="currentJob().tenants"
+        ></app-senshi-honour>
+      </div> -->
     </div>
   </span>
 
@@ -23,7 +39,7 @@
       <div><strong>SENSHI</strong> is an independent production by Slightly Reckless Games LTD and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
       <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
       <div>Web app by <a class="clickable" target="_blank" href="https://artliches.github.io/dungeons-coding">@codeLiches</a></div>
-      <div>v0.12a: <i>incoming eclipse</i></div>
+      <div>v0.2a: <i>bound by honour</i></div>
     </div>
   </span>
 </span>
