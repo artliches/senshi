@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, signal, WritableSignal } from '@angular/core';
 import { TenantsObj } from '../../../public/assets/models/senshi-interfaces';
 
 @Component({
@@ -9,4 +9,5 @@ import { TenantsObj } from '../../../public/assets/models/senshi-interfaces';
 })
 export class SenshiHonour {
   currentTenants = input<TenantsObj>();
+  showTenantsDetails: WritableSignal<boolean> = signal(false);
 }

@@ -6,7 +6,7 @@
         <div class="descrip-section">
             <em><span [innerHTML]="jobsObjSignal().descrip"></span></em>
         </div>
-        <div class="tenants-section">
+        <!-- <div class="tenants-section">
             <div>You must follow <strong class="underline">{{jobsObjSignal().tenants.title}}</strong></div>
             <div class="tenant-card">
                 @for (tenant of jobsObjSignal().tenants.honourList; track $index) {
@@ -16,7 +16,7 @@
                     </div>
                 }
             </div>
-        </div>
+        </div> -->
         <div class="feature-section">
             <div (click)="rerollFeature()" class="clickable shake">{{chosenFeatureSignal().title | uppercase}}</div>
             <div><span [innerHTML]="chosenFeatureSignal().descrip"></span></div>
