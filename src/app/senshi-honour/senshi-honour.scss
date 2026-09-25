@@ -37,6 +37,7 @@
             &-name {
                 grid-area: title;
                 place-self: center;
+                text-align: center;
                 color: colors.$slightly-yellow;
             }
             &-descrip {
@@ -68,6 +69,13 @@
         height: 0.3rem;
         border: 3px solid colors.$slightly-yellow;
         transform: rotate(45deg);
+    }
+    .unseen-section {
+        text-align: center;
+        font-size: 0.8rem;
+        padding-top: 0.5rem;
+        border-top: 1px dotted black;
+        font-family: 'ZombieQueen';
     }
 }
 
