@@ -1024,6 +1024,627 @@ export const JOBS = [
         },
         ryo: `1d6x10`,
     },
+    // Wild Dancer 
+    {
+        name: `Wild Dancer `,
+        descrip: `
+            The <strong>Wild Dancer</strong>, that's a character who's raw and reckless, a <strong>grim ballet of steel and gunpowder</strong>, twisting through the madness of battle like a half-crazed poet on a drunken payday. <strong>There's an art to their carnage</strong>, a rhythm to their mayhem. They're a heady mix of <strong>samurai discipline</strong> and <strong>wild, gunslinging abandon</strong>, turning every bloody skirmish into a theatrical spectacle.
+            <p>They're a swirling dervish of <strong>katana slashes</strong> and <strong>matchlock pistol blasts</strong>, dancing across the battlefield like it's the stage of some grand, grotesque opera. They wade through chaos with the finesse of a <strong>prima ballerina</strong> and the raw power of a <strong>rampaging bull</strong>. It's a dance of death, set to the rhythm of <strong>clashing steel</strong> and <strong>booming gunshots</strong>.</p>
+        `,
+        stats: {
+            swiftness: -1,
+            spirit: 2,
+            vigor: 2,
+            resilience: -2,
+            honour: -1,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `Untamed Ferocity`,
+                descrip:
+                `
+                    <span class="underline">Once per combat encounter</span>, they may enter a state of untamed ferocity for a <span class="underline">number of rounds equal to their <strong class="adjust-strong-size">Vigor modifier</strong></span> (<strong class="adjust-strong-size">minimum 1</strong>). 
+                    <p><span class="underline">While in this state</span>, they gain a <strong class="adjust-strong-size">+1 bonus to both attack and defence rolls</strong>, and their <strong class="adjust-strong-size">matchlock pistol deals an additional d4 damage</strong>. However, they <span class="underline"><strong class="adjust-strong-size">lose their ability to Parry during this time</strong></span>, as their focus is solely on aggressive combat.</p>
+                `
+            },
+
+            {
+                title: `Two-Weapon Fighting`,
+                descrip: 
+                `
+                    <em>Skilled at fighting with a weapon in each hand.</em>
+                    <p><span class="underline">Once per day</span>, <strong class="adjust-strong-size">attack twice in a round</strong> with both <strong class="adjust-strong-size">gun</strong> and <strong class="adjust-strong-size">katana</strong>.</p>
+                `
+            },
+            {
+                title: `Dancing Defence`,
+                descrip: 
+                `
+                    <em>Use graceful movements to dodge attacks. </em>
+                    <p><span class="underline">Once per day</span>, <strong class="adjust-strong-size">dodge</strong> an attack that would have <strong class="adjust-strong-size">hit</strong>.</p>
+                `
+            },
+            {
+                title: `Shooting Star`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, perform a flashy attack with the pistol that distracts and confuses the enemy, <strong class="adjust-strong-size">reducing the DR to attack that enemy by 4 for the <span class="underline">next round</span></strong>.
+                `
+            },
+            {
+                title: `Sword Dance`,
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, unleash a flurry of sword strikes, <strong class="adjust-strong-size">dealing an extra 2d6 of damage</strong>.
+                `
+            },
+            {
+                title: `Wild Spirit`,
+                descrip: 
+                `
+                    <em>The Wild Dancer’s unpredictable nature makes it hard for enemies to anticipate their actions.</em>
+                    <p><span class="underline">Once per combat</span>, they may <strong class="adjust-strong-size">reroll</strong> a <strong class="adjust-strong-size">failed attack</strong> or <strong class="adjust-strong-size">defence roll</strong>.</p>
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `A <span class="underline">Katana</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `A <strong>Tanegashima</strong> with <span class="underline">Spirit+5 Bullets</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``
+            },
+            {
+                item: `A flashy, decorative kimono`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `The Dancer’s Code`,
+            honourList: [
+                {
+                    name: `Expression`,
+                    descrip: `Embrace your unique self, expressing it without restraint.`,
+                },
+                {
+                    name: `Rhythm`,
+                    descrip: `Life's a dance; move with its rhythm, not against it.`
+                },
+                {
+                    name: 'Passion', 
+                    descrip: 'Let your emotions fuel your actions, turning fights into fiery dances.'},
+                {
+                    name: 'Grace', 
+                    descrip: 'Show elegance in every step, even in chaos.'},
+                {
+                    name: 'Courage', 
+                    descrip: 'Face challenges boldly, as a dancer embraces the stage.'},
+                {
+                    name: 'Innovation', 
+                    descrip: 'Constantly improvise, surprising everyone with unexpected moves and actions.'},
+            ]
+        },
+        ryo: `1d6x10`,
+    },
+    // Reckless Sumo 
+    {
+        name: `Reckless Sumo`,
+        descrip: `
+            The <strong>Reckless Sumo</strong>, well, he's no prince charming, but a <strong>boulder among pebbles</strong>, stubborn and solid,
+            carved out of raw muscle and grit. They say size is a hindrance, but not for these guys, it's their
+            <strong>badge of honour</strong>, a testament to their might that ain't shaking for no one. They're schooled in that
+            old sumo wrestling game, <strong>
+                trading sword and shield for a chest full of thunder and palms that can
+                uproot trees
+            </strong>.
+            <p>
+                They make their stand on the frontline, <strong>immovable</strong>, <strong>unshakeable</strong>, like a lighthouse in the tempest.
+                These titans, they don't bank on the quick dance of the sword but the slow, painful endurance of the
+                storm. The Sumo class is for those tough nuts who believe in standing firm, outmuscling the odds,
+                and letting the <strong>world know they're not going down without a hell of a fight</strong>.
+            </p>
+        `,
+        stats: {
+            swiftness: -2,
+            spirit: -1,
+            vigor: 3,
+            resilience: 2,
+            honour: 1,
+            virtues: 2,
+            hp: 12
+        },
+        features: [
+            {
+                title: `Iron Body`,
+                descrip:
+                `
+                    <em>A Sumo’s body is like a fortress.</em>
+                    <p><span class="underline">Once per day</span>, they may <strong>shrug off an attack that would have damaged them</strong>.</p>
+                `
+            },
+
+            {
+                title: `Sumo Slam`,
+                descrip: 
+                `
+                <em>Uses superior strength and mass to deliver a powerful slam attack.</em>
+                <p><span class="underline">Once per combat</span>, they may add <strong>twice their Vigor modifier to a melee attack roll</strong>.</p>
+                `
+            },
+            {
+                title: `Mountain's Grasp`,
+                descrip: 
+                `
+                    <strong>Roll 2d6+Vigor.</strong>
+                    <p><span class="underline">If the result is higher than the <strong>target's morale</strong></span>, they are <strong>grappled</strong>, rendering them <strong>unable to attack</strong> or <strong>move</strong> <span class="underline">until the start of the Sumo’s next turn</span>. </p>
+                    <p><em>The effect ends early if the Sumo is <strong>moved</strong> or <strong>rendered unconscious</strong>.</em></p>
+                `
+            },
+            {
+                title: `Ring Out`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, they may push an enemy out of the immediate combat zone, <strong>stopping them from melee attacks for <span class="underline">a round</span></strong>.
+                `
+            },
+            {
+                title: `Chanko Power`,
+                descrip: 
+                `
+                <em>The Reckless Sumo’s diet of <strong><span class="underline">chanko nabe</span></strong> gives them incredible strength.</em>
+                <p><span class="underline">Once per day</span>, they can tap into this power to get a <strong>+6 on any Vigor test</strong>.</p>
+                `
+            },
+            {
+                title: `Belly Bump`,
+                descrip: 
+                `
+                    <em>The Sumo can use their considerable girth to bump an opponent, potentially knocking them off balance.</em>
+                    <p><span class="underline">In the next round</span>, attacks against this <strong>enemy are made at +4</strong>.</p>
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Hand Chalk</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Traditional Sumo clothing`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `The Sumo’s Oath`,
+            honourList: [
+                {
+                    name: `Endurance`,
+                    descrip: `Embrace the storm, stand your ground, weather adversity.`},
+                {
+                    name: `Strength`,
+                    descrip: `Harness physical power, demonstrate it wisely and responsibly.`},
+                {
+                    name: `Patience`,
+                    descrip: `Learn to wait, to watch, to seize the right moment.`},
+                {
+                    name: `Respect`,
+                    descrip: `Honour your opponents, acknowledge their strengths, regardless of the outcome.`},
+                {
+                    name: `Discipline`,
+                    descrip: `Rigorously train your body and mind, fortify your spirit.`},
+                {
+                    name: `Tradition`,
+                    descrip: `Uphold the ancient practices, respecting the wisdom they embody.`},
+            ]
+        },
+        ryo: `1d6x10`,
+    },
+    {
+        // The Sword Saint 
+        name: `The Sword Saint`,
+        descrip: `
+            The <strong>Sword Saint</strong> - Not just any fencer, but the epitome of duelling mastery. With a blade that dances elegantly and strikes with deadly precision, <strong>their every move is a masterclass</strong>. Their footwork is fluid, their accuracy unmatched.
+            <p>A duelling legend, with a legacy of foes bested and a spirit that remains <strong>unyielding</strong>. In the dance of steel, <strong>they're always a step ahead</strong>.</p>
+        `,
+        stats: {
+            swiftness: 2,
+            spirit: -1,
+            vigor: 2,
+            resilience: 1,
+            honour: 1,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: ` Artful Execution`,
+                descrip:
+                `
+                <em>A true master of their chosen weapon, the Sword Saint is capable of performing strikes of unparalleled precision.</em>
+                <p><span class="underline">Once per combat</span>, they can execute a perfect strike, <strong class="adjust-strong-size">ignoring their opponent's armour or natural defences</strong>.</p>
+                `
+            },
+
+            {
+                title: `Unyielding Focus`,
+                descrip: 
+                `
+                    <em>In the heat of battle, the Sword Saint’s focus never wavers. </em>
+                    <p><span class="underline">Once per combat</span>, they can enter a state of heightened concentration, <strong class="adjust-strong-size">reducing all incoming damage by half for <span class="underline">one round</span></strong>.</p>
+                `
+            },
+            {
+                title: `Blade's Spirit`,
+                descrip: 
+                `
+                    <span class="underline">Once per session</span>, they can pour their spirit into a <span class="underline">single</span>, devastating strike, <strong class="adjust-strong-size">adding their Honour score to the damage roll</strong>.
+                `
+            },
+            {
+                title: `Ancestral Weapon`,
+                descrip: 
+                `
+                    <em>The Sword Saint’s weapon is old, passed down through generations.</em>
+                    <p><span class="underline">Once per day</span>, the Sword Saint can call upon the spirits of their ancestors to guide their blade, <strong class="adjust-strong-size">granting them a reroll on any <span class="underline">one attack roll</span></strong>.</p>
+                `
+            },
+            {
+                title: `Harmonic Duel`,
+                descrip: 
+                `
+                    <em>When engaged in combat with a single opponent, the Sword Saint finds a rhythm in the clash of steel.</em>
+                    <p><span class="underline">Once per duel</span>, they can predict their opponent's next move, <strong class="adjust-strong-size">gaining advantage on their next attack, defence, or riposte roll</strong>.</p>
+                `
+            },
+            {
+                title: `Unyielding Discipline`,
+                descrip: 
+                `
+                    <em>Years of strict discipline make them a formidable opponent.</em>
+                    <p><span class="underline">Once per day</span>, they can intimidate their enemies, <strong class="adjust-strong-size">lowering the DR of their next attack by -</strong>4.</p>
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Odachi</span> (<strong>d10 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `A set of worn armour (tier 3)`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `The Sword Saint's Discipline `,
+            honourList: [
+                {
+                    name: `Precision`,
+                    descrip: `Every movement, every strike, every parry should be measured and precise.`
+                },
+                {
+                    name: `Mastery`,
+                    descrip: `Strive to perfect your art, constantly seeking improvement.`
+                },
+                {
+                    name: `Discipline`,
+                    descrip: `Train the mind as well as the body, maintaining focus and clarity.`
+                },
+                {
+                    name: `Valour`,
+                    descrip: `Face combat and adversity with bravery, without fear.`
+                },
+                {
+                    name: `Respect`,
+                    descrip: `Honour your opponents and their skills, recognizing their worth.`
+                },
+                {
+                    name: `Legacy`,
+                    descrip: `Preserve the ancient way of the sword, honouring the wisdom of past masters.`
+                },
+            ]
+        },
+        ryo: `1d6x10`,
+    },
+    {
+        // Ashigaru Survivor
+        name: `Ashigaru Survivor`,
+        descrip: `
+            Footsoldier of no renown; <strong>trained to outlast orders and storms.</strong>
+            <p>Orders stopped coming, <strong>so you kept walking</strong>. There’s dirt under your nails and scars under your ribs. <strong>The war never really ended</strong>. You were trained to hold the line. You know where to step, where to hide food, how to patch flesh with a shirt sleeve and a steady hand. </p>
+            <p>You get up slow, bleed slow, breathe slow. <strong>And you don’t fall easy…</strong></p>
+        `,
+        stats: {
+            swiftness: 0,
+            spirit: -2,
+            vigor: 2,
+            resilience: 4,
+            honour: 2,
+            virtues: 2,
+            hp: 10
+        },
+        features: [
+            {
+                title: `Footslogger's Grit`,
+                descrip:
+                `
+                    <span class="underline">Once per day</span>, when you would drop to 0HP, <strong class="adjust-strong-size">remain at 1HP instead</strong>.
+                    <p>Your next <strong class="adjust-strong-size">Defence Test is -2 DR</strong>.</p>
+                `
+            },
+
+            {
+                title: `Wind-Body Drill`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, steady your breath—<strong class="adjust-strong-size">your next ranged Attack <span class="underline">this round</span> is -4 DR</strong>.
+                `
+            },
+            {
+                title: `Suffering Builds Character`,
+                descrip: 
+                `
+                    If you deal <strong class="adjust-strong-size">d4HP of damage</strong> to yourself <span class="underline">prior to combat</span>, you benefit from <strong class="adjust-strong-size">-2 DR</strong> for a <span class="underline">number of rolls equal to the <strong class="adjust-strong-size">HP</strong> lost</span>.
+                `
+            },
+            {
+                title: `Quiet Step`,
+                descrip: 
+                `
+                    Your <span class="underline">first</span> <strong class="adjust-strong-size">Swiftness Test</strong> each combat is <strong class="adjust-strong-size">-2 DR</strong>.
+                `
+            },
+            {
+                title: `I’m Not Even Hungry`,
+                descrip: 
+                `
+                    You do not need to eat or drink to <strong class="adjust-strong-size">heal</strong>.
+                `
+            },
+            {
+                title: `I Can Do This All Day`,
+                descrip: 
+                `
+                    Roll a d6, now. You can be <strong class="adjust-strong-size">resurrected</strong> that many times.
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Yari</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Tanto</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Yumi</span> with <span class="underline">Spirit+10 arrows</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Reed rain-cloak`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Rope coil`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Needle & bandages`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `Ash-Line's Oath`,
+            honourList: [
+                {
+                    name: `Hold the Line`,
+                    descrip: `Never break ranks, never retreat. Face death with honour.`
+                },
+                {
+                    name: `Breathe Before You Move`,
+                    descrip: `Stillness is swiftness. Find your centre before you find your feet.`
+                },
+                {
+                    name: `Spare the Ration`,
+                    descrip: `Where war marches, famine follows. A soldier should always know where the next meal is coming from.`
+                },
+                {
+                    name: `Bow to Water`,
+                    descrip: `Soldiers respect the tides. They too know what it is to be carried on strong currents, and dashed against rocks.`
+                },
+                {
+                    name: `Fix What You Carry`,
+                    descrip: `Repair and preserve. Throw nothing away, lest you be discarded yourself.`
+                },
+                {
+                    name: `Spend the Last Arrow Well`,
+                    descrip: `Choose wisely when to let a quarrel fly. An empty quiver is useless to the living, as is a full one to the dead.`
+                },
+            ]
+        },
+        ryo: `1d6x10`,
+    },
+    {
+        // Hōkaibito
+        name: `Hōkaibito`,
+        descrip: `
+            A vow taken in <strong>rot</strong>; power bought with slow unmaking.
+            <p>You made a vow in the dark, and now <strong>it's eating you</strong>. There's moss where there should be skin. <strong>You carry your own rot like a banner</strong> - don't flinch when the bones crack, don’t beg when the fever hits.</p>
+            <p>The forest knows you. <strong>The kodama knows better</strong>. You’re what happens when someone <strong>trades time for power and means it</strong>.</p>
+        `,
+        stats: {
+            swiftness: -1,
+            spirit: -2,
+            vigor: 1,
+            resilience: 3,
+            honour: -3,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `Absorption`,
+                descrip: `
+                    If you kill a yōkai, its soul is tied to you, <strong class="adjust-strong-size">granting a feature</strong> determined by the GM based on the <strong class="adjust-strong-size">yōkai's abilities</strong>.
+                    <p>This ability can only be <span class="underline">used once per creature</span>.</p>
+                `
+            },
+            {
+                title: `Wither's Touch`,
+                descrip: `You can <strong class="adjust-strong-size">poison</strong> food and water with touch.`},
+            {
+                title: `Rot Mark`,
+                descrip: `<span class="underline">Once per combat</span>, on a hit, you may mark the target.
+                <p>While marked, the <span class="underline">first time each round</span> they <strong class="adjust-strong-size">move</strong> or <strong class="adjust-strong-size">shout</strong>, they take <strong class="adjust-strong-size">d4 damage</strong>.</p>`
+            },
+            {
+                title: `Grave Nourish`,
+                descrip: `
+                <span class="underline">Once per day</span>, you can pack wounds with moss and sap (<span class="underline">takes roughly 10 minutes</span>).
+                <p>Restore <strong class="adjust-strong-size">d6HP to a creature</strong>. If used on yourself, <strong class="adjust-strong-size">also clear any infectio</strong>n.</p>`
+            },
+            {
+                title: `Patient Unbinding`,
+                descrip: `
+                    If you forgo <strong class="adjust-strong-size">Attacks</strong> <span class="underline">this round</span> and <strong class="adjust-strong-size">keep both feet to the earth</strong>, your first <strong class="adjust-strong-size">Attack</strong> <span class="underline">next round</span> is <strong class="adjust-strong-size">-4 DR</strong>; <span class="underline">on a hit</span>, deal <strong class="adjust-strong-size">+d4 damage</strong> and <strong class="adjust-strong-size">poison</strong> the target.`
+            },
+            {
+                title: `Refuse to Fall`,
+                descrip: `
+                    <span class="underline">Once per character</span>, when you would drop below <strong class="adjust-strong-size">0HP</strong>, encase yourself in a tree. You can be transported as a tree and count as <strong class="adjust-strong-size">1 heavy item</strong>.
+                    <p><span class="underline">If planted</span>, your next character starts with an <strong class="adjust-strong-size">extra d10HP</strong>.</p>
+                    <p><span class="underline">If burned</span>, all your allies can be <strong class="adjust-strong-size">resurrected</strong> again if they already have been.</p>
+                    <p><span class="underline">If taken to Yomi</span> you return to life with <strong class="adjust-strong-size">maximum Honour</strong>.</p>
+                    `
+                },
+        ],
+        startingEquipment: [
+            {
+                item: `Rust-pitted <span class="underline">katana</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Short blade</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Thorn-cord`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Sap-soaked rag (oil)`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Bark mask`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `Thorn-Tied Promise`,
+            honourList: [
+                {
+                    name: `Perseverance`,
+                    descrip: `Endure what must be borne.`
+                },
+                {
+                    name: `Suffering`,
+                    descrip: `Spend pain with purpose.`
+                },
+                {
+                    name: `Fester`,
+                    descrip: `Do not spread rot for pride.`
+                },
+                {
+                    name: `Tenacity`,
+                    descrip: `Keep the vow even if it scars.`
+                },
+                {
+                    name: `Putrescence`,
+                    descrip: `Bloom last. Strike only when it ends things.`
+                },
+                {
+                    name: `Pulchritude`,
+                    descrip: `Leave beauty unbroken when you can.`
+                },
+            ]
+        },
+        ryo: `1d6x10`,
+    },
 ];
 
     
