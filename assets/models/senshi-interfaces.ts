@@ -3,6 +3,7 @@ export interface JobObj {
     descrip: string,
     stats: StatsObj,
     features: FeaturesObj[],
+    extraFeature?: ExtraFeatureObj,
     startingEquipment: StartingEquipmentObj[],
     tenants: TenantsObj,
     ryo: string,
@@ -20,8 +21,19 @@ export interface StatsObj {
 
 export interface FeaturesObj {
     title: string,
+    subtitle?: string,
     descrip: string,
 };
+
+export interface ExtraFeatureObj {
+    title: string,
+    subtitle: string,
+    features: {
+        title: string,
+        descrip: string,
+        extra: string[]
+    }[],
+}
 
 export interface StartingEquipmentObj {
     item: string,

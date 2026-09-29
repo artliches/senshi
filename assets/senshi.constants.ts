@@ -1645,6 +1645,592 @@ export const JOBS = [
         },
         ryo: `1d6x10`,
     },
+    // Hōzien
+    {
+        name: `Hōzien`,
+        descrip: `
+            The <strong>Hōzien</strong> monks are silent ascetics who live on the volcanic ridges of Kaji. They are known for their doctrine of <strong>cutting without hate</strong>, <strong>stillness over speed</strong>, and <strong>truth through form</strong>.
+            <p>Each monk is given a <strong>single spear</strong>—their only tool, weapon, and <strong>mirror</strong>.</p>
+        `,
+        stats: {
+            swiftness: 3,
+            spirit: 1,
+            vigor: 0,
+            resilience: 2,
+            honour: 2,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `Line of Truth`,
+                descrip:
+                `
+                    <span class="underline">Once per day</span>, before combat begins, you may draw a line in the ground with your spear. If an enemy attacks you <span class="underlilne">after crossing the line</span>, <strong class="adjust-strong-size">Defence Tests are -4 DR</strong>.
+                    <p><strong class="adjust-strong-size">The line only works if you haven't attacked yet.</strong></p>
+                `
+            },
+
+            {
+                title: `Dragonfly Cut`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, your spear hums with perfect form. You may Attack <strong class="adjust-strong-size">two adjacent enemies in one motion</strong>.
+                    <p>
+                        <span class="underline">If both attacks hit</span>, choose <strong class="adjust-strong-size">one</strong>:
+                        <ul>
+                            <li><strong class="adjust-strong-size"><em>Disarm one target</em></strong>. they spend their turn retrieving their weapon.</li>
+                            <li><strong class="adjust-strong-size"><em>Move away from both enemies</em></strong>. they cannot attack you next round.</li>
+                        </ul>
+                    </p>
+                `
+            },
+            {
+                title: `Still Hands`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, if you do not act on your turn, you gain <strong class="adjust-strong-size">-3 DR to any Parries</strong> that round and <strong class="adjust-strong-size">advantage on your next Attack</strong>.
+                `
+            },
+            {
+                title: `Moon Mirror Style`,
+                descrip: 
+                `
+                    <span class="underline">Once per session</span>, when an enemy attacks you, you may reflect their form.
+                    <p><strong class="adjust-strong-size">Test Resilience DR14</strong> to immediately repeat their action with your own stats and equipment (<em>e.g., if they used a sword technique, you may mimic it with your spear</em>).</p>
+                    <p>This includes effects from <strong class="adjust-strong-size">Texts</strong> or <strong class="adjust-strong-size">enemy special abilities</strong> (<em>if the GM approves</em>).</p>
+                `
+            },
+            {
+                title: `Cut Without Malice`,
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, your strikes draw no hatred, only truth.
+                    <p><span class="underline">When you reduce a creature to <strong class="adjust-strong-size">0HP</strong></span>, you may instead leave them at <strong class="adjust-strong-size">1HP</strong> and ask one question they <strong class="adjust-strong-size">must answer truthfully</strong>.</p>
+                `
+            },
+            {
+                title: `Oath Through Steel`,
+                descrip: 
+                `
+                    <span class="underline">Once per session</span>, each strike affirms a truth.
+                    <p><span class="underline">When you declare your intent before battle</span> (<em>a truth, belief, or vow</em>), your first successful <strong class="adjust-strong-size">Attack</strong> deals <strong class="adjust-strong-size">+d8 damage</strong> and you <strong class="adjust-strong-size">gain +2 Honour</strong>.</p>
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Hōzien spear</span> (<strong>d8 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Prayer blade</span> (<strong>d4 damage, <em>hidden in sandal sole</em></strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `
+                    3 <span class="underline">Ofuda</span> {<em>paper seals bearing your truths</em>}
+                    <p>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</p>
+                    <p>while Dishonourable, you cannot rewrite them.</p>
+                `,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `A <span class="underline">reed-woven monk's robe</span> (<strong>tier 1 armour</strong>)`,
+                type: `armor`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `Lines That Do Not Move`,
+            honourList: [
+                {
+                    name: `Stillness`,
+                    descrip: `Act only when necessary. Let restraint speak louder than action.`
+                },
+                {
+                    name: `Clarity`,
+                    descrip: `Seek truth in all things. Do not act in confusion or haste.`
+                },
+                {
+                    name: `Discipline`,
+                    descrip: `Control your body, your thoughts, and your blade. Let nothing strike without purpose.`
+                },
+                {
+                    name: `Mercy`,
+                    descrip: `When the line is drawn and your opponent sees the truth, spare them.`
+                },
+                {
+                    name: `Silence`,
+                    descrip: `Speak only when words carry weight. Silence is your shield and stance.`
+                },
+                {
+                    name: `Presence`,
+                    descrip: `Be unmoved by fear, deception or provocation. Where you stand is where truth begins.`
+                },
+            ]
+        },
+        ryo: `1d6x0`,
+    },
+    // Kamaitachi Rider
+    {
+        name: `Kamaitachi Rider`,
+        descrip: `
+            <strong>Wind-weasel outrider</strong>; cuts arrive on the gust before you move.
+            <p>You move like you've got <strong>wind in your blood</strong> and a <strong>blade for a shadow</strong>. You don't stand still. <strong>Standing still gets you buried</strong>. You strike between heartbeats, vanishing before the scream.</p>
+            <p>Offer salt. Break snares. <strong>Keep running</strong>. Because the moment you stop, <strong>the wind forgets your name</strong>.</p>
+        `,
+        stats: {
+            swiftness: 4,
+            spirit: -2,
+            vigor: 2,
+            resilience: 0,
+            honour: 2,
+            virtues: 3,
+            hp: 6
+        },
+        features: [
+            {
+                title: `Slipstream Step`,
+                descrip:
+                `
+                <span class="underline">Once per combat</span>, instantly disengage or take a better position on the battlefield; your next <strong>Attack</strong> or <strong>Defence</strong> is <strong>-2 DR</strong>.
+                `
+            },
+
+            {
+                title: `Ankle Sever`,
+                descrip: 
+                `
+                    Your <span class="underline">first hit each combat</span> adds <strong>+d4 damage</strong> and <strong>staggers</strong> the target (<em>they fall and cannot move</em>).
+                `
+            },
+            {
+                title: `Whistle Surge`,
+                descrip: 
+                `
+                    <span class="underline">Once per duel</span>, after you succeed at <strong>Guard</strong>, immediately <strong>Attack at DR8</strong>.
+                `
+            },
+            {
+                title: `I Am Weasel`,
+                descrip: 
+                `
+                    You can escape any containment and fit through tiny spaces.
+                    <p>Tests involving swift movement are <strong>-4 DR</strong>.</p>
+                `
+            },
+            {
+                title: `Offer to the Gust`,
+                descrip: 
+                `
+                    Leave rice, salt, or sake (<em>1 ryō or a ration</em>).
+                    <span class="underline">For the rest of the day</span>, make <strong>Swiftness Tests</strong> with <strong>advantage</strong>, and gain <strong>d4 additional HP</strong>.
+                `
+            },
+            {
+                title: `Wind Veil`,
+                descrip: 
+                `
+                    All <strong>ranged Attacks</strong> targeting you are <strong>-4 DR</strong>.
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Kama</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Tanto</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Pouch of rice/salt`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Ankle wraps`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Reed whistle`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Wind-cloak`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: ``,
+            honourList: [
+                {
+                    name: `Motion`,
+                    descrip: `Keep moving; strike from the step, not the stand.`
+                },
+                {
+                    name: `Edge of Mercy`,
+                    descrip: `First cut staggers, not slaughters; spare those who drop their blades.`
+                },
+                {
+                    name: `Clean Passage`,
+                    descrip: `Break snares and lines; leave roads safer than you found them.`
+                },
+                {
+                    name: `Quiet`,
+                    descrip: `Let the whistle speak; boastful mouths lose the wind.`
+                },
+                {
+                    name: `Offerings`,
+                    descrip: `Feed the gust (rice, salt, sake); pay what the breeze carries for you.`
+                },
+                {
+                    name: `No Masters`,
+                    descrip: `Serve no tyrant and bind no spirit to cruelty.`
+                },
+            ]
+        },
+        ryo: `2d6`,
+    },
+    // Kensei of the Five Rings
+    {
+        name: `Kensei of the Five Rings`,
+        descrip: `
+            <div class="ring-row">
+                <div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div><div class="ring"></div> Five rings.
+            </div>
+            <p><strong>Earth</strong> for the ones who never move when they should. <strong>Water</strong> for the ones who slip too far. <strong>Fire</strong> for the ones who burn loud and die early. <strong>Wind</strong> for the fakes who think style will save them. And <strong>Void</strong>... Void's the part you stop trying to understand when you've killed enough to realise there's nothing left to learn.</p>
+            <p><strong>Invincible is just a word</strong>.</p>
+        `,
+        stats: {
+            swiftness: 2,
+            spirit: 2,
+            vigor: 1,
+            resilience: 1,
+            honour: 2,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `Granite Guard`,
+                subtitle: `earth`,
+                descrip:
+                `
+                 <span class="underline">Once per combat</span>, reduce all damage you take by<strong> d6 </strong><span class="underline">until your next turn</span>.
+                 <p>If you <strong>Parry</strong> while this is active, you deal <strong>+d6 damage</strong>.</p>
+                `
+            },
+
+            {
+                title: `Flowing Adaptation`,
+                subtitle: `water`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, after a successful <strong>Defence</strong> or <strong>Parry</strong>, immediately reposition and make one <strong>Attack</strong> at <strong>-2 DR</strong>.
+                `
+            },
+            {
+                title: `Single-Beat Kill`,
+                subtitle: 'fire',
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, declare before you roll.
+                    <p>Your <strong>Attack</strong> is <strong>-4 DR</strong> and, <span class="underline">on a hit</span>, deals <strong>+d8 damage</strong>.</p>
+                `
+            },
+            {
+                title: `Cut The Gap`,
+                subtitle: 'wind',
+                descrip: 
+                `
+                    When <strong>Attacking</strong> during a <span class="underline">duel</span> your <strong>DR is -4</strong>.
+                `
+            },
+            {
+                title: `No-Mind`,
+                subtitle: 'void',
+                descrip: 
+                `
+                    <span class="underline">Once per session</span>, before you roll any one <strong>Attack/Defence/Parry</strong>, reduce its <strong>DR by -4</strong>.
+                    <p><span class="underline">If it deals damage</span>, ignore <strong>armour</strong> for that hit.</p>
+                
+                `
+            },
+            {
+                title: `Two Heavens`,
+                subtitle: `niten ichi`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, while wielding <strong>katana</strong> + <strong>wakizashi</strong>, either: make <strong>two Attacks</strong> this turn <span class="underline">OR</span> make <strong>one Attack</strong> now and <strong>automatically succeed with a Parry</strong> <span class="underline">before your next turn</span>.
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `Fine <span class="underline">katana</span> (<strong>d10 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Wakizashi</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Training gi`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Whetstone`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `A straw hat`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `The Five Rings`,
+            honourList: [
+                {
+                    name: `Be Unmoved`,
+                    descrip: '<em>Earth</em>. Plant stance before steel; yield to neither push, taunt, nor noise.'
+                },
+                {
+                    name: `Be Formless`,
+                    descrip: '<em>Water</em>. Change guard and distance without pause; answer force with redirection.'
+                },
+                {
+                    name: `Decide`,
+                    descrip: '<em>Fire</em>. When the beat opens, strike at once; do not trade blows.'
+                },
+                {
+                    name: `Read Others`,
+                    descrip: '<em>Wind</em>. Study every school; cut through habit, not pride.'
+                },
+                {
+                    name: `Empty Intention`,
+                    descrip: '<em>Void</em>. No anger, no flourish; make the cut and be still.'
+                },
+                {
+                    name: `Just a Word`,
+                    descrip: '<em>Unrivalled</em>. No ego in victory or loss.'
+                },
+            ]
+        },
+        ryo: `2d6x10`,
+    },
+    // Kitsunetsukai
+    {
+        name: `Kitsunetsukai`,
+        descrip: `
+            <strong>Fox-binder</strong>; walks markets that aren't there and comes back with <strong>paper teeth</strong>.
+            <p><strong>Fox spirits trail you</strong> - small, sharp things that bite through flesh and bone. You bind them with <strong>paper</strong> and <strong>blood</strong>. Lanterns flicker when you pass. Some burn white. You <strong>heal</strong>, you <strong>hex</strong>, <strong>vanish</strong> through walls thinner than truth.</p>
+            <p>Just don't say your name out loud. <strong>Not here</strong>. Not where things listen.</p>
+        `,
+        stats: {
+            swiftness: 1,
+            spirit: 4,
+            vigor: 0,
+            resilience: 1,
+            honour: 1,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `Fox Step`,
+                descrip:
+                `
+                    <span class="underline">Once per combat</span>, you <strong class="adjust-strong-size">vanish</strong> in a rustle of paper and <strong class="adjust-strong-size">reappear</strong> beside an <span class="underline">ally in sight</span> (<em>through walls no thicker than paper/ wood</em>).
+                    That ally regains <strong class="adjust-strong-size">+d4HP</strong>.
+                `
+            },
+
+            {
+                title: `Healing Ofuda`,
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, send a talisman flying at an <strong class="adjust-strong-size">ally</strong>.
+                    <p>They <strong class="adjust-strong-size">regain +d6HP</strong> <em>or</em> remove a <strong class="adjust-strong-size">negative status</strong>.</p>
+                `
+            },
+            {
+                title: `White Lantern`,
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, tests <strong class="adjust-strong-size">Spirit DR12</strong>.
+                    <p><span class="underline">If successful</span>, your <em>Kudagitsune</em> ignores <strong class="adjust-strong-size">armour</strong> and deals <strong class="adjust-strong-size">double damage</strong> for <span class="underline">d4 rounds</span>.</p>
+                `
+            },
+            {
+                title: `Foxfire Strike`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, wreathe your blade or ofuda in a pale flame.
+                    <p>Your next hit adds <strong class="adjust-strong-size">+d6 blessed fire damage</strong> and <strong class="adjust-strong-size">ignores</strong> mundane armour.</p>
+                    <p>If the target is <span class="underline">sealed</span>, <span class="underline">marked</span>, or <span class="underline">muted</span>, roll with <strong class="adjust-strong-size">advantage</strong>.</p>
+                `
+            },
+            {
+                title: `Twin Pact`,
+                descrip: 
+                `
+                    You may keep two <em>Kudagitsune</em> bound. You still issue only one <strong class="adjust-strong-size">Command</strong> per round.
+                    <p>Dissipated foxes return at <span class="underline">dusk instead of dawn</span>.</p>
+                `
+            },
+            {
+                title: `Path of the Fox`,
+                descrip: 
+                `
+                    Your next <strong class="adjust-strong-size">Spirit Test</strong> is <strong class="adjust-strong-size">-2 DR</strong>.
+                    <p>If that <strong class="adjust-strong-size">Test</strong> involves <strong class="adjust-strong-size">attacking</strong>, <strong class="adjust-strong-size">sealing</strong>, or <strong class="adjust-strong-size">banishing</strong> a <span class="underline">yōkai</span>, add <strong class="adjust-strong-size">+d4 to the effect</strong>.</p>
+                `
+            },
+        ],
+        extraFeature: {
+            title: 'Kuoagitsune',
+            subtitle: 'HP5',
+            features: [
+                {
+                    title: 'Foxfire Nibble',
+                    descrip: `d4 <em>fire</em>`,
+                    extra: [],
+                },
+                {
+                    title:`Command`,
+                    descrip: `A small fox-spirit slips from sleeve or breath. One <em>Command</em> per round:`,
+                    extra: [
+                        `<strong>Harrow</strong>. Pick an enemy you can see; when you oppose that enemy this <span class="underline">round</span>, your <em>Test is -2 DR</em>.`,
+                        `<strong>Intercept</strong>. <span class="underline">Once per combat</span>, negate a hit against you; the fox takes the damage and vanishes <span class="underline">until combat is over</span>.`,
+                        `<strong>Marked</strong>. The fox places an ofuda on a target in your presence; all <em>Spirit</em> or <em>Swiftness Tests</em> against that target are <em>-2 DR</em>.`,
+                    ]
+                },
+            ]
+        },
+        startingEquipment: [
+            {
+                item: `<span class="underline">Ritual knife</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Ofuda {wooden or paper talismans} (<strong>inscribe Spirit+d4 ofuda on a long rest; new replaces old</strong>)`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `White lantern`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Ink brush & soot`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Vial of spring water`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Twine & needles`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Pouch of rice/salt`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `Binder's Thread`,
+            honourList: [
+                {
+                    name: `Snuff With Fingers`,
+                    descrip: `Never blow out a rite's flame.`
+                },
+                {
+                    name: `Paper Promises Hold`,
+                    descrip: `An ofuda you place is a vow—keep it or burn it yourself.`
+                },
+                {
+                    name: `Break Glamour, Not Will`,
+                    descrip: `Unmask; do not humiliate.`
+                },
+                {
+                    name: `Offer First`,
+                    descrip: `Rice, salt, sake; pay the roads and the little mouths.`
+                },
+                {
+                    name: `Bind Clean`,
+                    descrip: `No mortal souls. Sealed spirits release when the danger ends.`
+                },
+                {
+                    name: `Do Not Name Yourself in Markets`,
+                    descrip: `Names are doors; keep yours shut.`
+                },
+            ]
+        },
+        ryo: `1d6x0`,
+    },
 ];
 
     
