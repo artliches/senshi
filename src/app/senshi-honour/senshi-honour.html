@@ -7,7 +7,7 @@
                     @for (tenant of currentTenants()?.honourList; track $index) {
                         <div class="tenant">
                             <strong class="tenant-name underline">{{tenant.name}}</strong>
-                            <span class="tenant-descrip">{{tenant.descrip}}</span>
+                            <span [innerHtml]="tenant.descrip" class="tenant-descrip"></span>
                             @if ($index !== 5) {
                                 <div class="dot"></div>
                             }
@@ -27,6 +27,11 @@
             @if (currentTenants()?.title === 'The Unseen Virtues') {
                 <div class="unseen-section">
                     <em>you may lie to the GM when pleading your case for honourable actions</em>
+                </div>
+            }
+            @if (currentTenants()?.title === 'The Five Rings') {
+                <div class="unseen-section">
+                    <em>you cannot drop below 10 honour. if your honour would drop below 10, instead remove 1 max HP.</em>
                 </div>
             }
         </div>

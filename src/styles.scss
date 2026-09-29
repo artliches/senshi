@@ -88,6 +88,10 @@ body {
         font-family: 'AssassinNinja';
     }
 
+    ul {
+        margin: 0rem;
+    }
+
     .shake {
         &:active {
             animation: shake 0.1s ease-in-out;
@@ -131,6 +135,21 @@ body {
 
     .adjust-strong-size {
         font-size: 1.2rem;
+    }
+
+    .ring-row {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.3rem
+    }
+
+    .ring {
+        content: "";
+        width: 1rem;
+        height: 1rem;
+        border: 1px solid white;
+        border-radius: 50%;
+        background-color: colors.$red;
     }
 }
 

@@ -38,7 +38,7 @@ export class SenshiJob implements OnInit, OnChanges {
     this.jobsObjSignal.set(this.jobArraySignal()[newIndex]);
     this.randomNumberService.shuffle(this.jobsObjSignal().features);
     this.rerollFeature();
-    this.jobEmitter.emit(this.jobsObjSignal());
+    this.jobEmitter.emit(this.jobsObjSignal());    
   }
 
   rerollFeature() {
@@ -46,7 +46,6 @@ export class SenshiJob implements OnInit, OnChanges {
     const isEndOfArray = this.jobsObjSignal().features.length === newIndex + 1;
 
     newIndex = isEndOfArray ? 0 : newIndex += 1;
-
     this.chosenFeatureSignal.set(this.jobsObjSignal().features[newIndex]);
   }
 }

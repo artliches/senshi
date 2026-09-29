@@ -6,20 +6,36 @@
         <div class="descrip-section">
             <em><span [innerHTML]="jobsObjSignal().descrip"></span></em>
         </div>
-        <!-- <div class="tenants-section">
-            <div>You must follow <strong class="underline">{{jobsObjSignal().tenants.title}}</strong></div>
-            <div class="tenant-card">
-                @for (tenant of jobsObjSignal().tenants.honourList; track $index) {
-                    <div class="tenant">
-                        <strong class="tenant-name underline">{{tenant.name}}</strong>
-                        <span class="tenant-descrip">{{tenant.descrip}}</span>
-                    </div>
+        <span [class]="{'split-feature-layout': jobsObjSignal().extraFeature}">
+            <div class="feature-section">
+                <div (click)="rerollFeature()" class="clickable shake">{{chosenFeatureSignal().title | uppercase}}</div>
+                @if (chosenFeatureSignal().subtitle) {
+                    <em class="subtitle-section">{{chosenFeatureSignal().subtitle}}</em>
                 }
+                <div><span [innerHTML]="chosenFeatureSignal().descrip"></span></div>
             </div>
-        </div> -->
-        <div class="feature-section">
-            <div (click)="rerollFeature()" class="clickable shake">{{chosenFeatureSignal().title | uppercase}}</div>
-            <div><span [innerHTML]="chosenFeatureSignal().descrip"></span></div>
-        </div>
+            @if (jobsObjSignal().extraFeature) {
+                <div class="extra-feature-section">
+                    <span class="extra-feature-title">
+                        <span class="extra-title">{{jobsObjSignal().extraFeature?.title}}</span>
+                        {{jobsObjSignal().extraFeature?.subtitle}}
+                    </span>
+                    <span class="extra-feature-body">
+                        @for (feature of jobsObjSignal().extraFeature?.features; track $index) {
+                            <div class="feature-header">
+                                <strong>{{feature.title}}</strong> <span [innerHtml]="feature.descrip"></span>
+                            </div>
+                            @if (feature.extra) {
+                                <div class="feature-extra">
+                                    @for (ex of feature.extra; track $index) {
+                                        <div [innerHTML]="ex"></div>
+                                    }
+                                </div>
+                            }
+                        }
+                    </span>
+                </div>
+            }
+        </span>
     </div>
 </div>
