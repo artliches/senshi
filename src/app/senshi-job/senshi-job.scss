@@ -33,9 +33,11 @@
         grid-auto-rows: min-content;
         grid-gap: 0.5rem;
         .all-features-list-title {
-            font-size: 0.8rem;
+            font-size: 1.2rem;
             text-align: center;
-            color: colors.$slightly-yellow;
+            place-self: center;
+            width: 100%;
+            font-family: 'CAT';
         }
         .job-feature-layout {
             font-size: 0.8rem;
@@ -61,6 +63,14 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 0.5rem;
+        >div {
+            &:nth-child(odd) {
+                transform: rotate(0.5deg);
+            }
+            &:nth-child(even) {
+                transform: rotate(-0.5deg);
+            }
+        }
         &.puppet-master {
             grid-auto-rows: min-content;
             .rules-section {
@@ -134,7 +144,8 @@
 
         .all-features-list-layout {
             grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(6, min-content);
+            // grid-template-rows: repeat(6, min-content);
+            grid-auto-rows: min-content;
             .all-features-list-title {
                 grid-column: span 2;
             }

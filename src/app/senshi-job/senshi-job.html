@@ -21,13 +21,15 @@
                 </div>
             } @else {
                 <div class="all-features-list-layout">
-                    <strong class="all-features-list-title underline">THE {{jobsObjSignal().name | uppercase}} HAS ACCESS TO ALL FEATURES</strong>
-                    @for (jobFeature of jobsObjSignal().features; track $index) {
-                        <span class="job-feature-layout">
-                            <strong>{{jobFeature.title | uppercase}}</strong>
-                            <em>{{jobFeature.cost}} ryō</em>
-                            <span [innerHTML]="jobFeature.descrip"></span>
-                        </span>
+                    <strong (click)="showAllFeatures.set(!showAllFeatures())"  class="all-features-list-title clickable shake">The <span class="underline">{{jobsObjSignal().name}}</span> has access to all features</strong>
+                    @if (showAllFeatures()) {
+                        @for (jobFeature of jobsObjSignal().features; track $index) {
+                            <span class="job-feature-layout">
+                                <strong>{{jobFeature.title | uppercase}}</strong>
+                                <em>{{jobFeature.cost}} ryō</em>
+                                <span [innerHTML]="jobFeature.descrip"></span>
+                            </span>
+                        }
                     }
                 </div>
             }

@@ -16,6 +16,7 @@ export class SenshiJob implements OnInit, OnChanges {
   jobArraySignal: WritableSignal<JobObj[]> = signal(this.randomNumberService.shuffle([...JOBS]));
   jobsObjSignal: WritableSignal<JobObj> = signal(this.jobArraySignal()[0]);
   chosenFeatureSignal: WritableSignal<FeaturesObj> = signal(this.randomNumberService.shuffle([...this.jobsObjSignal().features])[0]);
+  showAllFeatures: WritableSignal<boolean> = signal(true);
   jobEmitter = output<JobObj>();
   triggerReroll = input<boolean>();
 
