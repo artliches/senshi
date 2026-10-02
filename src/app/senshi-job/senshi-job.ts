@@ -28,7 +28,6 @@ export class SenshiJob implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== undefined) {
       this.rerollJob();
-      this.checkForPuppetMasterJob();
     }
   }
 
@@ -42,6 +41,8 @@ export class SenshiJob implements OnInit, OnChanges {
     this.randomNumberService.shuffle([...this.jobsObjSignal().features]);
     this.rerollFeature();
     this.jobEmitter.emit(this.jobsObjSignal());    
+
+    this.checkForPuppetMasterJob();
   }
 
   rerollFeature() {

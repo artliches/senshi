@@ -97,6 +97,10 @@ body {
             flex-direction: column;
             gap: 0.2rem;
         }
+        &.x-list {
+            list-style-type: "×";
+            padding: 0 0 0 1rem;
+        }
     }
 
     .shake {
