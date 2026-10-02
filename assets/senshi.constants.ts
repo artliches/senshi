@@ -2571,129 +2571,161 @@ export const JOBS = [
         },
         ryo: `10d6x1`,
     },
+    // Onryō
+    {
+        name: `Onryō`,
+        descrip: `
+            A grievance given shape; elegance that cuts.
+            <p>They buried you too fast. <strong>Didn't bow right</strong>. Didn't speak your name. So now you walk, <strong>slow and cold</strong>, like the ground still misses your weight.</p>
+            <p><strong>People look away when you pass</strong>. Dogs don't bark. You wear the <strong>mask</strong> so they don't see <strong>how little face you've got left</strong>.</p>
+        `,
+        stats: {
+            swiftness: 2,
+            spirit: 3,
+            vigor: 0,
+            resilience: 0,
+            honour: -3,
+            virtues: 2,
+            hp: 6
+        },
+        features: [
+            {
+                title: `Director's Feedback`,
+                descrip:
+                `
+                    <span class="underline">While masked</span>, you may target a <strong class="adjust-strong-size">Yōkai</strong> and speak a <strong class="adjust-strong-size">one-word command</strong>.
+                    <p><strong class="adjust-strong-size">Test Spirit DR12</strong>; on a <span class="underline">success</span> the creature must obey the command.</p>
+                `
+            },
+
+            {
+                title: `Grudge Binding`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, name your grievance and point at a foe you've struck.
+                    <p>
+                        <div>They are bound until <span class="underline">combat ends</span>.</div>
+                        <ul class="x-list">
+                            <li>
+                                Your <strong class="adjust-strong-size">Attacks</strong> vs them have <strong class="adjust-strong-size">advantage</strong>.
+                            </li>
+                            <li>
+                                Your <strong class="adjust-strong-size">Defence Tests</strong> vs them are at <strong class="adjust-strong-size">-2 DR</strong>.
+                            </li>
+                        </ul>
+                    </p>
+                `
+            },
+            {
+                title: `Silent Verses`,
+                descrip: 
+                `
+                    <span class="underline">Once per day</span>, unfurl a script page and intone its verse in hushed tones.
+                    <p>
+                        <div><span class="underline">Choose one effect in your presence.</span></div>
+                        <ul class="x-list">
+                            <li><strong class="adjust-strong-size"><span class="underline">Reflection</span></strong>. One ally rerolls a failed <strong class="adjust-strong-size">Spirit Test</strong>.</li>
+                            <li><strong class="adjust-strong-size"><span class="underline">Lament</span></strong>. One enemy <strong class="adjust-strong-size">Tests Spirit DR14</strong> or flees.</li>
+                        </ul>
+                    </p>
+                `
+            },
+            {
+                title: `Ember Step`,
+                descrip: 
+                `
+                    <span class="underline">Once per combat</span>, pass through an enemy like smoke. <strong class="adjust-strong-size">Test Spirit DR13</strong>.
+                    <p>
+                        <ul class="x-list">
+                            <li><strong class="adjust-strong-size"><span class="underline">Success</span></strong>. they take <strong class="adjust-strong-size">d6</strong> fire/spirit damage and <strong class="adjust-strong-size">cannot Attack </strong>until the <span class="underline">end of your next turn</span>.</li>
+                            <li><strong class="adjust-strong-size"><span class="underline">Failure</span></strong>. you materialise behind them, gaining <strong class="adjust-strong-size">advantage</strong> on your <span class="underline">next <strong class="adjust-strong-size">Attack</strong> this round</span>.</li>
+                        </ul>
+                    </p>
+                `
+            },
+            {
+                title: `Mask Invocation`,
+                descrip: 
+                `
+                <span class="underline">Once per day</span>, change the mask's face to one of the following:
+                <p>
+                    <ul class="x-list">
+                        <li><strong class="adjust-strong-size"><span class="underline">Yomi</span></strong>. Yōkai believe you to be one of their own and treat you favourably.</li>
+                        <li><strong class="adjust-strong-size"><span class="underline">Grinning</span></strong>. Enemies that miss you take <strong class="adjust-strong-size">d4 damage ignoring armour</strong>.</li>
+                        <li><strong class="adjust-strong-size"><span class="underline">Weeping</span></strong>. Your <strong class="adjust-strong-size">Attacks</strong> hit with a <strong class="adjust-strong-size">DR8</strong> but you <strong class="adjust-strong-size">defend with DR16</strong>.</li>
+                    </ul>
+                </p>
+                `
+            },
+            {
+                title: `Quiet Release`,
+                descrip: 
+                `
+                    Putting the mask on the face of a <strong class="adjust-strong-size">dead person</strong> causes them to laugh and scream the last words they spoke before dying, <span class="underline">over and over and over again</span>.
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Short blade</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Funerary mask`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Ritual cords`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Script pages`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: ``,
+            honourList: [
+                {
+                    name: `Hush`, 
+                    descrip: `Speak softly; let form do the cutting.`
+                },
+                {
+                    name: `Subtlety`, 
+                    descrip: `Strike only for redress, not spectacle.`
+            },
+                {
+                    name: `Cold`, 
+                    descrip: `Mask the face so the grievance is seen.`
+                },
+                {
+                    name: `Open Mind`, 
+                    descrip: `Leave a path to ending.`
+            },
+                {
+                    name: `Debt`, 
+                    descrip: `Accept salt and silence as the prices of peace.`
+                },
+                {
+                    name: `Assent`, 
+                    descrip: `Finish the verse, then be gone.`
+            },
+            ]
+        },
+        ryo: `2d6x10`,
+    },
 ];
-
-    
-    // {
-    //     name: ``,
-    //     descrip: `
-
-    //     `,
-    //     stats: {
-    //         swiftness: ,
-    //         spirit: ,
-    //         vigor: ,
-    //         resilience: ,
-    //         honour: ,
-    //         virtues: ,
-    //         hp: 
-    //     },
-    //     features: [
-    //         {
-    //             title: ``,
-    //             descrip:
-    //             `
-                
-    //             `
-    //         },
-
-    //         {
-    //             title: ``,
-    //             descrip: 
-    //             `
-                
-    //             `
-    //         },
-    //         {
-    //             title: ``,
-    //             descrip: 
-    //             `
-
-    //             `
-    //         },
-    //         {
-    //             title: ``,
-    //             descrip: 
-    //             `
-
-    //             `
-    //         },
-    //         {
-    //             title: ``,
-    //             descrip: 
-    //             `
-                
-                
-    //             `
-    //         },
-    //         {
-    //             title: ``,
-    //             descrip: 
-    //             `
-
-    //             `
-    //         },
-    //     ],
-    //     startingEquipment: [
-    //         {
-    //             item: `A worn but serviceable <strong class="underline">katana</strong> (<strong>d8 damage</strong>)`,
-    //             type: `weapon`,
-    //             die: ``,
-    //         },
-    //         {
-    //             item: `A set of traveling clothes`,
-    //             type: `item`,
-    //             die: ``
-    //         },
-    //         {
-    //             item: `A letter of introduction (<em>can be used to gain an audience with a local lord or official</em>)`,
-    //             type: `item`,
-    //             die: ``
-    //         },
-    //         {
-    //             item: `A straw hat`,
-    //             type: `item`,
-    //             die: ``
-    //         },
-    //         {
-    //             item: `[] <strong class="underline">food</strong>`,
-    //             type: `item`,
-    //             die: `1d4`,
-    //         },            
-    //         {
-    //             item: `[] <strong class="underline">water</strong>`,
-    //             type: `item`,
-    //             die: `1d4`,
-    //         },
-    //     ],
-    //     tenants: {
-    //         title: ``,
-    //         honourList: [
-    //             {
-    //                 name: ``,
-    //                 descrip: ``,
-    //             },
-    //             {
-    //                 name: ``,
-    //                 descrip: ``
-    //             },
-    //             {
-    //                 name: ``,
-    //                 descrip: ``,
-    //             },
-    //             {
-    //                 name: ``,
-    //                 descrip: ``,
-    //             },
-    //             {
-    //                 name: ``,
-    //                 descrip: ``,
-    //             },
-    //             {
-    //                 name: ``,
-    //                 descrip: ``,
-    //             },
-    //         ]
-    //     },
-    //     ryo: `1d6x10`,
-    // },
