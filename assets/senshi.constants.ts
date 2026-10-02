@@ -2450,7 +2450,7 @@ export const JOBS = [
                 title: `The Contract`,
                 content: [
                     `<strong>Pay to Act.</strong> Each feature lists a Cost in ryō that you hand to the puppet. If you don’t or can’t, you may still use it but mark Debt equal to its cost.`,
-                    `<strong>Debt Thresholds.</strong> At 15 Debt the puppet is Spiteful; at 30 the Puppet is Angry; at 60 the contract breaks.`,
+                    `<strong>Debt Thresholds.</strong> At <em>15 Debt</em> the puppet is <span class="underline">Spiteful</span>; at <em>30</em> the Puppet is <span class="underline">Angry</span>; at <em>60</em> the <span class="underline">contract breaks</span>.`,
                     `<strong>Paying Down Debt.</strong> During downtime, spend 1 ryō to clear 1 Debt.`
                 ]
             },
