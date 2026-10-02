@@ -2,30 +2,32 @@ import { Component, inject, input, OnChanges, OnInit, output, signal, SimpleChan
 import { FeaturesObj, JobObj } from '../../../public/assets/models/senshi-interfaces';
 import { RandomNumber } from '../random-number';
 import { JOBS } from '../../../public/assets/senshi.constants';
-import { UpperCasePipe } from '@angular/common';
+import { JsonPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-senshi-job',
-  imports: [UpperCasePipe],
+  imports: [UpperCasePipe, JsonPipe],
   templateUrl: './senshi-job.html',
   styleUrl: './senshi-job.scss',
 })
 export class SenshiJob implements OnInit, OnChanges {
   private randomNumberService = inject(RandomNumber);
 
-  jobArraySignal: WritableSignal<JobObj[]> = signal(this.randomNumberService.shuffle(JOBS));
+  jobArraySignal: WritableSignal<JobObj[]> = signal(this.randomNumberService.shuffle([...JOBS]));
   jobsObjSignal: WritableSignal<JobObj> = signal(this.jobArraySignal()[0]);
-  chosenFeatureSignal: WritableSignal<FeaturesObj> = signal(this.randomNumberService.shuffle(this.jobsObjSignal().features)[0]);
+  chosenFeatureSignal: WritableSignal<FeaturesObj> = signal(this.randomNumberService.shuffle([...this.jobsObjSignal().features])[0]);
   jobEmitter = output<JobObj>();
   triggerReroll = input<boolean>();
 
   ngOnInit(): void {
     this.jobEmitter.emit(this.jobsObjSignal());
+    this.checkForPuppetMasterJob();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== 'undefined') {
+    if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== undefined) {
       this.rerollJob();
+      this.checkForPuppetMasterJob();
     }
   }
 
@@ -36,7 +38,7 @@ export class SenshiJob implements OnInit, OnChanges {
     newIndex = isEndOfArray ? 0 : newIndex += 1;
 
     this.jobsObjSignal.set(this.jobArraySignal()[newIndex]);
-    this.randomNumberService.shuffle(this.jobsObjSignal().features);
+    this.randomNumberService.shuffle([...this.jobsObjSignal().features]);
     this.rerollFeature();
     this.jobEmitter.emit(this.jobsObjSignal());    
   }
@@ -47,5 +49,17 @@ export class SenshiJob implements OnInit, OnChanges {
 
     newIndex = isEndOfArray ? 0 : newIndex += 1;
     this.chosenFeatureSignal.set(this.jobsObjSignal().features[newIndex]);
+  }
+
+  private checkForPuppetMasterJob() {
+    if (this.jobsObjSignal().name.includes('Kugutsu-No-Musha')) {
+      this.chosenFeatureSignal.set({} as FeaturesObj);
+      this.jobsObjSignal.update(feature => ({
+        ...feature,
+        features: JOBS[JOBS.findIndex(job => job.name === this.jobsObjSignal().name)].features
+      }));
+    } else {
+      this.chosenFeatureSignal.set(this.randomNumberService.shuffle([...this.jobsObjSignal().features])[0]);
+    }
   }
 }

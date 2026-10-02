@@ -154,7 +154,7 @@ export const JOBS = [
         },
         features: [
             {
-                title: `RONIN’S RESOLVE`,
+                title: `RONIN'S RESOLVE`,
                 descrip:
                 `<em>The Forgotten Ronin can draw upon their inner strength and resolve in times of great need.</em>
                 <p><strong class="adjust-strong-size">Once per day</strong>, they may <strong class="adjust-strong-size">roll d6</strong> and add the result to <span class="underline">any one roll they make</span>.</p>
@@ -620,7 +620,7 @@ export const JOBS = [
             honourList: [
                 {
                     name: `Deception`,
-                    descrip: `Use your skills of deception to achieve your goals, but never let your true intentions be known.`,
+                    descrip: `Do what you must to achieve your goals, even if that means lying.`,
                 },
                 {
                     name: `Ruthlessness`,
@@ -1268,8 +1268,8 @@ export const JOBS = [
         },
         ryo: `1d6x10`,
     },
+    // The Sword Saint 
     {
-        // The Sword Saint 
         name: `The Sword Saint`,
         descrip: `
             The <strong>Sword Saint</strong> - Not just any fencer, but the epitome of duelling mastery. With a blade that dances elegantly and strikes with deadly precision, <strong>their every move is a masterclass</strong>. Their footwork is fluid, their accuracy unmatched.
@@ -1387,8 +1387,8 @@ export const JOBS = [
         },
         ryo: `1d6x10`,
     },
+    // Ashigaru Survivor
     {
-        // Ashigaru Survivor
         name: `Ashigaru Survivor`,
         descrip: `
             Footsoldier of no renown; <strong>trained to outlast orders and storms.</strong>
@@ -1523,8 +1523,8 @@ export const JOBS = [
         },
         ryo: `1d6x10`,
     },
+    // Hōkaibito
     {
-        // Hōkaibito
         name: `Hōkaibito`,
         descrip: `
             A vow taken in <strong>rot</strong>; power bought with slow unmaking.
@@ -2133,7 +2133,7 @@ export const JOBS = [
                 `
             },
         ],
-        extraFeature: {
+        pet: {
             title: 'Kuoagitsune',
             subtitle: 'HP5',
             features: [
@@ -2230,6 +2230,346 @@ export const JOBS = [
             ]
         },
         ryo: `1d6x0`,
+    },
+    //Kuge Ninja
+    {
+        name: `Kuge Ninja`,
+        descrip: `
+            <strong>Kuge Ninja</strong> are masters of deception.
+            <p>They act as nobles within palace walls, <strong>orchestrate scandals</strong>, and help pick victims of internal purges. They have learned to wear <strong>names like blades</strong> and <strong>truths like poisons</strong>.</p>
+            <p>To the world, <strong>they are whoever they need to be</strong>.</p>
+        `,
+        stats: {
+            swiftness: 1,
+            spirit: 3,
+            vigor: -2,
+            resilience: 1,
+            honour: -1,
+            virtues: 2,
+            hp: 8
+        },
+        features: [
+            {
+                title: `THOUSAND FACES`,
+                descrip: `<span class="underline">Once per day</span>, assume the identity of any humanoid you've seen. <span class="underline">Requires 1 minute</span>.
+                <p><strong class="adjust-strong-size">Spirit DR12</strong> to pass casual inspection. <strong class="adjust-strong-size">DR14</strong> under scrutiny.</p>
+                <p><span class="underline">While disguised</span>, you may use <strong class="adjust-strong-size">Spirit</strong> instead of <strong class="adjust-strong-size">Vigor</strong> for <strong class="adjust-strong-size">Attack rolls</strong>.</p>
+                `
+            },
+            {
+                title: `FORGED IN SILK`,
+                descrip: `
+                You may <strong class="adjust-strong-size">Test Spirit DR14</strong> to implant a false memory or belief in a target with whom you've <strong class="adjust-strong-size">spoken for at least <span class="underline">one minute</span></strong>.
+                <p>The effect lasts until proven false.</p>
+                <p><span class="underline">Can only affect one target at a time</span>.</p>
+                `
+            },
+            {
+                title: `MASK OF CONVICTION`,
+                descrip: `<span class="underline">Once per session</span>, you may lie with such certainty that the <strong class="adjust-strong-size">GM must treat it as true</strong>.`
+            },
+            {
+                title: `HIDDEN BLADE, HIDDEN NAME`,
+                descrip: `<span class="underline">Once per day</span>, you can hide a weapon or tool on your person, undetectable except by magic.
+                <p>Declare the item when you need it, <strong class="adjust-strong-size">no action required</strong>.</p>
+                <p><span class="underline">If you're disarmed or stripped</span>, <strong class="adjust-strong-size">Test Spirit DR12</strong> to still have it.</p>
+                `
+            },
+            {
+                title: `THE REAL POISON IS THE WORD`,
+                descrip: `When speaking for <span class="underline">more than a minute</span> with a target, you may poison them with a command.
+                <p><strong class="adjust-strong-size">Test Spirit DR14</strong>; on a <span class="underline">success</span>, they must obey a simple order the next time you say their name.</p>
+                <p>You may choose to do <strong class="adjust-strong-size">d6 damage ignoring armour</strong> <span class="underline">when they next rest</span> instead of giving an order.</p>
+                `
+            },
+            {
+                title: `GHOST IN BROCADE`,
+                descrip: `
+                <em>You may move unseen, not by stealth, but by appearing to belong.</em>
+                <p><strong class="adjust-strong-size">Test Spirit DR10</strong> to avoid detection or suspicion. This includes walking into <em>restricted places</em>, <em>manipulating guards</em>, or <em>interrupting ceremonies</em>.</p>
+                <p>You may also <strong class="adjust-strong-size">Test Swiftness</strong> to flee if <span class="underline">you are joining a crowd</span>.</p>
+                `
+            },
+        ],
+        startingEquipment: [
+            {
+                item: `<span class="underline">Tanto</span> (<strong>d4 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Vial of sleeping poison (<strong>[]{d4} uses, Resilience DR14 or sleep d6 rounds</strong>)`,
+                type: `weapon`,
+                die: `d4`,
+            },
+            {
+                item: `High-quality silk mask`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Forged travel document or noble seal`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `The Unseen Virtues`,
+            honourList: [
+                {
+                    name: `Deception`,
+                    descrip: `Do what you must to achieve your goals, even if that means lying.`,
+                },
+                {
+                    name: `Ruthlessness`,
+                    descrip: `Show no mercy to those who oppose you.`
+                },
+                {
+                    name: `Loyalty`,
+                    descrip: `Remain loyal to your allies and those who hold power over you, even if it goes against your personal interests.`,
+                },
+                {
+                    name: `Discretion`,
+                    descrip: `Keep your actions and intentions secret, revealing them only to those you trust`,
+                },
+                {
+                    name: `Adaptability`,
+                    descrip: `Be prepared to adapt and change your plans at a moment's notice to achieve your goals`,
+                },
+                {
+                    name: `Perseverance`,
+                    descrip: `Never give up, even in the face of seemingly insurmountable obstacles.`,
+                },
+            ]
+        },
+        ryo: `2d6x10`,
+    },
+    // Kugutsu-No-Musha
+    {
+        name: `Kugutsu-No-Musha`,
+        descrip: `
+            Puppet warrior; the blade behind the curtain
+            <p><strong>You're not alone in your skin</strong>. There's something behind you—stitched, lacquered, smiling too wide. <strong>It moves when paid</strong>. <strong>It fights when told</strong>.</p>
+            <p>You've got <strong>debts in your teeth</strong> and a partner who doesn't sleep.</p>
+            <p><strong>Keep the show going. Keep your hands steady.</strong></p>
+        `,
+        stats: {
+            swiftness: 2,
+            spirit: -1,
+            vigor: 3,
+            resilience: 1,
+            honour: -2,
+            virtues: 2,
+            hp: 6
+        },
+        features: [
+            {
+                title: `Cue:Snare`,
+                cost: 12,
+                descrip:
+                `
+                <em>The puppet aids your allies</em>. Choose a <span class="underline">visible ally</span> in your presence. Their next roll is <strong>-3DR</strong>.
+                `
+            },
+
+            {
+                title: `Drop Curtain`,
+                cost: 20,
+                descrip: 
+                `
+                <em>The puppet changes the set</em>. Pick <strong>one</strong> immediate effect:
+                <div class="all-features-flex">
+                    <span><strong>Blackout</strong>. Yours and the puppet's Defence Tests are -2 DR.</span>
+                    <span><strong>Falling Curtain</strong>. One enemy loses their next action.</span>
+                    <span><strong>Sure Footing</strong>. The puppet may Parry in your place at -2 DR.</span>
+                </div>
+                `
+            },
+            {
+                title: `Raise The Double`,
+                cost: 30,
+                descrip: 
+                `
+                    <div class="all-features-flex">
+                        <span>
+                            Animate the puppet as your partner
+                            for this battle. <span class="underline">Each round</span>, after your
+                            action, the puppet can either <strong>Strike</strong>
+                            (<em>d4 damage</em>) or <span class="underline">Take a Hit</span>.
+                        </span>
+                        <span>
+                            <strong>Take the Hit.</strong> <span class="underline">Once per combat</span>, redirect a hit on you to the puppet (<em>apply its HP</em>). <span class="underline">If reduced to <strong>0HP</strong></span> it collapses into parts until repaired in <em>downtime</em>.
+                        </span>
+                    </div>
+                `
+            },
+            {
+                title: `Red Thread Oath`,
+                cost: 60,
+                descrip: 
+                `
+                    The puppet <strong>marks</strong> an enemy <span class="underline">until combat ends</span> or the <span class="underline">puppet is broken</span>. If the <strong>marked</strong>
+                    target <span class="underline">attacks anyone but you</span>, they take <strong>d6 damage</strong>. <span class="underline">If they attempt to flee</span>, they take
+                    <strong>d6 damage</strong>. Yours and the Puppet's attacks against the <strong>marked enemy have advantage</strong>.
+                `
+            },
+            {
+                title: `Director's Cut`,
+                cost: 120,
+                descrip: 
+                `
+                If you <strong>die</strong> <span class="underline">while the puppet is active</span> (<em>he takes the ryō from your corpse</em>). He brings you back to <strong>1HP</strong> before you go to <span class="underline"><strong>Yomi</strong></span>.
+                
+                `
+            },
+            {
+                title: `Final Strings`,
+                cost: 300,
+                descrip: 
+                `
+                    <span class="underline">Choose an enemy you can see</span>. The
+                    puppet makes one attack at <strong>-2 DR</strong>. <span class="underilne">
+                        If
+                        successful
+                    </span> the target is reduced to <strong>1HP</strong>.
+                `
+            },
+        ],
+        rulesFeature: [
+            {
+                title: `The Contract`,
+                content: [
+                    `<strong>Pay to Act.</strong> Each feature lists a Cost in ryō that you hand to the puppet. If you don’t or can’t, you may still use it but mark Debt equal to its cost.`,
+                    `<strong>Debt Thresholds.</strong> At 15 Debt the puppet is Spiteful; at 30 the Puppet is Angry; at 60 the contract breaks.`,
+                    `<strong>Paying Down Debt.</strong> During downtime, spend 1 ryō to clear 1 Debt.`
+                ]
+            },
+            {
+                title: `Debt`,
+                content: [
+                    `<strong>Spiteful.</strong> <em>15+ Debt.</em> <span class="underline">Once per battle</span> the puppet imposes a petty cost (you drop a weapon, your next roll is +3 DR, or you must pay 10 ryō on the spot).`,
+                    `<strong>Angry.</strong> <em>30+ Debt.</em> All features prices are doubled until debt is cleared.`,
+                    `<strong>Contract Broken.</strong> <em>60+ Debt, end of session.</em> You cannot use features next session <span class="underline">until you reduce Debt to 10 or less</span>.`,
+                ]
+            },
+            {
+                title: `Repairs`,
+                content: [
+                    `<strong>Mend.</strong> <em>Downtime. 15 ryō.</em> Restore <span class="underline">6HP</span>.`,
+                    `<strong>Fresh Paint.</strong> <em>Rest. 30 ryō.</em> Set mood to <span class="underline">Devoted</span>.`
+                ]
+            },
+            {
+                title: `Mood`,
+                content: [
+                    `<span class="underline">Roll 2d6 at session start</span> with the following modifications:`,
+                    `<div class="padding-left"><em>+d6</em> if last session ended at <span class="underline">0 Debt</span></div>`,
+                    `<div class="padding-left"><em>-2d6</em> if you ended last time at <span class="underline">30+ Debt</span>.</div>`,
+                    `<span class="underline">After triggering an effect, </span>Mood drops one step`,
+                    `
+                        <ul class="rules-list">
+                            <li><strong>0-1 Petty.</strong> All costs are doubled</li>
+                            <li><strong>2-3 Dormant.</strong> The first feature you use costs +10 ryō</li>
+                            <li><strong>4-5 Sulk.</strong> No discount; Cue:Snare cannot be used this session</li>
+                            <li><strong>6-8 Attentive.</strong> -10 ryō on your first feature this session</li>
+                            <li><strong>9-10 Amused.</strong> -10 ryō on all features this session</li>
+                            <li><strong>11 Devoted.</strong> -20 ryō on one feature of your choice</li>
+                            <li><strong>12+ Enthralled.</strong> Choose one feature other than Final Strings; it is free once this session</li>
+                        </ul>
+                    `
+                ]
+            },
+        ],
+        pet: {
+            title: 'Puppet',
+            subtitle: `HP6 | STRIKE D4`,
+            features: [
+                {
+                title: '',
+                descrip: `<em>Immune to all statuses.</em>`,
+                extra: [],
+                },
+                {
+                    title: '',
+                    descrip: '<em>Use your stats when making Tests.</em>',
+                    extra: [],
+                }
+            ]
+
+        },
+        startingEquipment: [
+            {
+                item: `<span class="underline">Awl</span> (<strong>d4 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `<span class="underline">Tanto</span> (<strong>d6 damage</strong>)`,
+                type: `weapon`,
+                die: ``,
+            },
+            {
+                item: `Your puppet`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Stage Gear (<em>red cord coil, stage paints, cue-cards, etc</em>)`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `Puppet chest (<em>worn on back</em>)`,
+                type: `item`,
+                die: ``
+            },
+            {
+                item: `[] <strong class="underline">food</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },            
+            {
+                item: `[] <strong class="underline">water</strong>`,
+                type: `item`,
+                die: `1d4`,
+            },
+        ],
+        tenants: {
+            title: `Marionette's Compact`,
+            honourList: [
+                {
+                    name: `Script`,
+                    descrip: `Keep the promise you set onstage.`,
+                },
+                {
+                    name: `Debt`,
+                    descrip: `Pay those who lift your hands.`,
+                },
+                {
+                    name: `Restraint`,
+                    descrip: `Use a trick before a cut.`,
+                },
+                {
+                    name: `Witness`,
+                    descrip: `Leave one truth behind each deception.`,
+                },
+                {
+                    name: `Grace`,
+                    descrip: `Exit cleanly Perform. Keep it flashy.`,
+                },
+            ]
+        },
+        ryo: `10d6x1`,
     },
 ];
 

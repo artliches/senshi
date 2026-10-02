@@ -5,10 +5,78 @@
 }
 
 .section-body {
+    .rules-pancake-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        grid-gap: 0.5rem;
+        grid-template-areas:
+            "pet"
+            "features"
+            "rules";
+        .extra-feature-section {
+            .extra-feature-body {
+                display: flex;
+                gap: 1rem;
+            }
+        }
+    }
     .subtitle-section {
         font-size: 0.8rem;
     }
+    .all-features-list-layout {
+        grid-area: features;
+        border: 1px solid white;
+        padding: 0.5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        grid-gap: 0.5rem;
+        .all-features-list-title {
+            font-size: 0.8rem;
+            text-align: center;
+            color: colors.$slightly-yellow;
+        }
+        .job-feature-layout {
+            font-size: 0.8rem;
+            background-color: white;
+            background-color: colors.$dark-red;
+            padding: 0.3rem 0.5rem;
+            strong {
+                padding-right: 0.5rem;
+            }
+            &:nth-child(odd) {
+                transform: rotate(-0.5deg);
+            }
+            &:nth-child(even) {
+                transform: rotate(0.5deg);
+            }
+        }
+    }
+    .rules-feature-layout {
+        background-color: #FFFFF0;
+        padding: 0.3rem;
+        font-size: 0.8rem;
+        color: black;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0.5rem;
+        &.puppet-master {
+            grid-auto-rows: min-content;
+            .rules-section {
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                }
+                &-title {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
     .extra-feature-section {
+        grid-area: pet;
+        height: min-content;
         font-size: 0.8rem;
         background-color: colors.$slightly-yellow;
         color: black;
@@ -47,10 +115,55 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .split-feature-layout {
-        display: grid;
-        grid-template-columns: 1fr 33%;
-        grid-template-rows: 1fr;
-        column-gap: 0.5rem;
+    .section-body {
+        .split-feature-layout {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: min-content;
+            grid-template-areas:
+                "feature    pet";
+            column-gap: 0.5rem;
+
+            .feature-section {
+                grid-area: feature;
+            }
+            .extra-feature-section {
+                grid-area: pet;
+            }
+        }
+
+        .all-features-list-layout {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, min-content);
+            .all-features-list-title {
+                grid-column: span 2;
+            }
+            .job-feature-layout {
+                &:nth-child(-n+5) {
+                    grid-column: 1 / span 2;
+                }
+            }
+        }
+
+        .rules-feature-layout {
+            grid-template-columns: repeat(2, 1fr);
+            &.puppet-master {
+                grid-template-rows: repeat(3, min-content);
+                .rules-section {
+                    &:nth-child(3) {
+                        grid-column: span 2;
+                        .rules-section-content {
+                            flex-direction: row;
+                            gap: 0.3rem;
+                        }
+                    }
+                    &:last-of-type {
+                        grid-column: 2;
+                        grid-row: 1 / span 2;
+                    }
+                }
+            }
+        }
     }
+
 }
