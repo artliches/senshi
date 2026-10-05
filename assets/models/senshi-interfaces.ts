@@ -54,4 +54,12 @@ export interface TenantsObj {
 export interface HonourObj {
     name: string,
     descrip: string,
-}
+};
+
+export interface AbilityObj {
+    name: string,
+    descrip: string,
+    value: number,
+    rolledDie: any[],
+    modifier: number,
+};
