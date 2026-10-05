@@ -164,6 +164,17 @@ body {
         padding-left: 1rem;
     }
 
+    .plus-minus {
+        font-family: "Aquifer";
+    }
+
+    .yellow-text {
+        color: colors.$slightly-yellow;
+    }
+    .dark-red-text {
+        color: black;
+    }
+
     .ring {
         content: "";
         width: 1rem;

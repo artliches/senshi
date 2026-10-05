@@ -3,10 +3,11 @@ import { SenshiIntro } from './senshi-intro/senshi-intro';
 import { SenshiJob } from './senshi-job/senshi-job';
 import { JobObj } from '../../public/assets/models/senshi-interfaces';
 import { SenshiHonour } from './senshi-honour/senshi-honour';
+import { SenshiAbilities } from './senshi-abilities/senshi-abilities';
 
 @Component({
   selector: 'app-root',
-  imports: [SenshiIntro, SenshiJob, SenshiHonour],
+  imports: [SenshiIntro, SenshiJob, SenshiHonour, SenshiAbilities],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })

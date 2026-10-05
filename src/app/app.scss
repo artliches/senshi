@@ -67,13 +67,16 @@
                 border-top: 3px solid colors.$dark-red;
                 padding: 0.5rem;
                 &.job {
-                    grid-row: 3;
+                    grid-row: 4;
                 }
                 &.intro {
                     grid-row: 1;
                 }
-                &.honour {
+                &.abilities {
                     grid-row: 2;
+                }
+                &.honour {
+                    grid-row: 3;
                 }
             }
         }
@@ -97,7 +100,7 @@
         .senshi-body-layout {
             .senshi-body {
                 grid-template-columns: repeat(2, 1fr);
-                .intro, .honour {
+                .intro, .honour, .abilities {
                     grid-column: 1 / span 2;
                 }
                 .job {

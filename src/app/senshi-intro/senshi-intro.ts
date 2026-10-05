@@ -38,7 +38,7 @@ export class SenshiIntro implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== 'undefined') {
+    if (changes && changes['triggerReroll'] && changes['triggerReroll'].previousValue !== undefined) {
       this.rerollAllObjects();
     }
   }

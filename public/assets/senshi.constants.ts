@@ -1157,8 +1157,11 @@ export const JOBS = [
             <p>
                 They make their stand on the frontline, <strong>immovable</strong>, <strong>unshakeable</strong>, like a lighthouse in the tempest.
                 These titans, they don't bank on the quick dance of the sword but the slow, painful endurance of the
-                storm. The Sumo class is for those tough nuts who believe in standing firm, outmuscling the odds,
-                and letting the <strong>world know they're not going down without a hell of a fight</strong>.
+                storm.
+            </p>
+            <p>
+                The Sumo class is for those tough nuts who believe in standing firm, outmuscling the odds,
+                    and letting the <strong>world know they're not going down without a hell of a fight</strong>.
             </p>
         `,
         stats: {

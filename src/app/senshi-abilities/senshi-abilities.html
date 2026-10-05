@@ -1,0 +1,69 @@
+<div class="section-layout">
+    <div class="section-header">
+        <h2>
+            <div (click)="rerollAllAbilities(); rerollHonour()" class="clickable shake header">ABILITIES</div>
+        </h2>
+    </div>
+    <div class="section-body">
+        <div class="stats-section">
+            @for (stat of abilitiesArray; track $index) {
+                <div class="stats-section-layout">
+                    <div (click)="rerollAbility(stat)" class="clickable shake stat-name">{{stat.name | uppercase}}</div>
+                    <em class="stat-descrip">
+                        {{stat.descrip}}
+                        @if (showRolls()) {
+                            <span class="rolled-result">
+                                [
+                                    @for (roll of stat.rolledDie; track $index) {
+                                        <span class="individual-roll">{{roll}}</span>
+                                    }
+                                ]
+                                @if (stat.modifier >= 0 ) {
+                                    +
+                                }{{stat.modifier}}
+                            </span>
+                        }
+                    </em>
+                    <div class="stat-value">
+                        <strong>
+                            @if (stat.value === 0) {
+                                <span class="plus-minus">±</span>
+                            }
+                            {{stat.value}}
+                        </strong>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="vitals-section">
+            <div class="vitals-section-layout">
+                <div (click)="rerollHonour()" class="clickable shake vital-name">HONOUR</div>
+                <em class="vital-descrip">
+                    <span class="underline" [class]="{
+                        'yellow-text': honourObj.descrip === 'honourable',
+                        'dark-red-text': honourObj.descrip === 'dishonourable'
+                    }">{{honourObj.descrip}}</span>
+                    @if (showRolls()) {
+                        <span class="rolled-result">
+                            [
+                                @for (roll of honourObj.rolledDie; track $index) {
+                                    <span class="individual-roll">{{roll}}</span>
+                                }
+                            ]
+                            @if (honourObj.modifier >= 0 ) {
+                                +
+                            }{{honourObj.modifier}}
+                        </span>
+                    }
+                </em>
+                <div class="vital-value">
+                    <strong>
+                        @if (honourObj.value === 0) {
+                            <span class="plus-minus">±</span>
+                        }{{honourObj.value}}
+                    </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
