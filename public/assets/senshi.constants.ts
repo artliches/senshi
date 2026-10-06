@@ -1178,7 +1178,7 @@ export const JOBS = [
                 title: `Iron Body`,
                 descrip:
                 `
-                    <em>A Sumo’s body is like a fortress.</em>
+                    <em>A Sumo's body is like a fortress.</em>
                     <p><span class="underline">Once per day</span>, they may <strong>shrug off an attack that would have damaged them</strong>.</p>
                 `
             },
@@ -1923,7 +1923,7 @@ export const JOBS = [
                 },
             ]
         },
-        ryo: `2d6`,
+        ryo: `2d6x1`,
     },
     // Kensei of the Five Rings
     {
@@ -2232,7 +2232,7 @@ export const JOBS = [
                 },
             ]
         },
-        ryo: `1d6x0`,
+        ryo: `2d6x10`,
     },
     //Kuge Ninja
     {
@@ -2568,7 +2568,11 @@ export const JOBS = [
                 },
                 {
                     name: `Grace`,
-                    descrip: `Exit cleanly Perform. Keep it flashy.`,
+                    descrip: `Exit cleanly.`,
+                },
+                {
+                    name: `Perform`,
+                    descrip: `Keep it flashy.`,
                 },
             ]
         },

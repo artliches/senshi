@@ -42,13 +42,23 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .stats-section, .vitals-section {
+        .stats-section-layout, .vitals-section-layout {
+            grid-template-columns: 150px max-content;
+            .stat-value, .vital-value {
+                place-self: start;
+            }
+        }
+    }
     .stats-section {
         display: grid;
         grid-template-columns: repeat(4, auto);
         grid-template-rows: 1fr;
         justify-content: space-around;
-        .stats-section-layout {
-            grid-template-columns: 150px max-content;
-        }
+    }
+    .vitals-section {
+        display: flex;
+        flex-flow: wrap;
+        place-content: center;
     }
 }

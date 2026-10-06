@@ -1,7 +1,7 @@
 <div class="section-layout">
     <div class="section-header">
         <h2>
-            <div (click)="rerollAllAbilities(); rerollHonour()" class="clickable shake header">ABILITIES</div>
+            <div (click)="rerollAll()" class="clickable shake header">ABILITIES</div>
         </h2>
     </div>
     <div class="section-body">
@@ -61,6 +61,65 @@
                         @if (honourObj.value === 0) {
                             <span class="plus-minus">±</span>
                         }{{honourObj.value}}
+                    </strong>
+                </div>
+            </div>
+            <div class="vitals-section-layout">
+                <div (click)="rerollHP()" class="clickable shake vital-name">HP</div>
+                <em class="vital-descrip">
+                    <span [innerHTML]="hpObj.descrip"></span>
+                    @if (showRolls()) {
+                        <span class="rolled-result">
+                            d{{hpObj.modifier}}
+                            [
+                                @for (roll of hpObj.rolledDie; track $index) {
+                                    <span class="individual-roll">{{roll}}</span>
+                                }
+                            ]
+                            @if (resilienceValue >= 0 ) {
+                                +
+                            }{{resilienceValue}}
+                        </span>
+                    }
+                </em>
+                <div class="vital-value">
+                    <strong>
+                        @if (hpObj.value === 0) {
+                            <span class="plus-minus">±</span>
+                        }{{hpObj.value}}
+                    </strong>
+                </div>
+            </div>
+            <div class="vitals-section-layout">
+                <div (click)="rerollRyo()" class="clickable shake vital-name">RYO</div>
+                <em class="vital-descrip">
+                    <span>{{ryoObj.descrip}}</span>
+                    @if (showRolls()) {
+                        <span class="rolled-result">
+                            <span>{{ryoDieObj.dieNum}}d{{ryoDieObj.dieSize}}</span>
+                            [
+                                @for (roll of ryoObj.rolledDie; track $index) {
+                                    <span class="individual-roll">{{roll}}</span>
+                                }
+                            ]
+                            @if (ryoObj.modifier > 1 ) {
+                                x {{ryoObj.modifier}}
+                            }
+                        </span>
+                    }
+                </em>
+                <div class="vital-value">
+                    <strong>{{ryoObj.value}}</strong>
+                </div>
+            </div>
+            <div class="vitals-section-layout">
+                <div (click)="rerollVirtues()" class="clickable shake vital-name">VIRTUES</div>
+                <em class="vital-descrip">
+                    <span [innerHTML]="virtuesObj.descrip"></span>
+                </em>
+                <div class="vital-value">
+                    <strong>
+                        {{virtuesObj.value}} (d{{virtuesObj.modifier}})
                     </strong>
                 </div>
             </div>

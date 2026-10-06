@@ -1,7 +1,7 @@
 import { Component, inject, input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { AbilityObj, JobObj, StatsObj } from '../../../public/assets/models/senshi-interfaces';
 import { RandomNumber } from '../random-number';
-import { UpperCasePipe } from '@angular/common';
+import { JsonPipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-senshi-abilities',
@@ -11,8 +11,11 @@ import { UpperCasePipe } from '@angular/common';
 })
 export class SenshiAbilities implements OnInit, OnChanges {
   private randomNumberService = inject(RandomNumber);
+  isKitsunetsukai = input<boolean>();
   currentJobStats = input<StatsObj>();
+  currentJobRyo = input<string>();
   showRolls = input<boolean>(true);
+
   abilitiesArray: AbilityObj[] = [
       {
         name: 'swiftness',
@@ -54,7 +57,58 @@ export class SenshiAbilities implements OnInit, OnChanges {
     value: 0,
     rolledDie: [],
     modifier: 0,
-  }
+  };
+
+  hpObj: {
+    descrip: string,
+    value:number,
+    rolledDie:number[],
+    modifier: number,
+  } = {
+    descrip: `
+      <div>0: <span class="underline">Broken</span></div>
+      <div>Negative: <strong>Dead</strong> (<em>for now</em>)</div>
+    `,
+    value: 0,
+    rolledDie: [],
+    modifier: 0,
+  };
+
+  virtuesObj: {
+    descrip: string,
+    value:number,
+    rolledDie:number[],
+    modifier: number,
+  } = {
+    descrip: `
+    blessings or curses
+    `,
+    value: 0,
+    rolledDie: [],
+    modifier: 0,
+  };
+
+  ryoObj: {
+    descrip: string,
+    value:number,
+    rolledDie:number[],
+    modifier: number,
+  } = {
+    descrip: `
+    cuts as well as any metal
+    `,
+    value: 0,
+    rolledDie: [],
+    modifier: 0,
+  };
+
+  ryoDieObj = {
+    dieNum: 0,
+    dieSize: 0
+  };
+
+
+  resilienceValue: number = -5;
 
   ngOnInit(): void {
     this.abilitiesArray.forEach(ability => {
@@ -63,12 +117,21 @@ export class SenshiAbilities implements OnInit, OnChanges {
     });
 
     this.rerollHonour();
+    this.rerollHP();
+    this.rerollVirtues();
+    this.rerollRyo();
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes && changes['currentJobStats'] && changes['currentJobStats'].previousValue !== undefined) {
-      this.rerollAllAbilities();
+      this.abilitiesArray.forEach(ability => {
+        ability.modifier = this.currentJobStats()![ability.name as keyof StatsObj];
+        this.rerollAbility(ability);
+      });
       this.rerollHonour();
+      this.rerollHP();
+      this.rerollVirtues();
+      this.rerollRyo();
     }
   }
 
@@ -83,6 +146,15 @@ export class SenshiAbilities implements OnInit, OnChanges {
 
     let rawNumber = ability.rolledDie.reduce(this.reducerFunction, 0) + ability.modifier;
     this.convertRawNumberToAbilityMod(rawNumber, ability);
+
+    if (this.isKitsunetsukai() && ability.name === 'spirit') {
+      this.resilienceValue = ability.value;
+      this.adjustHPWithResilienceValue();
+    } else if (!this.isKitsunetsukai() && ability.name === 'resilience') {
+      //need to adjust HP without rerolling the hpDie
+      this.resilienceValue = ability.value;
+      this.adjustHPWithResilienceValue();
+    }
   }
 
   rerollAllAbilities() {
@@ -100,6 +172,55 @@ export class SenshiAbilities implements OnInit, OnChanges {
 
     this.honourObj.value = this.honourObj.rolledDie.reduce(this.reducerFunction, 0) + this.honourObj.modifier;
     this.honourObj.descrip = this.honourObj.value >= 10 ? `honourable` : `dishonourable`;
+  }
+
+  rerollHP() {
+    this.hpObj.value = 0;
+    this.hpObj.rolledDie = [];
+    this.hpObj.modifier = this.currentJobStats()!.hp;
+
+    this.hpObj.rolledDie.push(this.randomNumberService.getRandomNumber(1, this.hpObj.modifier));
+    this.adjustHPWithResilienceValue();
+  }
+
+  private adjustHPWithResilienceValue() {
+    this.hpObj.value = this.hpObj.rolledDie[0] + this.resilienceValue > 0 ?
+      this.hpObj.rolledDie[0] + this.resilienceValue : 1;
+  }
+
+  rerollVirtues() {
+    this.virtuesObj.value = 0;
+    this.virtuesObj.rolledDie = [];
+    this.virtuesObj.modifier = this.currentJobStats()!.virtues;
+
+    this.virtuesObj.rolledDie.push(this.randomNumberService.getRandomNumber(1, this.virtuesObj.modifier));
+    this.virtuesObj.value = this.virtuesObj.rolledDie[0];
+  }
+
+  rerollRyo() {
+    this.ryoObj.value = 0;
+    this.ryoObj.rolledDie = [];
+
+    this.ryoDieObj.dieNum = Number(this.currentJobRyo()?.slice(0,this.currentJobRyo()?.indexOf('d')));
+    this.ryoDieObj.dieSize = Number(this.currentJobRyo()?.slice(this.currentJobRyo()?.indexOf('d')!+1, this.currentJobRyo()?.indexOf('x')));
+    const multiplier = Number(this.currentJobRyo()?.slice(this.currentJobRyo()?.indexOf('x')!+1));
+
+    let sumOfRoll: number[] = [];
+    for (let i = 0; i < this.ryoDieObj.dieNum; i++) {
+      sumOfRoll.push(this.randomNumberService.getRandomNumber(1, this.ryoDieObj.dieSize));
+    }
+    this.ryoObj.rolledDie.push(sumOfRoll.reduce(this.reducerFunction, 0));
+    this.ryoObj.modifier = multiplier;
+
+    this.ryoObj.value = this.ryoObj.rolledDie[0] * this.ryoObj.modifier;
+  }
+
+  rerollAll() {
+    this.rerollAllAbilities();
+    this.rerollHonour();
+    this.rerollHP();
+    this.rerollVirtues();
+    this.rerollRyo();
   }
 
   private reducerFunction(partialSum: number, currValue: number) {
