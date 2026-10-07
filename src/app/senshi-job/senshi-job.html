@@ -6,7 +6,7 @@
         <div class="descrip-section">
             <em><span [innerHTML]="jobsObjSignal().descrip"></span></em>
         </div>
-        <span [class]="{
+        <div [class]="{
             'split-feature-layout': jobsObjSignal().pet && !jobsObjSignal().rulesFeature,
             'rules-pancake-layout': jobsObjSignal().rulesFeature,
 
@@ -76,6 +76,6 @@
                     }
                 </div>
             }
-        </span>
+        </div>
     </div>
 </div>

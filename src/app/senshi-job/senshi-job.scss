@@ -5,6 +5,14 @@
 }
 
 .section-body {
+    >div{
+        &:nth-child(odd) {
+            transform: rotate(-0.5deg);
+        }
+        &:nth-child(even) {
+            transform: rotate(0.5deg);
+        }
+    }
     .rules-pancake-layout {
         display: grid;
         grid-template-columns: 1fr;

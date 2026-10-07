@@ -1,0 +1,15 @@
+<div class="section-layout">
+    <div class="section-header">
+        <h2>
+            <div (click)="rerollAll()" class="clickable shake header">ATTRIBUTES</div>
+        </h2>
+    </div>
+    <div class="section-body">
+        @for (att of allAttributesArray; track $index) {
+            <span class="attribute-section">
+                <div (click)="rerollAttribute(att.attSignal, att.attArray)" class="clickable shake">{{att.attSignal()}}</div>
+                <em class="attribute-description"><strong>{{att.descrip}}</strong></em>
+            </span>
+        }
+    </div>
+</div>

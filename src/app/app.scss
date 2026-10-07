@@ -66,9 +66,8 @@
             >div:not(.honour) {
                 border-top: 3px solid colors.$dark-red;
                 padding: 0.5rem;
-                &.job {
-                    grid-row: 4;
-                }
+            }
+            >div {
                 &.intro {
                     grid-row: 1;
                 }
@@ -78,6 +77,12 @@
                 &.honour {
                     grid-row: 3;
                 }
+                &.descriptions {
+                    grid-row: 4;
+                }
+                &.job {
+                    grid-row: 5;
+                }
             }
         }
     }
@@ -86,8 +91,8 @@
         text-align: center;
         font-size: 0.75rem;
         .copyright-text {
-                    border-top: 3px solid colors.$dark-red;
-        padding: 0.5rem;
+            border-top: 3px solid colors.$dark-red;
+            padding: 0.5rem;
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
@@ -100,12 +105,21 @@
         .senshi-body-layout {
             .senshi-body {
                 grid-template-columns: repeat(2, 1fr);
-                .intro, .honour, .abilities {
-                    grid-column: 1 / span 2;
+                >div {
+                    &.intro, &.honour, &.abilities {
+                        grid-column: 1 / span 2;
+                    }
+                    &.descriptions {
+                        grid-column: 1;
+                        grid-row: 4;
+                        border-right: 3px solid colors.$dark-red;
+                    }
+                    &.job {
+                        grid-column: 2;
+                        grid-row: 4;
+                    }
                 }
-                .job {
-                    grid-column: 2;
-                }
+
             }
         }
     }
