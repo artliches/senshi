@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1791465805491,
+  "timestamp": 1791465885123,
   "index": "/senshi.git/index.csr.html",
   "assetGroups": [
     {
@@ -77,7 +77,7 @@
     "/senshi.git/icons/favicon-16x16.png": "379451b36ec4e487fe8c329cf6636d0acc8e3ea3",
     "/senshi.git/icons/favicon-32x32.png": "5ecc3c6aaa6241a0506225207b526e3c27858c41",
     "/senshi.git/index.csr.html": "22b0999aa13f7e69933f1ab7d9c55f346abf998d",
-    "/senshi.git/index.html": "623fe5ef5bcda0dcc29426be49a5d756b7df97a6",
+    "/senshi.git/index.html": "7b1d184086674ce09eda2ab35297c3812f76974f",
     "/senshi.git/main-HDKM4EAF.js": "a23a22aa29d00b6c015a854b92275a2177039880",
     "/senshi.git/manifest.webmanifest": "5b3afd1f5fc4c371ee722edb74899a540c5762a9",
     "/senshi.git/media/1550-6OZ4N3CA.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
