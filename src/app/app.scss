@@ -106,7 +106,7 @@
             .senshi-body {
                 grid-template-columns: repeat(2, 1fr);
                 >div {
-                    &.intro, &.honour, &.abilities {
+                    &.intro, &.honour, &.abilities, &.equipment {
                         grid-column: 1 / span 2;
                     }
                     &.descriptions {

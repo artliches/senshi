@@ -40,6 +40,13 @@
         ></app-senshi-abilities>
       </div>
 
+      <div class="equipment">
+        <app-senshi-equipment
+          [triggerReroll]="triggerReroll()"
+        >
+        </app-senshi-equipment>
+      </div>
+
       <div class="honour">
         <app-senshi-honour
           [currentTenants]="currentJob().tenants"
@@ -53,7 +60,7 @@
       <div><strong>SENSHI</strong> is an independent production by Slightly Reckless Games LTD and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
       <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
       <div>Web app by <a class="clickable" target="_blank" href="https://artliches.github.io/dungeons-coding">@codeLiches</a></div>
-      <div>v0.4a: <i>grim past, bad habits, and broken bones</i></div>
+      <div>v0.5a: <i>you're gonna carry that weight</i></div>
     </div>
   </span>
 </span>

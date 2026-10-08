@@ -5,10 +5,11 @@ import { JobObj } from '../../public/assets/models/senshi-interfaces';
 import { SenshiHonour } from './senshi-honour/senshi-honour';
 import { SenshiAbilities } from './senshi-abilities/senshi-abilities';
 import { SenshiDescriptions } from './senshi-descriptions/senshi-descriptions';
+import { SenshiEquipment } from './senshi-equipment/senshi-equipment';
 
 @Component({
   selector: 'app-root',
-  imports: [SenshiIntro, SenshiJob, SenshiHonour, SenshiAbilities, SenshiAbilities, SenshiDescriptions],
+  imports: [SenshiIntro, SenshiJob, SenshiHonour, SenshiAbilities, SenshiAbilities, SenshiDescriptions, SenshiEquipment],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
