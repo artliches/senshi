@@ -204,17 +204,17 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `A set of traveling clothes`,
+                item: `<span class="underline">A set of traveling clothes</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A letter of introduction (<em>can be used to gain an audience with a local lord or official</em>)`,
+                item: `<span class="underline">A letter of introduction (<em>can be used to gain an audience with a local lord or official</em>)</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A straw hat`,
+                item: `<span class="underline">A straw hat</span>`,
                 type: `item`,
                 die: ``
             },
@@ -222,11 +222,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -342,11 +344,11 @@ export const JOBS = [
             },
             {
                 item: `A set of sturdy armour (tier 2) `,
-                type: `armor`,
+                type: `2`,
                 die: ``,
             },
             {
-                item: `A collection of <span class="underline">books and papers</span>`,
+                item: `<span class="underline">A collection of <strong>books and papers</strong></span>`,
                 type: `item`,
                 die: ``
             },
@@ -354,11 +356,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -464,12 +468,12 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `A set of monk's robes and sandals`,
+                item: `<span class="underline">A set of monk's robes and sandals</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A gourd of sake`,
+                item: `<span class="underline">A gourd of sake</span>`,
                 type: `item`,
                 die: ``
             },
@@ -477,11 +481,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -600,7 +606,7 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `A set of dark, unremarkable clothing`,
+                item: `<span class="underline">A set of dark, unremarkable clothing</span>`,
                 type: `item`,
                 die: ``
             },
@@ -608,11 +614,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -723,24 +731,26 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `A set of robes and talismans`,
+                item: `<span class="underline">A set of robes and talismans</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A random Unseen Text and Shintai Text`,
-                type: `item`,
+                item: `<span class="underline">A random Unseen Text and Shintai Text</span>`,
+                type: `scroll`,
                 die: ``
             },
             {
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -845,17 +855,17 @@ export const JOBS = [
         ],
         startingEquipment: [
             {
-                item: `A <spaan class="underline">tanto</spaan> (<strong>d4 damage</strong>)`,
+                item: `A <span class="underline">tanto</span> (<strong>d4 damage</strong>)`,
                 type: `weapon`,
                 die: ``,
             },
             {
-                item: `A set of stylish, flamboyant clothing`,
+                item: `<span class="underline">A set of stylish, flamboyant clothing</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A set of loaded dice and marked cards.`,
+                item: `<span class="underline">A set of loaded dice and marked cards.</span>`,
                 type: `item`,
                 die: ``
             },
@@ -863,15 +873,17 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
-            title: `The Gambler’s Way`,
+            title: `The Gambler's Way`,
             honourList: [
                 {
                     name: `Honour Among Thieves`,
@@ -973,24 +985,26 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Robes and sash adorned with pom-poms`,
+                item: `<span class="underline">Robes and sash adorned with pom-poms</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A random Unseen Text. `,
-                type: `item`,
+                item: `<span class="underline">A random Unseen Text.</span>`,
+                type: `scroll`,
                 die: ``
             },
             {
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1096,12 +1110,13 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `A <strong>Tanegashima</strong> with <span class="underline">Spirit+5 Bullets</span> (<strong>d8 damage</strong>)`,
+                item: `A <strong>Tanegashima</strong> with <span class="underline">[] Bullets</span> (<strong>d8 damage</strong>)`,
                 type: `weapon`,
-                die: ``
+                die: `Spirit+5`,
+                value: 0,
             },
             {
-                item: `A flashy, decorative kimono`,
+                item: `<span class="underline">A flashy, decorative kimono</span>`,
                 type: `item`,
                 die: ``
             },
@@ -1109,11 +1124,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1231,7 +1248,7 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Traditional Sumo clothing`,
+                item: `<span class="underline">Traditional Sumo clothing</span>`,
                 type: `item`,
                 die: ``
             },
@@ -1239,11 +1256,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1345,18 +1364,20 @@ export const JOBS = [
             },
             {
                 item: `A set of worn armour (tier 3)`,
-                type: `item`,
+                type: `3`,
                 die: ``
             },
             {
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1465,22 +1486,23 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `<span class="underline">Yumi</span> with <span class="underline">Spirit+10 arrows</span> (<strong>d6 damage</strong>)`,
+                item: `<span class="underline">Yumi</span> with <span class="underline"> [] arrows</span> (<strong>d6 damage</strong>)`,
                 type: `weapon`,
-                die: ``,
+                die: `Spirit+10`,
+                value: 0,
             },
             {
-                item: `Reed rain-cloak`,
+                item: `<span class="underline">Reed rain-cloak</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Rope coil`,
+                item: `<span class="underline">Rope coil</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Needle & bandages`,
+                item: `<span class="underline">Needle & bandages</span>`,
                 type: `item`,
                 die: ``
             },
@@ -1488,11 +1510,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1592,17 +1616,17 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Thorn-cord`,
+                item: `<span class="underline">Thorn-cord</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Sap-soaked rag (oil)`,
+                item: `<span class="underline">Sap-soaked rag (<strong>oil</strong>)</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Bark mask`,
+                item: `<span class="underline">Bark mask</span>`,
                 type: `item`,
                 die: ``
             },
@@ -1610,11 +1634,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1734,27 +1760,31 @@ export const JOBS = [
             },
             {
                 item: `
-                    3 <span class="underline">Ofuda</span> {<em>paper seals bearing your truths</em>}
-                    <p>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</p>
-                    <p>while Dishonourable, you cannot rewrite them.</p>
+                    <span class="underline">3 <strong>Ofuda</strong> {<em>paper seals bearing your truths</em>}</span>
+                    <div class="small-item-description">
+                        <div><em>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</em></div>
+                        <div><em>while Dishonourable, you cannot rewrite them.</em></div>
+                    </div>
                 `,
                 type: `item`,
                 die: ``
             },
             {
                 item: `A <span class="underline">reed-woven monk's robe</span> (<strong>tier 1 armour</strong>)`,
-                type: `armor`,
+                type: `1`,
                 die: ``
             },
             {
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -1864,22 +1894,22 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Pouch of rice/salt`,
+                item: `<span class="underline">Pouch of rice/salt</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Ankle wraps`,
+                item: `<span class="underline">Ankle wraps</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Reed whistle`,
+                item: `<span class="underline">Reed whistle</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Wind-cloak`,
+                item: `<span class="underline">Wind-cloak</span>`,
                 type: `item`,
                 die: ``
             },
@@ -1887,11 +1917,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -2011,17 +2043,17 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Training gi`,
+                item: `<span class="underline">Training gi</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Whetstone`,
+                item: `<span class="underline">Whetstone</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A straw hat`,
+                item: `<span class="underline">A straw hat</span>`,
                 type: `item`,
                 die: ``
             },
@@ -2029,11 +2061,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -2163,32 +2197,34 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Ofuda {wooden or paper talismans} (<strong>inscribe Spirit+d4 ofuda on a long rest; new replaces old</strong>)`,
+                item: `<span class="underline">Ofuda {<strong>wooden or paper talismans</strong>}</span>`,
+                type: `item`,
+                die: `Spirit+d4`,
+                descrip: `(inscribe [] ofuda on a long rest; new replaces old)`,
+                value: 0,
+            },
+            {
+                item: `<span class="underline">White lantern</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `White lantern`,
+                item: `<span class="underline">Ink brush & soot</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Ink brush & soot`,
+                item: `<span class="underline">Vial of spring water</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Vial of spring water`,
+                item: `<span class="underline">Twine & needles</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Twine & needles`,
-                type: `item`,
-                die: ``
-            },
-            {
-                item: `Pouch of rice/salt`,
+                item: `<span class="underline">Pouch of rice/salt</span>`,
                 type: `item`,
                 die: ``
             },
@@ -2196,11 +2232,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -2301,17 +2339,18 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Vial of sleeping poison (<strong>[]{d4} uses, Resilience DR14 or sleep d6 rounds</strong>)`,
+                item: `Vial of sleeping poison (<strong>[] uses, Resilience DR14 or sleep d6 rounds</strong>)`,
                 type: `weapon`,
                 die: `d4`,
+                value: 0,
             },
             {
-                item: `High-quality silk mask`,
+                item: `<span class="underline">High-quality silk mask</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Forged travel document or noble seal`,
+                item: `<span class="underline">Forged travel document or noble seal</span>`,
                 type: `item`,
                 die: ``
             },
@@ -2319,11 +2358,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -2522,17 +2563,17 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Your puppet`,
+                item: `<span class="underline">Your puppet</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Stage Gear (<em>red cord coil, stage paints, cue-cards, etc</em>)`,
+                item: `<span class="underline">Stage Gear (<strong>red cord coil, stage paints, cue-cards, etc</strong>)</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Puppet chest (<em>worn on back</em>)`,
+                item: `<span class="underline">Puppet chest (<strong>worn on back</strong>)</span>`,
                 type: `item`,
                 die: ``
             },
@@ -2540,11 +2581,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {
@@ -2679,17 +2722,17 @@ export const JOBS = [
                 die: ``,
             },
             {
-                item: `Funerary mask`,
+                item: `<span class="underline">Funerary mask</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Ritual cords`,
+                item: `<span class="underline">Ritual cords</span>`,
                 type: `item`,
                 die: ``
             },
             {
-                item: `Script pages`,
+                item: `<span class="underline">Script pages</span>`,
                 type: `item`,
                 die: ``
             },
@@ -2697,11 +2740,13 @@ export const JOBS = [
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
+value: 0,
             },
         ],
         tenants: {

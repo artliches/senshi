@@ -1,7 +1,7 @@
-<div class="section-layout">
-    <div class="section-header">
+<section class="section-layout">
+    <header class="section-header">
         <h2 (click)="rerollJob()" class="clickable shake header">{{ jobsObjSignal().name | uppercase }}</h2>
-    </div>
+    </header>
     <div class="section-body">
         <div class="descrip-section">
             <em><span [innerHTML]="jobsObjSignal().descrip"></span></em>
@@ -78,4 +78,4 @@
             }
         </div>
     </div>
-</div>
+</section>

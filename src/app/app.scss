@@ -87,11 +87,15 @@
         }
     }
     .senshi-footer-layout {
+        border-top: 3px solid colors.$dark-red;
+        padding-top: 0.3rem;
         place-self: end center;
         text-align: center;
         font-size: 0.75rem;
+        .buttons-layout {
+            place-self: center;
+        }
         .copyright-text {
-            border-top: 3px solid colors.$dark-red;
             padding: 0.5rem;
             display: flex;
             flex-direction: column;
@@ -127,7 +131,7 @@
 
 @media only screen and (min-width: 1440px) {
     .senshi-main-layout {
-        .senshi-body-layout, .senshi-footer-layout {
+        .senshi-body-layout {
             display: grid;
             grid-template-columns: 1fr 65% 1fr;
             grid-template-areas:

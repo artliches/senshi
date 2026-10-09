@@ -1,5 +1,5 @@
-import { Component, inject, input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
-import { AbilityObj, JobObj, StatsObj } from '../../../public/assets/models/senshi-interfaces';
+import { Component, inject, input, OnChanges, OnInit, output, SimpleChanges } from '@angular/core';
+import { AbililtyValuesObj, AbilityObj, JobObj, StatsObj } from '../../../public/assets/models/senshi-interfaces';
 import { RandomNumber } from '../random-number';
 import { JsonPipe, UpperCasePipe } from '@angular/common';
 
@@ -14,7 +14,10 @@ export class SenshiAbilities implements OnInit, OnChanges {
   isKitsunetsukai = input<boolean>();
   currentJobStats = input<StatsObj>();
   currentJobRyo = input<string>();
-  showRolls = input<boolean>(true);
+  showRolls = input<boolean>(false);
+  abilityValuesEmitter = output<AbililtyValuesObj[]>();
+
+  abilityValuesArray: AbililtyValuesObj[] = [];
 
   abilitiesArray: AbilityObj[] = [
       {
@@ -116,6 +119,8 @@ export class SenshiAbilities implements OnInit, OnChanges {
       this.rerollAbility(ability);
     });
 
+    this.abilityValuesEmitter.emit(this.abilityValuesArray);
+
     this.rerollHonour();
     this.rerollHP();
     this.rerollVirtues();
@@ -128,6 +133,7 @@ export class SenshiAbilities implements OnInit, OnChanges {
         ability.modifier = this.currentJobStats()![ability.name as keyof StatsObj];
         this.rerollAbility(ability);
       });
+      
       this.rerollHonour();
       this.rerollHP();
       this.rerollVirtues();
@@ -135,7 +141,7 @@ export class SenshiAbilities implements OnInit, OnChanges {
     }
   }
 
-  rerollAbility(ability: AbilityObj) {
+  rerollAbility(ability: AbilityObj, singleReroll?: boolean, isRerollAll?: boolean) {
     ability.rolledDie = [];
     ability.value = 0;
 
@@ -155,10 +161,32 @@ export class SenshiAbilities implements OnInit, OnChanges {
       this.resilienceValue = ability.value;
       this.adjustHPWithResilienceValue();
     }
+
+    //update emitter
+    const abilityValueIndex = this.abilityValuesArray.findIndex(value => value.name === ability.name);
+    if (abilityValueIndex === -1) {
+      //new. add to array
+      this.abilityValuesArray.push({
+        name: ability.name,
+        value: ability.value
+      });
+    } else {
+      //not new, update value
+      const isValueDifferent = this.abilityValuesArray[abilityValueIndex].value !== ability.value;
+      if (isValueDifferent) {
+        this.abilityValuesArray[abilityValueIndex].value = ability.value;
+      }
+
+      if (isValueDifferent && singleReroll) {
+        this.abilityValuesEmitter.emit(this.abilityValuesArray);
+      }
+    }
   }
 
   rerollAllAbilities() {
     this.abilitiesArray.forEach(ability => this.rerollAbility(ability));
+    this.abilityValuesEmitter.emit(this.abilityValuesArray);
+
   }
 
   rerollHonour() {
@@ -221,6 +249,10 @@ export class SenshiAbilities implements OnInit, OnChanges {
     this.rerollHP();
     this.rerollVirtues();
     this.rerollRyo();
+  }
+
+  private getAbilityValue(abilityName:string): number {
+    return this.abilitiesArray[this.abilitiesArray.findIndex(ability => ability.name === abilityName)].value
   }
 
   private reducerFunction(partialSum: number, currValue: number) {

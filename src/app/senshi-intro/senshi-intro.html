@@ -1,5 +1,5 @@
-<div class="section-layout">
-    <div class="section-header">
+<section class="section-layout">
+    <header class="section-header">
         <h2>YOU ARE 
             <div
                 (click)="rerollAllObjects()"
@@ -7,7 +7,7 @@
             >
                 {{ firstNameObj.descrip | uppercase }}
             </div> THE {{ currentJobName() | uppercase}}</h2>
-    </div>
+    </header>
     <div class="section-body">
         <div>
             Carve your name into the endless night:
@@ -16,4 +16,4 @@
             <strong (click)="nickNameObj = reroll(nickNameArray, nickNameObj)" class="clickable shake">{{nickNameObj.descrip}}</strong>
         </div>
     </div>
-</div>
+</section>

@@ -31,4 +31,14 @@ export class RandomNumber {
     }
     return sumOfRolls;
   }
+
+  splitDie(wholeDie: string): {dieNum: number, dieSize: number} {
+    const dieNum = Number(wholeDie.slice(0, wholeDie.indexOf('d'))) > 0 || !isNaN(Number(wholeDie.slice(0, wholeDie.indexOf('d')))) ? Number(wholeDie.slice(0, wholeDie.indexOf('d'))) : 1;
+    const dieSize = Number(wholeDie.slice(wholeDie.indexOf('d')+1));
+
+    return {
+      dieNum: dieNum,
+      dieSize: dieSize
+    };
+  }
 }

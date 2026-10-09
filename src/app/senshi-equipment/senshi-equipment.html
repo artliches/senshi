@@ -1,10 +1,36 @@
-<div class="section-layout">
-    <div class="section-header">
+<section class="section-layout">
+    <header class="section-header">
         <h2>
             <div class="clickable shake header">EQUIPMENT</div>
         </h2>
-    </div>
+    </header>
     <div class="section-body">
-        {{triggerReroll()}}
+        <section class="equipment-section">
+            <header><em><strong>items</strong></em></header>
+            <div class="equipment-section-body">
+                <ul>
+                    @for (item of itemsArray; track $index) {
+                        <li>
+                            @if (item.splitStringObj) {
+                                <span class="item-row">
+                                    <span [innerHTML]="item.splitStringObj.leftString"></span>
+                                    <div (click)="item.value = rerollDie(item.die)" class="clickable shake">{{item.value}}</div>
+                                    <span [innerHTML]="item.splitStringObj.rightString"></span>
+                                </span>
+                            } @else if (item.splitDescripObj) {
+                                <span [innerHTML]="item.item"></span>
+                                <div class="item-row small-item-description">
+                                    <span [innerHTML]="item.splitDescripObj.leftString"></span>
+                                    <div (click)="item.value = rerollDie(item.die)" class="clickable shake">{{item.value}}</div>
+                                    <span [innerHTML]="item.splitDescripObj.rightString"></span>
+                                </div>
+                            } @else {
+                                <span [innerHTML]="item.item"></span>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
     </div>
-</div>
+</section>

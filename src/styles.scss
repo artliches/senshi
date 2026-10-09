@@ -149,6 +149,10 @@ body {
         font-size: 1.2rem;
     }
 
+    .small-item-description {
+        font-size: 0.8rem;
+    }
+
     .ring-row {
         display: flex;
         align-items: flex-end;
@@ -183,6 +187,10 @@ body {
         border: 1px solid white;
         border-radius: 50%;
         background-color: colors.$red;
+    }
+
+    button {
+        border: none;
     }
 
     @media only screen and (min-width: (768px)) {
