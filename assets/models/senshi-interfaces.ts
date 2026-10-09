@@ -23,6 +23,11 @@ export interface StatsObj {
     hp: number,
 };
 
+export interface AbililtyValuesObj {
+    name: string,
+    value: number,
+};
+
 export interface FeaturesObj {
     title: string,
     subtitle?: string,
@@ -44,6 +49,16 @@ export interface StartingEquipmentObj {
     item: string,
     type: string,
     die: string,
+    descrip?: string,
+    value?: number,
+    splitStringObj?: {
+        leftString: string,
+        rightString: string,
+    },
+    splitDescripObj?: {
+        leftString: string,
+        rightString: string, 
+    }
 };
 
 export interface TenantsObj {
