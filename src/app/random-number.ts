@@ -33,8 +33,16 @@ export class RandomNumber {
   }
 
   splitDie(wholeDie: string): {dieNum: number, dieSize: number} {
-    const dieNum = Number(wholeDie.slice(0, wholeDie.indexOf('d'))) > 0 || !isNaN(Number(wholeDie.slice(0, wholeDie.indexOf('d')))) ? Number(wholeDie.slice(0, wholeDie.indexOf('d'))) : 1;
-    const dieSize = Number(wholeDie.slice(wholeDie.indexOf('d')+1));
+    const indexOfD = wholeDie.indexOf('d');
+
+    let dieNum, dieSize = 0;
+    if (indexOfD === -1) {
+      dieNum = Number(wholeDie.slice(wholeDie.indexOf('+') + 1));
+      dieSize = Number(wholeDie.slice(wholeDie.indexOf('+') + 1));
+    } else {
+      dieNum = Number(wholeDie.slice(0, indexOfD)) > 0 || !isNaN(Number(wholeDie.slice(0, indexOfD))) ? Number(wholeDie.slice(0, indexOfD)) : 1;
+      dieSize = Number(wholeDie.slice(indexOfD+1));
+    }
 
     return {
       dieNum: dieNum,

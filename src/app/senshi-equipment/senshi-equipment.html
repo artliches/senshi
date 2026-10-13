@@ -6,27 +6,52 @@
     </header>
     <div class="section-body">
         <section class="equipment-section">
+            <header><em><strong>weapons</strong></em></header>
+            <div class="equipment-section-body">
+                <ul>
+                    @for (weapon of weaponsArray; track $index) {
+                        <li>
+                            <span
+                                class="item-layout"
+                                [class]="{
+                                    'has-value': weapon.value,
+                                    'has-descrip': weapon.descrip,
+                                }"
+                            >
+                                @if (weapon.value) {
+                                    <div class="clickable shake">{{weapon.value}}</div>
+                                }
+                                <span [innerHTML]="weapon.item"></span>
+                                @if (weapon.descrip) {
+                                    <span class="small-item-description" [innerHTML]="weapon.descrip"></span>
+                                }
+                            </span>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </section>
+        <section class="equipment-section">
             <header><em><strong>items</strong></em></header>
             <div class="equipment-section-body">
                 <ul>
                     @for (item of itemsArray; track $index) {
                         <li>
-                            @if (item.splitStringObj) {
-                                <span class="item-row">
-                                    <span [innerHTML]="item.splitStringObj.leftString"></span>
-                                    <div (click)="item.value = rerollDie(item.die)" class="clickable shake">{{item.value}}</div>
-                                    <span [innerHTML]="item.splitStringObj.rightString"></span>
-                                </span>
-                            } @else if (item.splitDescripObj) {
+                            <span
+                                class="item-layout"
+                                [class]="{
+                                    'has-value': item.value,
+                                    'has-descrip': item.descrip,
+                                }"
+                            >
+                                @if (item.value) {
+                                    <div (click)="item.value = rerollDie(item)" class="clickable shake">{{item.value}}</div>
+                                }
                                 <span [innerHTML]="item.item"></span>
-                                <div class="item-row small-item-description">
-                                    <span [innerHTML]="item.splitDescripObj.leftString"></span>
-                                    <div (click)="item.value = rerollDie(item.die)" class="clickable shake">{{item.value}}</div>
-                                    <span [innerHTML]="item.splitDescripObj.rightString"></span>
-                                </div>
-                            } @else {
-                                <span [innerHTML]="item.item"></span>
-                            }
+                                @if (item.descrip) {
+                                    <span class="small-item-description" [innerHTML]="item.descrip"></span>
+                                }
+                            </span>
                         </li>
                     }
                 </ul>

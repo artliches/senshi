@@ -4,14 +4,21 @@ ul {
     margin: 0;
     list-style: none;
 }
-.item-row {
-    display: flex;
+.item-layout {
+    display: grid;
     align-items: center;
+    grid-template-columns: 1fr;
+    &.has-value {
+        grid-template-columns: min-content 1fr;
+    }
+    grid-auto-rows: min-content;
     .clickable {
         font-size: 1.5rem;
         padding: 0 0.5rem;
     }
-    &.small-item-description {
+    .small-item-description {
+        grid-row: 2;
+        grid-column: span 2;
         .clickable {
             font-size: 0.8rem;
         }
@@ -27,17 +34,46 @@ ul {
         }
         .equipment-section-body {
             ul {
+                list-style-type: "×";
                 display: flex;
                 flex-direction: column;
                 gap: 0.3rem;
-                // >li {
-                //     &:nth-child(odd) {
-                //         transform: rotate(-0.5deg);
-                //     }
-                //     &:nth-child(even) {
-                //         transform: rotate(0.5deg);
-                //     }
-                // }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .item-layout {
+        &.has-descrip {
+            grid-template-columns: max-content 1fr;
+            .small-item-description {
+                grid-column: 3;
+                grid-row: 1;
+            }
+            &.has-value {
+                grid-template-columns: min-content max-content 1fr;
+            }
+        }
+    }
+    .section-body {
+        .equipment-section {
+            .equipment-section-body {
+                ul {
+                    align-items: center;
+                    gap: 1rem;
+                    flex-direction: row;
+                    flex-flow: wrap;
+                    justify-content: space-evenly;
+                    >li {
+                        &:nth-child(odd) {
+                            transform: rotate(-0.5deg);
+                        }
+                        &:nth-child(even) {
+                            transform: rotate(0.5deg);
+                        }
+                    }
+                }
             }
         }
     }

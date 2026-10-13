@@ -51,14 +51,7 @@ export interface StartingEquipmentObj {
     die: string,
     descrip?: string,
     value?: number,
-    splitStringObj?: {
-        leftString: string,
-        rightString: string,
-    },
-    splitDescripObj?: {
-        leftString: string,
-        rightString: string, 
-    }
+    rolledResult?: number,
 };
 
 export interface TenantsObj {

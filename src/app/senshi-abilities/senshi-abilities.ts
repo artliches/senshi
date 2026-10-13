@@ -138,6 +138,7 @@ export class SenshiAbilities implements OnInit, OnChanges {
       this.rerollHP();
       this.rerollVirtues();
       this.rerollRyo();
+      this.abilityValuesEmitter.emit(this.abilityValuesArray);
     }
   }
 

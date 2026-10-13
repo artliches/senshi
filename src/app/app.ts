@@ -28,7 +28,7 @@ export class App {
   }
 
   setAbilityValues(abilityValuesArray: AbililtyValuesObj[]) {
-    this.abilityValuesSignal.set(abilityValuesArray);
+    this.abilityValuesSignal.set([...abilityValuesArray]);
   }
 
   toggleRolls() {

@@ -209,7 +209,8 @@ export const JOBS = [
                 die: ``
             },
             {
-                item: `<span class="underline">A letter of introduction (<em>can be used to gain an audience with a local lord or official</em>)</span>`,
+                item: `<span class="underline">A letter of introduction</span>`,
+                descrip: `(<em>can be used to gain an audience with a local lord or official</em>)`,
                 type: `item`,
                 die: ``
             },
@@ -601,9 +602,11 @@ value: 0,
                 die: ``,
             },
             {
-                item: `A small <span class="underline">vial of poison</span> (<strong>d6 uses, d4 damage for d4 rounds</strong>)`,
+                item: `uses of a small <span class="underline">vial of poison</span>`,
+                descrip: `(<strong>[] uses, d4 damage for d4 rounds</strong>)`,
                 type: `weapon`,
-                die: ``,
+                die: `1d6`,
+                value: 0,
             },
             {
                 item: `<span class="underline">A set of dark, unremarkable clothing</span>`,
@@ -1110,7 +1113,8 @@ value: 0,
                 die: ``,
             },
             {
-                item: `A <strong>Tanegashima</strong> with <span class="underline">[] Bullets</span> (<strong>d8 damage</strong>)`,
+                item: `bullets loaded in a <strong>Tanegashima</strong> (<strong>d8 damage</strong>)`,
+                descrip: `<em>start with [] Bullets</em>`,
                 type: `weapon`,
                 die: `Spirit+5`,
                 value: 0,
@@ -1124,17 +1128,17 @@ value: 0,
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
-value: 0,
+                value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
-value: 0,
+                value: 0,
             },
         ],
         tenants: {
-            title: `The Dancer’s Code`,
+            title: `The Dancer's Code`,
             honourList: [
                 {
                     name: `Expression`,
@@ -1486,9 +1490,10 @@ value: 0,
                 die: ``,
             },
             {
-                item: `<span class="underline">Yumi</span> with <span class="underline"> [] arrows</span> (<strong>d6 damage</strong>)`,
+                item: `<span class="underline">arrows and a Yumi</span> with <span class="underline"></span> (<strong>d6 damage</strong>)`,
                 type: `weapon`,
                 die: `Spirit+10`,
+                descrip: `start with []`,
                 value: 0,
             },
             {
@@ -1754,7 +1759,8 @@ value: 0,
                 die: ``,
             },
             {
-                item: `<span class="underline">Prayer blade</span> (<strong>d4 damage, <em>hidden in sandal sole</em></strong>)`,
+                item: `<span class="underline">Prayer blade</span> (<strong>d4 damage</strong>)`,
+                descrip: `<em>hidden in sandal sole</em>`,
                 type: `weapon`,
                 die: ``,
             },
@@ -1762,8 +1768,8 @@ value: 0,
                 item: `
                     <span class="underline">3 <strong>Ofuda</strong> {<em>paper seals bearing your truths</em>}</span>
                     <div class="small-item-description">
-                        <div><em>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</em></div>
-                        <div><em>while Dishonourable, you cannot rewrite them.</em></div>
+                        <em>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</em>
+                        <em>while Dishonourable, you cannot rewrite them.</em>
                     </div>
                 `,
                 type: `item`,
@@ -2339,7 +2345,8 @@ value: 0,
                 die: ``,
             },
             {
-                item: `Vial of sleeping poison (<strong>[] uses, Resilience DR14 or sleep d6 rounds</strong>)`,
+                item: `use(s) in a vial of sleeping poison`,
+                descrip: `(<strong>[] uses, Resilience DR14 or sleep d6 rounds</strong>)`,
                 type: `weapon`,
                 die: `d4`,
                 value: 0,
