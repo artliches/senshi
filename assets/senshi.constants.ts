@@ -184,7 +184,7 @@ export const JOBS = [
                 title: `PROTECTOR`,
                 descrip: `
                 <em>The Forgotten Ronin is fiercely protective of their allies and will go to great lengths to defend them.</em>
-                <p><span class="underline">Once per combat</span>, they may protect an ally, <strong class="adjust-strong-size">adding +2 to their defence against all attacks</strong> until the <span class="underline">end of the Ronin’s next turn</span>.</p>
+                <p><span class="underline">Once per combat</span>, they may protect an ally, <strong class="adjust-strong-size">adding +2 to their defence against all attacks</strong> until the <span class="underline">end of the Ronin's next turn</span>.</p>
                 `
             },
             {
@@ -199,7 +199,7 @@ export const JOBS = [
         ],
         startingEquipment: [
             {
-                item: `A worn but serviceable <strong class="underline">katana</strong> (<strong>d8 damage</strong>)`,
+                item: `A worn but serviceable <span class="underline">katana</span> (<strong>d8 damage</strong>)`,
                 type: `weapon`,
                 die: ``,
             },
@@ -209,7 +209,8 @@ export const JOBS = [
                 die: ``
             },
             {
-                item: `<span class="underline">A letter of introduction (<em>can be used to gain an audience with a local lord or official</em>)</span>`,
+                item: `<span class="underline">A letter of introduction</span>`,
+                descrip: `can be used to gain an audience with a local lord or official`,
                 type: `item`,
                 die: ``
             },
@@ -344,8 +345,8 @@ value: 0,
             },
             {
                 item: `A set of sturdy armour (tier 2) `,
-                type: `2`,
-                die: ``,
+                type: `armor`,
+                die: `2`,
             },
             {
                 item: `<span class="underline">A collection of <strong>books and papers</strong></span>`,
@@ -601,9 +602,11 @@ value: 0,
                 die: ``,
             },
             {
-                item: `A small <span class="underline">vial of poison</span> (<strong>d6 uses, d4 damage for d4 rounds</strong>)`,
+                item: `uses of a small <span class="underline">vial of poison</span>`,
+                descrip: `[] uses, d4 damage for d4 rounds`,
                 type: `weapon`,
-                die: ``,
+                die: `1d6`,
+                value: 0,
             },
             {
                 item: `<span class="underline">A set of dark, unremarkable clothing</span>`,
@@ -1110,7 +1113,8 @@ value: 0,
                 die: ``,
             },
             {
-                item: `A <strong>Tanegashima</strong> with <span class="underline">[] Bullets</span> (<strong>d8 damage</strong>)`,
+                item: `bullets loaded in a <span class="underline">Tanegashima</span> (<strong>d8 damage</strong>)`,
+                descrip: `<em>start with [] Bullets</em>`,
                 type: `weapon`,
                 die: `Spirit+5`,
                 value: 0,
@@ -1124,17 +1128,17 @@ value: 0,
                 item: `[] <strong class="underline">food</strong>`,
                 type: `item`,
                 die: `1d4`,
-value: 0,
+                value: 0,
             },            
             {
                 item: `[] <strong class="underline">water</strong>`,
                 type: `item`,
                 die: `1d4`,
-value: 0,
+                value: 0,
             },
         ],
         tenants: {
-            title: `The Dancer’s Code`,
+            title: `The Dancer's Code`,
             honourList: [
                 {
                     name: `Expression`,
@@ -1364,8 +1368,8 @@ value: 0,
             },
             {
                 item: `A set of worn armour (tier 3)`,
-                type: `3`,
-                die: ``
+                type: `armor`,
+                die: `3`
             },
             {
                 item: `[] <strong class="underline">food</strong>`,
@@ -1486,9 +1490,10 @@ value: 0,
                 die: ``,
             },
             {
-                item: `<span class="underline">Yumi</span> with <span class="underline"> [] arrows</span> (<strong>d6 damage</strong>)`,
+                item: `<span class="underline">arrows and a Yumi</span> (<strong>d6 damage</strong>)`,
                 type: `weapon`,
                 die: `Spirit+10`,
+                descrip: `start with [] arrows`,
                 value: 0,
             },
             {
@@ -1754,7 +1759,8 @@ value: 0,
                 die: ``,
             },
             {
-                item: `<span class="underline">Prayer blade</span> (<strong>d4 damage, <em>hidden in sandal sole</em></strong>)`,
+                item: `<span class="underline">Prayer blade</span> (<strong>d4 damage</strong>)`,
+                descrip: `<em>hidden in sandal sole</em>`,
                 type: `weapon`,
                 die: ``,
             },
@@ -1762,16 +1768,16 @@ value: 0,
                 item: `
                     <span class="underline">3 <strong>Ofuda</strong> {<em>paper seals bearing your truths</em>}</span>
                     <div class="small-item-description">
-                        <div><em>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</em></div>
-                        <div><em>while Dishonourable, you cannot rewrite them.</em></div>
+                        <em>you may burn one to gain advantage on a Test. once all are burned, they must be rewritten in ink and blood during a long rest, during which you forgo healing.</em>
+                        <em>while Dishonourable, you cannot rewrite them.</em>
                     </div>
                 `,
                 type: `item`,
                 die: ``
             },
             {
-                item: `A <span class="underline">reed-woven monk's robe</span> (<strong>tier 1 armour</strong>)`,
-                type: `1`,
+                item: `A <span class="underline">reed-woven monk's robe</span>`,
+                type: `armor`,
                 die: ``
             },
             {
@@ -2200,7 +2206,7 @@ value: 0,
                 item: `<span class="underline">Ofuda {<strong>wooden or paper talismans</strong>}</span>`,
                 type: `item`,
                 die: `Spirit+d4`,
-                descrip: `(inscribe [] ofuda on a long rest; new replaces old)`,
+                descrip: `inscribe [] ofuda on a long rest; new replaces old`,
                 value: 0,
             },
             {
@@ -2339,9 +2345,10 @@ value: 0,
                 die: ``,
             },
             {
-                item: `Vial of sleeping poison (<strong>[] uses, Resilience DR14 or sleep d6 rounds</strong>)`,
+                item: `use(s) in a vial of <span class="underline">sleeping poison</span>`,
+                descrip: `[] uses, Resilience DR14 or sleep d6 rounds`,
                 type: `weapon`,
-                die: `d4`,
+                die: `1d4`,
                 value: 0,
             },
             {
@@ -2873,3 +2880,291 @@ export const AFFLICTIONS = [
     `Unreliable. Too scared, too callous, or too foolish to commit entirely, you cannot be trusted to do anything well.`,
     `Delusional. You ignore the reality of the world you live in, convinced that with enough optimism anything is possible.`,
 ];
+
+export const BACKPACK = [
+    {
+        item: `nothing`,
+        descrip: `, empty hands make light feet`
+    },
+    {
+        item: `nothing`,
+        descrip: `except what you can hold in your hands`
+    },
+    {
+        item: 'a backpack',
+        descrip: `that can hold up to 7 small items`
+    },
+    {
+        item: 'a sack',
+        descrip: `that can hold up to 10 small items`
+    },
+    {
+        item: 'a small wagon',
+        descrip: `, simple wood and wheels that bounces across the ground`
+    },
+    {
+        item: 'a trusty pack animal',
+        descrip: `, such as a donkey`
+    },
+];
+
+export const ITEMS = [
+    {
+        item: `Rope`,
+        descrip: `(30 ft)`,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+    {
+        item: `
+            Torches
+        `,
+        descrip: `(start with [])`,
+        type: `item`,
+        die: `Spirit+4`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `hours of oil and a Lantern`,
+        descrip: `(start with [] hours of oil)`,
+        type: `item`,
+        die: `Spirit+6`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `Magnesium strip`,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+        {
+        item: `Random Unseen Text`,
+        type: `scroll`,
+        die: ``,
+        rerollable: true,
+    },
+        {
+        item: `Firecrackers`,
+        descrip: `(start with [] uses)`,
+        type: `item`,
+        die: `Spirit+4`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `uses of a Healers Kit`,
+        descrip: `(start with [] uses, heals d6HP and stops bleeding/infection)`,
+        type: `item`,
+        die: `Spirit+4`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `Metal file and lockpicks`,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+        {
+        item: `Bear trap`,
+        descrip: `(Spirit DR14 to spot, d8 damage)`,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+        {
+        item: `Black powder bomb`,
+        descrip: ` (sealed bottle, d10 damage)`,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+    {
+        item: `Snake venom shuriken(s)`,
+        descrip: `(start with [] shuriken, Resilience DR12 or d8 damage)`,
+        type: `item`,
+        die: `1d4`,
+        value: 0,
+        rerollable: true,
+    },
+    {
+        item: `Silver talismans`,
+        descrip: ` (defence against yokai DR10) `,
+        type: `item`,
+        die: ``,
+        rerollable: true,
+    },
+];
+
+export const WEAPONS = [
+    {
+        item: `10 Shuriken (<span class="underline">d4 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        rerollable: true,
+        //optional
+        descrip: `(small, hand-thrown blades used for ranged attacks)`,
+    },
+        {
+        item: `Tanto (<span class="underline">d4 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        rerollable: true,
+        //optional
+        descrip: `(a small, pointed Japanese dagger)`,
+    },
+        {
+        item: `arrows and Yumi (<span class="underline">d6 damage</span>)`,
+        type: `weapon`,
+        die: `Spirit+10`,
+        //optional
+        descrip: `(a long Japanese bow made of bamboo. start with [] arrows)`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `Bo (<span class="underline">d6 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `(a long staff made of wood or bamboo)`,
+        rerollable: true,
+    },
+        {
+        item: `Naginata (<span class="underline">d8 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `(a Japanese polearm with a curved blade)`,
+        rerollable: true,
+    },
+        {
+        item: `Kusarigama (<span class="underline">d6 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `(a Japanese sickle and chain weapon. melee/ranged)`,
+        rerollable: true,
+    },
+        {
+        item: `Wakizashi (<span class="underline">d6 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `A shorter Japanese sword used for close combat`,
+        rerollable: true,
+    },
+        {
+        item: `Nunchaku (<span class="underline">d6 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `(<span class="underline">a pair of short sticks connected by a chain or rope</span>)`,
+        rerollable: true,
+    },
+        {
+        item: `bullets & a Tanegashima (<span class="underline">d8 damage</span>)`,
+        type: `weapon`,
+        die: `Spirit+5`,
+        //optional
+        descrip: `(a pistol with a matchlock mechanism. start with [] bullets)`,
+        value: 0,
+        rerollable: true,
+    },
+        {
+        item: `Katana (<span class="underline">d10 damage</span>)`,
+        type: `weapon`,
+        die: ``,
+        //optional
+        descrip: `(a traditional, curved Japanese sword)`,
+        rerollable: true,
+    },
+];
+
+export const ARMORS = [
+    {
+        tier: 0,
+        descrip: 
+        `
+            <strong class="underline">No Armour</strong>, leaving you vulnerable to all attacks. Good luck…
+        `,
+        armorStyles: [
+            {
+                name: 'Scarred',
+                descrip: `A history of violence etched across your skin.`,
+                chosen: false,
+            },
+            {
+                name: 'Tattooed',
+                descrip: `Images dance across your flesh; a history of who you are and where you've been.`,
+                chosen: false,
+            },
+        ],
+        rerollable: true,
+    },
+        {
+        tier: 1,
+        descrip: 
+        `
+            <strong class="underline">Light Armour</strong>, moderate protection without weighing the wearer down. <span class="underline">Reduces damage taken by <strong>-d2</strong></span>.
+        `,
+        armorStyles: [
+            {
+                name: 'Ashigaru Armour',
+                descrip: `Leather and iron scales.`,
+                chosen: false,
+            },
+            {
+                name: 'Kendo Armour',
+                descrip: `Cloth and padded with silk or cotton.`,
+                chosen: false,
+            },
+        ],
+        rerollable: true,
+    },
+        {
+        tier: 2,
+        descrip: 
+        `
+            <strong class="underline">Medium Armour</strong>, excellent protection against attacks while still allowing for agility and movement. However, it is less effective against blunt force attacks.
+            <div><span class="underline">Reduces damage taken by <strong>-d4</strong></span> and imposes a <span class="underline">+2 DR penalty on Swiftness tests</span>. <strong>Defence is DR+2</strong></div>
+        `,
+        armorStyles: [
+            {
+                name: 'Dō-maru',
+                descrip: `Iron or leather plates laced together with silk or leather cords.`,
+                chosen: false,
+            },
+            {
+                name: 'Kusari Armor',
+                descrip: `Interlocking metal rings.`,
+                chosen: false,
+            }
+        ],
+        rerollable: true,
+    },
+        {
+        tier: 3,
+        descrip: 
+        `
+            <strong class="underline">Heavy Armour</strong>, incredibly heavy and restricts movement but provides the highest level of protection against attacks.
+            <div><span class="underline">Reduces damage taken by <strong>-d6</strong></span>, imposes a <span class="underline">+4 DR penalty on Swiftness tests</span>, and <strong>defence is DR+2</strong>.</div>
+        `,
+        armorStyles: [
+            {
+                name: 'O-yoroi',
+                descrip: `Iron plates and chainmail that covers the wearer from head to toe.`,
+                chosen: false,
+            },
+            {
+                name: 'Haramaki',
+                descrip: `Thick leather and iron plates covering the torso and upper legs.`,
+                chosen: false,
+            }
+        ],
+        rerollable: true,
+    },
+]
