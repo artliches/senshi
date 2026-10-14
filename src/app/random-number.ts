@@ -35,7 +35,8 @@ export class RandomNumber {
   splitDie(wholeDie: string): {dieNum: number, dieSize: number} {
     const indexOfD = wholeDie.indexOf('d');
 
-    let dieNum, dieSize = 0;
+    let dieNum = 0;
+    let dieSize = 0;
     if (indexOfD === -1) {
       dieNum = Number(wholeDie.slice(wholeDie.indexOf('+') + 1));
       dieSize = Number(wholeDie.slice(wholeDie.indexOf('+') + 1));

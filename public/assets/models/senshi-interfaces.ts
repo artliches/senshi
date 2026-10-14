@@ -52,6 +52,7 @@ export interface StartingEquipmentObj {
     descrip?: string,
     value?: number,
     rolledResult?: number,
+    rerollable?: boolean,
 };
 
 export interface TenantsObj {
@@ -71,3 +72,14 @@ export interface AbilityObj {
     rolledDie: any[],
     modifier: number,
 };
+
+export interface ArmorObj {
+    tier: number,
+    descrip: string,
+    armorStyles?: {
+        name: string,
+        descrip: string,
+        chosen: boolean,
+    }[],
+    rerollable: boolean,
+}

@@ -1,10 +1,19 @@
 <section class="section-layout">
     <header class="section-header">
         <h2>
-            <div class="clickable shake header">EQUIPMENT</div>
+            <div (click)="rerollAll()" class="clickable shake header">EQUIPMENT</div>
         </h2>
     </header>
     <div class="section-body">
+        <section class="equipment-section">
+            <div class="equipment-section-body">
+                <span>At the beginning of your journey, you possess only what you carry and you have</span>
+                <span class="backpack-descrip">
+                    <span (click)="rerollBackpack()" class="clickable shake">{{backpackObj.item}}</span>
+                    <span class="descrip-break">{{backpackObj.descrip}}.</span>
+                </span>
+            </div>
+        </section>
         <section class="equipment-section">
             <header><em><strong>weapons</strong></em></header>
             <div class="equipment-section-body">
@@ -19,16 +28,57 @@
                                 }"
                             >
                                 @if (weapon.value) {
-                                    <div class="clickable shake">{{weapon.value}}</div>
+                                    <div (click)="weapon.value = rerollDie(weapon)" class="calculated-value"
+                                    [class]="{
+                                        'clickable': weapon.die.indexOf('d') !== -1,
+                                        'shake': weapon.die.indexOf('d') !== -1
+                                    }">{{weapon.value}}</div>
                                 }
-                                <span [innerHTML]="weapon.item"></span>
+                                @if (weapon.rerollable) {
+                                    <div (click)="rerollWeapon()" [innerHTML]="weapon.item" class="clickable shake"></div>
+                                } @else {
+                                    <span [innerHTML]="weapon.item"></span>
+                                }
                                 @if (weapon.descrip) {
-                                    <span class="small-item-description" [innerHTML]="weapon.descrip"></span>
+                                    <em class="small-item-description" [innerHTML]="weapon.descrip"></em>
                                 }
                             </span>
                         </li>
                     }
                 </ul>
+            </div>
+        </section>
+        <section class="equipment-section">
+            <header><em><strong>armor</strong></em></header>
+            <div class="equipment-section-body">
+                <span class="armor-layout">
+                    <div class="armor-description">
+                        @if (currentArmor.armorStyles) {
+                            @for (armorStyle of currentArmor.armorStyles; track $index) {
+                                @if (armorStyle.chosen) {
+                                    <div
+                                        (click)="changeArmorStyle()"
+                                        [class]="{
+                                            'clickable': currentArmor.armorStyles.length !== 1,
+                                            'shake': currentArmor.armorStyles.length !== 1,
+                                        }"
+                                        [innerHTML]="armorStyle.name"
+                                    ></div>
+                                    <span>
+                                        @if (currentArmor.rerollable) {
+                                            <div (click)="rerollArmorTier()" class="clickable shake">(tier {{currentArmor.tier}})</div>
+                                        } @else {
+                                        <strong>(tier {{currentArmor.tier}})</strong>
+                                        }
+                                    </span>
+                                    <em>{{armorStyle.descrip}}</em>
+                                }
+                            }
+                        }
+                    </div>
+                    <em [innerHTML]="currentArmor.descrip" class="small-item-description">
+                    </em>
+                </span>
             </div>
         </section>
         <section class="equipment-section">
@@ -45,11 +95,20 @@
                                 }"
                             >
                                 @if (item.value) {
-                                    <div (click)="item.value = rerollDie(item)" class="clickable shake">{{item.value}}</div>
+                                    <div (click)="item.value = rerollDie(item)" class="calculated-value"
+                                    [class]="{
+                                        'clickable': item.die.indexOf('d') !== -1,
+                                        'shake': item.die.indexOf('d') !== -1,
+                                    }
+                                    ">{{item.value}}</div>
                                 }
-                                <span [innerHTML]="item.item"></span>
+                                @if (item.rerollable) {
+                                    <div (click)="rerollItem()" class="clickable shake">{{item.item}}</div>
+                                } @else {
+                                    <span [innerHTML]="item.item"></span>
+                                }
                                 @if (item.descrip) {
-                                    <span class="small-item-description" [innerHTML]="item.descrip"></span>
+                                    <em class="small-item-description" [innerHTML]="item.descrip"></em>
                                 }
                             </span>
                         </li>
