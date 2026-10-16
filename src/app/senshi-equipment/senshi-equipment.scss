@@ -37,20 +37,73 @@ ul {
 }
 
 .section-body {
+    .scrolls-section {
+        padding: 0.3rem 0.5rem;
+        background-color: colors.$slightly-yellow;
+        color: black;
+        header {
+            display: flow-root;
+            >div.scroll-section-header{
+                float: left;
+                padding: 0rem 0.25rem 0rem 0.25rem;
+            }
+            >em.scroll-rules {
+                padding: 0.5rem 0 0 0.5rem;
+            }
+        }
+        .scrolls-body {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+            >div {
+                &:nth-child(odd) {
+                    transform: rotate(-0.5deg);
+                }
+                &:nth-child(even) {
+                    transform: rotate(0.5deg);
+                }
+            }
+            .scroll-card {
+                height: min-content;
+                background-color: #FFFFF0;
+                color: black;
+                .inner-border {
+                    border: 3px solid black;
+                    margin: 0.2rem;
+                    padding: 0 0.5rem;
+                    height: 99%;
+                }
+                header {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                }
+                >span {
+                    padding: 0.5rem;
+                }
+            }
+        }
+    }
     .equipment-section {
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             border-bottom: 3px dotted colors.$dark-red;
             color: colors.$dark-red;
             margin-bottom: 0.3rem;
         }
         .equipment-section-body {
             .armor-layout {
+                padding-left: 1rem;
                 display: flex;
                 flex-direction: column;
                 .armor-description {
                     display: grid;
                     grid-template-columns: max-content 1fr;
-                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-rows: repeat(2, min-content);
                     align-items: center;
                     column-gap: 0.5rem;
                     em {
@@ -89,7 +142,7 @@ ul {
                 .armor-layout {
                     .armor-description {
                         display: grid;
-                        grid-template-columns: repeat(2, max-content) 1fr;
+                        grid-template-columns: repeat(3, max-content);
                         grid-template-rows: 1fr;
                         em {
                             grid-column: 3;

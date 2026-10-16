@@ -1,18 +1,18 @@
-import { Component, computed, effect, inject, input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, effect, inject, input } from '@angular/core';
 import { RandomNumber } from '../random-number';
-import { AbililtyValuesObj, ArmorObj, StartingEquipmentObj } from '../../../public/assets/models/senshi-interfaces';
-import { JsonPipe } from '@angular/common';
-import { ARMORS, BACKPACK, ITEMS, WEAPONS } from '../../../public/assets/senshi.constants';
+import { AbililtyValuesObj, ArmorObj, ScrollsObj, StartingEquipmentObj } from '../../../public/assets/models/senshi-interfaces';
+import { ARMORS, BACKPACK, ITEMS, SHINTAI_TEXTS, UNSEEN_TEXTS, WEAPONS } from '../../../public/assets/senshi.constants';
 
 @Component({
   selector: 'app-senshi-equipment',
-  imports: [JsonPipe],
+  imports: [],
   templateUrl: './senshi-equipment.html',
   styleUrl: './senshi-equipment.scss',
 })
 export class SenshiEquipment {
   private randomNumberService = inject(RandomNumber);
 
+  isSumoSignal = input<boolean>();
   currentJobAbilityValues = input.required<AbililtyValuesObj[]>();
   currentJobStartingEquipment = input<StartingEquipmentObj[]>();
   triggerReroll = input<boolean>();
@@ -26,6 +26,7 @@ export class SenshiEquipment {
   weaponsArrayIndex = WEAPONS.slice(0);
   currentArmor: ArmorObj = {} as ArmorObj;
   armorArrayIndex: ArmorObj[] = ARMORS.slice(0);
+  scrollsArray: ScrollsObj[] = [];
 
   constructor() {
     effect(() => {
@@ -64,6 +65,7 @@ export class SenshiEquipment {
     this.weaponsArrayIndex = WEAPONS.slice(0);
     this.startingEquipment = this.currentJobStartingEquipment()!;
     this.currentArmor = {} as ArmorObj;
+    this.scrollsArray = [];
 
     this.itemsArray = this.startingEquipment.filter(item => item.type === 'item' || item.type === 'scroll');
     //get additional item
@@ -73,8 +75,8 @@ export class SenshiEquipment {
 
     this.weaponsArray = this.startingEquipment.filter(weapon => weapon.type === 'weapon');
     this.weaponsArray.push(this.randomNumberService.shuffle(this.weaponsArrayIndex)[0]);
-
     this.getStartingArmor();
+    this.getInitialScrolls();
 
     //check if we need to roll die
     this.itemsArray.forEach(item => {
@@ -90,6 +92,38 @@ export class SenshiEquipment {
     });
 
     this.replaceWeaponIfScrollInvalid();
+  }
+
+  private getInitialScrolls() {
+    const rawScrolls = this.itemsArray.filter(scroll => scroll.type === 'scroll');
+    if (rawScrolls.length > 0) {
+      //we've got scrolls, find out what type
+      rawScrolls.forEach(scroll => {
+        if (scroll.item.toLowerCase().split('unseen').length - 1 > 0) {
+          const numUnseenScrolls = scroll.item.toLowerCase().split('unseen').length - 1;
+          this.randomNumberService.shuffle(UNSEEN_TEXTS);
+          for (let i = 0; i <= numUnseenScrolls - 1; i++) {
+            this.scrollsArray.push({
+              name: UNSEEN_TEXTS[i].name,
+              descrip: UNSEEN_TEXTS[i].descrip,
+              type: 'unseen'
+            });
+          }
+        }
+
+        if (scroll.item.toLowerCase().split('shintai').length - 1 > 0) {
+          const numShintaiScrolls = scroll.item.toLowerCase().split('shintai').length - 1;
+          this.randomNumberService.shuffle(SHINTAI_TEXTS);
+          for (let i = 0; i <= numShintaiScrolls - 1; i++) {
+            this.scrollsArray.push({
+              name: SHINTAI_TEXTS[i].name,
+              descrip: SHINTAI_TEXTS[i].descrip,
+              type: 'shintai'
+            });
+          }
+        }
+      });
+    }
   }
 
   private getStartingArmor() {
@@ -148,6 +182,42 @@ export class SenshiEquipment {
       this.getAbilityValuesAndAddModifiers();
   }
 
+  rerollAllScrolls() {
+    for (let i = 0; i < this.scrollsArray.length; i++) {
+      const currScroll = this.scrollsArray[i];
+      if (currScroll.type === 'unseen') {
+        this.scrollsArray[i] = this.rerollScroll(currScroll, UNSEEN_TEXTS, 'unseen');
+      } else if (currScroll.type === 'shintai') {
+        this.scrollsArray[i] = this.rerollScroll(currScroll, SHINTAI_TEXTS, 'shintai');
+      }
+    }
+  }
+
+  private rerollScroll(currScroll: ScrollsObj, scrollArray: {name: string, descrip: string}[], scrollType: string): ScrollsObj {
+      const scrollsOfMatchingType = this.scrollsArray.filter(scroll => scroll.type === scrollType);
+      const indexesToSkip: number[] = [];
+      scrollsOfMatchingType.forEach(scrollObj => indexesToSkip.push(scrollArray.findIndex(scroll => scroll.name === scrollObj.name)));
+      
+      let currIndex = scrollArray.findIndex(scroll => scroll.name === currScroll.name);
+      do {
+        currIndex = currIndex + 1 > scrollArray.length - 1 ? 0: currIndex + 1;
+      } while (indexesToSkip.includes(currIndex));
+
+      return {
+        name: scrollArray[currIndex].name,
+        descrip: scrollArray[currIndex].descrip,
+        type: scrollType
+      };
+  }
+
+  rerollIndividualScroll(scrollObj: ScrollsObj): ScrollsObj {
+    if (scrollObj.type === 'unseen') {
+      return this.rerollScroll(scrollObj, UNSEEN_TEXTS, 'unseen');
+    } else {
+      return this.rerollScroll(scrollObj, SHINTAI_TEXTS, 'shintai');
+    }
+  }
+
   rerollArmorTier() {
       const hasScroll = this.itemsArray.some(item => item.type === 'scroll');
       this.armorArrayIndex = hasScroll ? ARMORS.slice(0, 2) : ARMORS.slice(0);
@@ -179,6 +249,7 @@ export class SenshiEquipment {
   rerollItem() {
     let newItem;
     const itemToRerollIndex = this.itemsArray.findIndex(item => item.rerollable);
+    const wasScroll = this.itemsArray[itemToRerollIndex].type === 'scroll';
     let newIndex = ITEMS.findIndex(val => val.item === this.itemsArray[itemToRerollIndex].item);
     const isEndOfArray = ITEMS.length === newIndex + 1;
 
@@ -189,7 +260,10 @@ export class SenshiEquipment {
     if (Number.isFinite(newItem.value) && newItem.die) this.rollItemDie(newItem);
     this.itemsArray[itemToRerollIndex] = newItem;
 
+    if (wasScroll) this.scrollsArray.pop();
     //check if item is a scroll
+    if (this.itemsArray[itemToRerollIndex].type === 'scroll') this.addNewScroll();
+
     this.replaceWeaponIfScrollInvalid();
     //check if armor is invalid
     if (this.currentArmor.rerollable && this.itemsArray.some(item => item.type === 'scroll')) {
@@ -197,6 +271,27 @@ export class SenshiEquipment {
         this.rerollArmorTier();
       }
     }
+  }
+
+  private addNewScroll() {
+    const isUnseenScroll: boolean = this.itemsArray[this.itemsArray.findIndex(scroll => scroll.type === 'scroll')].item.toLowerCase().includes('unseen');
+    const scrollType = isUnseenScroll ? 'unseen' : 'shintai';
+    const scrollArray: { name: string; descrip: string; }[] = isUnseenScroll ? UNSEEN_TEXTS : SHINTAI_TEXTS;
+    const scrollsOfMatchingType = this.scrollsArray.filter(scroll => scroll.type === scrollType);
+    const indexesToSkip: number[] = [];
+
+    scrollsOfMatchingType.forEach(scrollObj => indexesToSkip.push(scrollArray.findIndex(scroll => scroll.name === scrollObj.name)));
+
+    let currIndex = 0;
+    do {
+      currIndex = currIndex + 1 > this.scrollsArray.length - 1 ? 0 : currIndex + 1;
+    } while (indexesToSkip.includes(currIndex));
+
+    this.scrollsArray.push({
+      name: scrollArray[currIndex].name,
+      descrip: scrollArray[currIndex].descrip,
+      type: scrollType,
+    });
   }
 
   private replaceWeaponIfScrollInvalid() {

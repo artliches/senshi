@@ -49,7 +49,7 @@
             </div>
         </section>
         <section class="equipment-section">
-            <header><em><strong>armor</strong></em></header>
+            <header><em><strong>armour</strong></em></header>
             <div class="equipment-section-body">
                 <span class="armor-layout">
                     <div class="armor-description">
@@ -71,7 +71,9 @@
                                         <strong>(tier {{currentArmor.tier}})</strong>
                                         }
                                     </span>
-                                    <em>{{armorStyle.descrip}}</em>
+                                    @if (armorStyle.descrip) {
+                                        <em>{{armorStyle.descrip}}</em>
+                                    }
                                 }
                             }
                         }
@@ -82,7 +84,12 @@
             </div>
         </section>
         <section class="equipment-section">
-            <header><em><strong>items</strong></em></header>
+            <header>
+                <em><strong>items</strong></em>
+                @if (isSumoSignal()) {
+                    <em class="small-item-description">* consume 2 food when resting instead of 1</em>
+                }
+            </header>
             <div class="equipment-section-body">
                 <ul>
                     @for (item of itemsArray; track $index) {
@@ -116,5 +123,30 @@
                 </ul>
             </div>
         </section>
+        @if (scrollsArray.length > 0) {
+            <section class="scrolls-section">
+                <header>
+                    <div (click)="rerollAllScrolls()" class="clickable shake scroll-section-header">ANCIENT TEXTS</div>
+                    <em class="small-item-description scroll-rules">
+                        Each morn, you roll <strong>Spirit+d4</strong>, revealing the <span class="underline">number of times you may wield these mystical gifts</span>.
+                        <strong>Test Spirit DR12</strong>: <span class="underline">Success</span> = you cast the text's effect, consuming one daily use. <span class="underline">Failure</span> = The text fails. Take <strong>d2 damage</strong> and consume one daily use.
+                        A <strong>Fumble</strong> invokes the <strong class="underline">Kami's Vengeance</strong>. Texts will never work when wielding <span class="underline">two handed weapons</span> or <span class="underline">medium/heavy armour</span>.
+                    </em>
+                </header>
+                <span class="scrolls-body">
+                    @for (scroll of scrollsArray; track $index) {
+                        <div class="scroll-card">
+                            <div class="inner-border">
+                                <header>
+                                    <em class="small-item-description underline">{{scroll.type.trim()}}</em>
+                                    <div (click)="scrollsArray[$index] = this.rerollIndividualScroll(scroll)" class="clickable shake">{{scroll.name}}</div>
+                                </header>
+                                <span [innerHTML]="scroll.descrip"></span>
+                            </div>
+                        </div>
+                    }
+                </span>
+            </section>
+        }
     </div>
 </section>

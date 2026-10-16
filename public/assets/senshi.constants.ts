@@ -3167,4 +3167,167 @@ export const ARMORS = [
         ],
         rerollable: true,
     },
+];
+
+export const UNSEEN_TEXTS = [
+    {
+        name: `Whirlwind Blade.`,
+        descrip: `Unleash a flurry (<em>d4</em>) of air strikes against a <span class="underline">single enemy</span>, <strong>dealing d6 damage per hit</strong>.`
+    },
+    {
+        name: `Soothing Breeze.`,
+        descrip: `<strong>Heal d6 HP</strong> for yourself or an ally.`
+    },
+    {
+        name: `Thundering Roar.`,
+        descrip: `<strong>Stun</strong> a single enemy for <span class="underline">1 round</span>.`
+    },
+    {
+        name: `Eagle Eye.`,
+        descrip: `Gain <strong>+4 to hit</strong> for your <span class="underline">next attack</span>.`
+    },
+    {
+        name: `Shadow Step.`,
+        descrip: `Instantly move to any visible location.`
+    },
+    {
+        name: `Burning Blade.`,
+        descrip: `Ignite your weapon, dealing an <strong>extra d4 damage</strong> with each hit for <span class="underline">d6 rounds</span>.`
+    },
+    {
+        name: `Steel Barrier.`,
+        descrip: `Gain <strong>+2 to Swiftness</strong> tests for defence for <span class="underline">d6 rounds</span>.`
+    },
+    {
+        name: `Spectral Guardian.`,
+        descrip: `Summon a <strong>skeletal ronin</strong> to fight alongside you for <span class="underline">d6 rounds</span>.`
+    },
+    {
+        name: `Soul Drain.`,
+        descrip: `<strong>Deal d8 damage</strong> and gain that much <strong>HP for yourself</strong> (<em>can take you above max HP</em>).`
+    },
+    {
+        name: `Void Blast.`,
+        descrip: `Unleash a blast of negative energy that deals <strong>d8 damage</strong> to <span class="underline">all enemies you can see</span>.`
+    },
+];
+
+export const SHINTAI_TEXTS = [
+    {
+        name: `Blessing of the Gods.`,
+        descrip: `Restore <strong>d10 HP</strong> to <span class="underline">d2 creatures</span>.`
+    },
+    {
+        name: `Grace of Redemption.`,
+        descrip: `A creature of your choice gains <strong>+d6 on one roll</strong>.`
+    },
+    {
+        name: `Speak with the Departed.`,
+        descrip: `Ask <span class="underline">three questions</span> to a deceased creature.`
+    },
+    {
+        name: `Spirit Shield.`,
+        descrip: `A creature of your choice gains <strong>2d6 extra HP</strong> for <span class="underline">d3 rounds</span>.`
+    },
+    {
+        name: `Visions of the Beyond.`,
+        descrip: `One creature, <span class="underline">dead for no more than a week</span>, is awakened with terrible memories.`
+    },
+    {
+        name: `Bestial Communion.`,
+        descrip: `You may speak with animals for <span class="underline">d20 minutes</span>.`
+    },
+    {
+        name: `Divine Illumination.`,
+        descrip: `Light or darkness for <span class="underline">3d10 minutes</span>.`
+    },
+    {
+        name: `Pure Insight.`,
+        descrip: `You find all <strong>traps</strong> in your path for <span class="underline">2d10 minutes</span>.`
+    },
+    {
+        name: `Holy Retribution.`,
+        descrip: `<span class="underline">d4 creatures</span> lose <strong>d8 HP</strong> each.`
+    },
+    {
+        name: `Word of the Gods.`,
+        descrip: `One creature blindly obeys a <span class="underline">single command</span>.`
+    },
+    {
+        name: `Indestructible Guardian.`,
+        descrip: `
+        <strong>Test Resilience D12</strong> instead of Spirit to use this Text and choose one:
+        <ul class="x-list">
+            <li><span class="underline">Become the Gate.</span> Until combat ends you cannot be pushed or moved.</li>
+            <li><span class="underline">Hold the Threshold.</span> For this round, you and one adjacent ally reduce the next damage each would take by d6.</li>
+        </ul>
+        `
+    },
+    {
+        name: `Paper Effigies of the Self.`,
+        descrip: `
+            <strong>Test Spirit DR12</strong>. <span class="underline">On a success</span>, you hold <strong>3 katashiro</strong> until the end of the combat. <span class="underline">On a failure</span>, you create <strong>1 instead</strong>. Spend 1 katashiro and choose an action:
+            <ul class="x-list">
+                <li><span class="underline">Take My Place.</span> When an attack would hit you, destroy a katashiro. <strong>It hits an ally instead</strong>.</li>
+                <li><span class="underline">Mirror Cut. </span>Before you roll to Attack, destroy 2 katashiro. Your Attack is -4DR. <strong>On a hit, the target's attack damage and armour dice are swapped for 1 round</strong>.</li>
+                <li><span class="underline">Carry the Sin.</span> When a magical effect targets you, destroy 3 katashiro to ignore it; <strong>take d4 damage as the effigy blackens</strong>.</li>
+            </ul>
+            <div class="small-item-description"><em>You can hold at most 3 katashiro at once. New ones replace old.</em></div>
+        `
+    },
+    {
+        name: `Purification By Waterfall`,
+        descrip:
+        `<strong>Test Spirit DR12</strong> and <strong>Resilience DR12</strong> to cleanse. Resets Honour to 10. Regain all spent uses of Features and Virtues.`
+    },
+    {
+        name: `Sky-Walking Technique`,
+        descrip:
+        `
+            <strong>Test Spirit DR12</strong> (<em>DR +2 if wearing armour or carrying a burdensome load</em>). <span class="underline">On a success</span>, choose one effect:
+            <ul class="x-list">
+                <li><span class="underline">Step-Through Air.</span> Until the end of your turn, treat open air as firm ground. <strong>You must end on a surface</strong>.</li>
+                <li><span class="underline">Feather Drop.</span> When you would fall (<em>or as you begin a fall</em>), drift instead. <strong>Negate the fall's damage and land standing</strong>.</li>
+            </ul>
+            <em class="small-item-description">On a fumble, you stumble—fall prone and take d6 damage; you can't attempt Sky-Walking Technique again until you rest.</em>
+        `
+    },
+    {
+        name: `Spirit Barrier Technique`,
+        descrip: `
+            Spend an action to trace a closed line and hold silence, then <strong>Test Spirit DR14</strong>.
+            <p><span class="underline">On a success</span>, enemies cannot cross; a foe may spend its action to try: <strong>Test Resilience DR14</strong> to force a step (<em>on a failure it recoils and takes d6 damage</em>).</p>
+            <p><span class="underline">While inside</span>, allies suffer no harmful aura penalties and half damage. You must spend your action each exchange to sustain it; <strong>if you act otherwise or the line is broken it drops</strong>.</p>
+        `
+    },
+    {
+        name: `Spirit Puppetry`,
+        descrip:
+        `
+            <strong>Test Spirit DR12</strong> to draw a spirit into a mask, doll, or tool in your presence for <span class="underline">d4 hours</span>. 
+            <p>It can perform simple acts (<em>carry, open, kneel, speak one remembered line, hold a door, Guard another</em>).</p>
+            <p><strong>In combat. 4HP, d4 damage, straight d20 for Tests.</strong></p>
+        `
+    },
+    {
+        name: `The Starvation Curse`,
+        descrip:
+        `
+            <strong>Test Spirit DR12</strong>. Choose One:
+            <ul class="x-list">
+                <li><span class="underline">Hunger Lash.</span> The target Creature cannot heal for d4 hours.</li>
+                <li><span class="underline">Fasting Body.</span> You do not need food or water to heal for d4 hours.</li>
+            </ul>
+            <div><em class="small-item-description">Using this curse causes the user to lose d4 Honour.</em></div>
+        `
+    },
+    {
+        name: `Supernatural Endurance`,
+        descrip: `
+            <div><strong class="underline">One time use.</strong></div>
+            <div><span class="underline">For one hour</span>, you cannot pass out, be <strong>broken</strong>, or <strong>suffocate</strong>. You keep acting at 1HP no matter the incoming damage or conditions. <em>All damage you would have taken accumulates</em>.</div>
+            <p><span class="underline">When the hour ends</span>, <strong>take the accumulated damage at once</strong>.</p>
+            <p><span class="underline">On invocation</span>, lose 3 Honour and <strong>gain a permanent visible scar from the ordeal</strong>.</p>
+        `
+    }
 ]
