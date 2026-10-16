@@ -82,4 +82,10 @@ export interface ArmorObj {
         chosen: boolean,
     }[],
     rerollable: boolean,
-}
+};
+
+export interface ScrollsObj {
+    name: string,
+    descrip: string,
+    type: string,
+};
