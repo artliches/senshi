@@ -9,6 +9,9 @@ ul {
         margin-left: 0.3rem;
         display: inline-block;
         word-break: break-word;
+        &:hover {
+            transform: rotate(-3deg);
+        }
     }
     .descrip-break {
         padding-left: 0.3rem;
@@ -32,6 +35,16 @@ ul {
         grid-column: span 2;
         .clickable {
             font-size: 0.8rem;
+        }
+    }
+    &:nth-child(odd) {
+        .clickable:hover {
+            transform: rotate(-3deg);
+        }
+    }
+    &:nth-child(odd) {
+        .clickable:hover {
+            transform: rotate(3deg);
         }
     }
 }
@@ -109,6 +122,16 @@ ul {
                     em {
                         font-size: 1rem;
                         grid-column: span 2;
+                    }
+                    &:nth-child(odd) {
+                        .clickable:hover {
+                            transform: rotate(3deg);
+                        }
+                    }
+                    &:nth-child(odd) {
+                        .clickable:hover {
+                            transform: rotate(-3deg);
+                        }
                     }
                 }
             }

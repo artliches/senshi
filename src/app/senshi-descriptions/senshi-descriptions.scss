@@ -23,6 +23,16 @@
             color: colors.$dark-red;
             margin-top: 0.3rem;
         }
+        &:nth-child(odd) {
+            .clickable:hover {
+                transform: rotate(3deg);
+            }
+        }
+        &:nth-child(even) {
+            .clickable:hover {
+                transform: rotate(-3deg);
+            }
+        }
     }
 }
 

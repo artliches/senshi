@@ -1,4 +1,4 @@
-import { Component, inject, input, OnChanges, OnInit, output, SimpleChanges } from '@angular/core';
+import { Component, effect, inject, input, OnChanges, OnInit, output, SimpleChanges } from '@angular/core';
 import { AbililtyValuesObj, AbilityObj, JobObj, StatsObj } from '../../../public/assets/models/senshi-interfaces';
 import { RandomNumber } from '../random-number';
 import { JsonPipe, UpperCasePipe } from '@angular/common';
@@ -15,6 +15,7 @@ export class SenshiAbilities implements OnInit, OnChanges {
   currentJobStats = input<StatsObj>();
   currentJobRyo = input<string>();
   showRolls = input<boolean>(false);
+  hasHonourOrDishonour = input<boolean | null>(null);
   abilityValuesEmitter = output<AbililtyValuesObj[]>();
 
   abilityValuesArray: AbililtyValuesObj[] = [];
@@ -110,7 +111,6 @@ export class SenshiAbilities implements OnInit, OnChanges {
     dieSize: 0
   };
 
-
   resilienceValue: number = -5;
 
   ngOnInit(): void {
@@ -131,6 +131,11 @@ export class SenshiAbilities implements OnInit, OnChanges {
     if (changes && changes['currentJobStats'] && changes['currentJobStats'].previousValue !== undefined) {
       this.abilitiesArray.forEach(ability => {
         ability.modifier = this.currentJobStats()![ability.name as keyof StatsObj];
+        if (this.hasHonourOrDishonour() === true) {
+          ability.modifier += 1;
+        } else if (this.hasHonourOrDishonour() === false) {
+          ability.modifier -= 1;
+        }
         this.rerollAbility(ability);
       });
       

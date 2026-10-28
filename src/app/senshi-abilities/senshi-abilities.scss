@@ -40,6 +40,16 @@
             font-size: 3rem;
             grid-area: stat-value;
         }
+        &:nth-child(odd) {
+            .clickable:hover {
+                transform: rotate(3deg);
+            }
+        }
+        &:nth-child(even) {
+            .clickable:hover {
+                transform: rotate(-3deg);
+            }
+        }
     }
 }
 

@@ -4,6 +4,10 @@
     transform: rotate(-0.5deg)
 }
 
+.clickable:hover {
+    transform: rotate(-1deg);
+}
+
 .section-body {
     >div{
         &:nth-child(odd) {

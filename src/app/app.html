@@ -2,9 +2,22 @@
   <span class="senshi-header no-print">
     <span class="subtitle-section">THE <strong>RŌNIN</strong> WARRIOR GENERATOR</span>
     <span class="main-title-section">
+      <section class="honour-toggles-section">
+        <div>YOUR LAST WARRIOR DIED WITH</div>
+        <button [class]="{'chosen': hasHonourOrDishonour() === true}" (click)="setHonourOrDishonourToggles(true)" class="clickable shake honour-button">HONOUR</button>
+        <button [class]="{'chosen': hasHonourOrDishonour() === false}" (click)="setHonourOrDishonourToggles(false)" class="clickable shake dishonour-button">DISHONOUR</button>
+      </section>
       <img class="senshi-header-icon" src="assets/icons/Senshi.webp" alt="SENSHI">
       <div class="reroll-section">
-        <div (click)="rerollAll()" class="clickable shake no-print">THIS ONE DIED WITH HONOUR</div>
+        <div (click)="rerollAll()" class="clickable shake no-print">
+          @if (hasHonourOrDishonour() === true) {
+            THIS ONE DIED WITH HONOUR
+          } @else if (hasHonourOrDishonour() === false) {
+            THIS ONE DIED DISHONOURABLY
+          } @else {
+            A NEW WARRIOR WALKS
+          }
+        </div>
         <img src="assets/icons/Eclipse.svg" alt="">        
       </div>
     </span>
@@ -38,6 +51,7 @@
           [currentJobStats]="currentJob().stats"
           [currentJobRyo]="currentJob().ryo"
           [showRolls]="showRolls()"
+          [hasHonourOrDishonour]="hasHonourOrDishonour()"
           (abilityValuesEmitter)="setAbilityValues($event)"
         ></app-senshi-abilities>
       </div>
@@ -68,7 +82,7 @@
       <div><strong>SENSHI</strong> is an independent production by Slightly Reckless Games LTD and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
       <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
       <div>Web app by <a class="clickable" target="_blank" href="https://artliches.github.io/dungeons-coding">@codeLiches</a></div>
-      <div>v0.6a: <i>texts both ancient and crumbling</i></div>
+      <div>v0.7a: <i>karmic reincarnation</i></div>
     </div>
   </span>
 </span>

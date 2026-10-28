@@ -18,6 +18,7 @@ export class App {
   triggerReroll: WritableSignal<boolean> = signal(false);
   showRolls: WritableSignal<boolean> = signal(false);
   abilityValuesSignal: WritableSignal<AbililtyValuesObj[]> = signal([]);
+  hasHonourOrDishonour: WritableSignal<boolean|null> = signal(null);
 
   rerollAll() {
     this.triggerReroll.set(!this.triggerReroll());
@@ -33,5 +34,10 @@ export class App {
 
   toggleRolls() {
     this.showRolls.set(!this.showRolls());
+  }
+
+  setHonourOrDishonourToggles(hasHonourOrDishonour: boolean) {
+    if (this.hasHonourOrDishonour() === hasHonourOrDishonour) this.hasHonourOrDishonour.set(null);
+    else this.hasHonourOrDishonour.set(hasHonourOrDishonour);
   }
 }

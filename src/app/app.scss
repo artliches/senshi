@@ -19,6 +19,47 @@
             grid-template-columns: 1fr;
             grid-template-rows: 1fr;
 
+            .honour-toggles-section {
+                z-index: 2;
+                grid-area: 1/1;
+                place-self: start center;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, min-content);
+                row-gap: 0.1rem;
+                column-gap: 1rem;
+                >div {
+                    grid-column: span 2;
+                    grid-row: 1;
+                    font-family: 'AssassinNinja';
+                    font-size: 0.99rem;
+                    background-color: colors.$dark-red;
+                    padding: 0.1rem 0.25rem;
+                }
+                button.clickable {
+                    background-color: colors.$red;
+                    color: black;
+                    border: 1px solid black;
+                    &.honour-button {
+                        place-self: center;
+                        &:hover, &.chosen {
+                            background-color: colors.$slightly-yellow;
+                            border-color: colors.$slightly-yellow;
+                            transform: rotate(3deg);
+                        }
+
+                    }
+                    &.dishonour-button {
+                        place-self: end;
+                        &:hover, &.chosen {
+                            background-color: black;
+                            color: white;
+                            transform: rotate(-3deg);
+                        }
+                    }
+                }
+            }
+
             img.senshi-header-icon {
                 height: 14rem;
                 width: 25rem;
