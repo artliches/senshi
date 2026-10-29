@@ -135,6 +135,18 @@
         font-size: 0.75rem;
         .buttons-layout {
             place-self: center;
+            display: flex;
+            gap: 1rem;
+            &:nth-child(odd) {
+                .clickable:hover {
+                    transform: rotate(3deg);
+                }
+            }
+            &:nth-child(even) {
+                .clickable:hover {
+                    transform: rotate(-3deg);
+                }
+            }
         }
         .copyright-text {
             padding: 0.5rem;

@@ -40,4 +40,8 @@ export class App {
     if (this.hasHonourOrDishonour() === hasHonourOrDishonour) this.hasHonourOrDishonour.set(null);
     else this.hasHonourOrDishonour.set(hasHonourOrDishonour);
   }
+
+  print() {
+    window.print();
+  }
 }

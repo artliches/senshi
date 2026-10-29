@@ -15,7 +15,7 @@
         flex-direction: column;
         >div {
             font-size: 1.1rem;
-            max-width: 100vw;
+            inline-size: 99vw;
             overflow-wrap: break-word;
         }
         .attribute-description {
@@ -33,6 +33,12 @@
                 transform: rotate(-3deg);
             }
         }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .section-body {
+        align-items: center;
     }
 }
 

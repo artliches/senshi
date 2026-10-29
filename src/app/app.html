@@ -9,7 +9,7 @@
       </section>
       <img class="senshi-header-icon" src="assets/icons/Senshi.webp" alt="SENSHI">
       <div class="reroll-section">
-        <div (click)="rerollAll()" class="clickable shake no-print">
+        <div (click)="rerollAll()" class="clickable shake">
           @if (hasHonourOrDishonour() === true) {
             THIS ONE DIED WITH HONOUR
           } @else if (hasHonourOrDishonour() === false) {
@@ -75,14 +75,15 @@
   </span>
 
   <span class="senshi-footer-layout">
-    <div class="buttons-layout">
+    <div class="buttons-layout no-print">
       <button (click)="toggleRolls()" class="clickable shake">{{showRolls() ? 'HIDE' : 'SHOW'}} ROLLS</button>
+      <button (click)="print()" class="clickable shake">PRINT</button>
     </div>
     <div class="copyright-text">
       <div><strong>SENSHI</strong> is an independent production by Slightly Reckless Games LTD and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
       <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
       <div>Web app by <a class="clickable" target="_blank" href="https://artliches.github.io/dungeons-coding">@codeLiches</a></div>
-      <div>v0.7a: <i>karmic reincarnation</i></div>
+      <div>v0.8a: <i>ink to parchment</i></div>
     </div>
   </span>
 </span>
