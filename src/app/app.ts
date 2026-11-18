@@ -14,11 +14,6 @@ import { SenshiEquipment } from './senshi-equipment/senshi-equipment';
   styleUrl: './app.scss'
 })
 export class App implements OnInit, AfterViewChecked {
-    constructor() {
-    afterNextRender(() => {
-      if (window.self !== window.top) this.getCurrentHeight(); 
-    });
-  }
   currentJob: WritableSignal<JobObj> = signal({} as JobObj);
   triggerReroll: WritableSignal<boolean> = signal(false);
   showRolls: WritableSignal<boolean> = signal(false);
@@ -32,7 +27,7 @@ export class App implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    // if (window.self !== window.top) this.getCurrentHeight(); 
+    if (window.self !== window.top) this.getCurrentHeight(); 
   }
 
   rerollAll() {
@@ -63,7 +58,7 @@ export class App implements OnInit, AfterViewChecked {
   private getCurrentHeight() {
     console.log('getCurrentHeight()');
     const senshiElement = document.getElementById('senshi-main-layout');
-    senshiElement!.style.height = 'auto';
+    // senshiElement!.style.height = 'auto';
     this.currentHeight = senshiElement?.scrollHeight ? senshiElement.scrollHeight : this.currentHeight;
     console.log(this.currentHeight, senshiElement?.scrollHeight);
 
