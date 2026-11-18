@@ -29,6 +29,7 @@ export class App implements AfterViewChecked {
 
   ngAfterViewChecked(): void {
     if (window.self !== window.top) this.getCurrentHeight(); 
+    this.triggerReroll.set(!this.triggerReroll());
   }
 
   rerollAll() {
