@@ -1,4 +1,4 @@
-import { afterNextRender, AfterViewChecked, Component, signal, WritableSignal } from '@angular/core';
+import { afterNextRender, AfterViewChecked, Component, OnInit, signal, WritableSignal } from '@angular/core';
 import { SenshiIntro } from './senshi-intro/senshi-intro';
 import { SenshiJob } from './senshi-job/senshi-job';
 import { AbililtyValuesObj, JobObj } from '../../public/assets/models/senshi-interfaces';
@@ -13,12 +13,12 @@ import { SenshiEquipment } from './senshi-equipment/senshi-equipment';
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
-export class App implements AfterViewChecked {
-  //   constructor() {
-  //   afterNextRender(() => {
-  //     if (window.self !== window.top) this.getCurrentHeight(); 
-  //   });
-  // }
+export class App implements OnInit, AfterViewChecked {
+    constructor() {
+    afterNextRender(() => {
+      if (window.self !== window.top) this.getCurrentHeight(); 
+    });
+  }
   currentJob: WritableSignal<JobObj> = signal({} as JobObj);
   triggerReroll: WritableSignal<boolean> = signal(false);
   showRolls: WritableSignal<boolean> = signal(false);
@@ -27,9 +27,12 @@ export class App implements AfterViewChecked {
 
   currentHeight: number = 0;
 
+  ngOnInit(): void {
+    this.rerollAll();
+  }
+
   ngAfterViewChecked(): void {
-    if (window.self !== window.top) this.getCurrentHeight(); 
-    this.triggerReroll.set(!this.triggerReroll());
+    // if (window.self !== window.top) this.getCurrentHeight(); 
   }
 
   rerollAll() {
