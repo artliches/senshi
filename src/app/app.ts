@@ -58,7 +58,7 @@ export class App {
     this.currentHeight = senshiElement?.scrollHeight ? senshiElement.scrollHeight : this.currentHeight;
 
     window.parent.postMessage({
-      height: this.currentHeight,
+      height: this.currentHeight + 50,
     }, "*");
   }
 }
