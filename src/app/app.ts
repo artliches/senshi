@@ -27,11 +27,12 @@ export class App implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    if (window.self !== window.top) this.getCurrentHeight(); 
+    // if (window.self !== window.top) this.getCurrentHeight(); 
   }
 
   rerollAll() {
     this.triggerReroll.set(!this.triggerReroll());
+    if (window.self !== window.top) this.getCurrentHeight();
   }
 
   getNewJob(jobObj: JobObj) {
