@@ -5,7 +5,7 @@
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, min-content);
     grid-gap: 1rem;
-    height: max-content;
+    height: auto;
 
     .senshi-header {
         display: grid;

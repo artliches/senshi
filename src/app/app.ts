@@ -1,4 +1,4 @@
-import { afterNextRender, AfterViewChecked, Component, OnInit, signal, WritableSignal } from '@angular/core';
+import { afterNextRender, AfterViewChecked, Component, effect, ElementRef, OnInit, signal, viewChild, WritableSignal } from '@angular/core';
 import { SenshiIntro } from './senshi-intro/senshi-intro';
 import { SenshiJob } from './senshi-job/senshi-job';
 import { AbililtyValuesObj, JobObj } from '../../public/assets/models/senshi-interfaces';
@@ -21,18 +21,44 @@ export class App implements OnInit, AfterViewChecked {
   hasHonourOrDishonour: WritableSignal<boolean|null> = signal(null);
 
   currentHeight: number = 0;
+  senshiElementSignal = viewChild.required<ElementRef>('senshiElement');
+  height = signal(0);
+
+  constructor() {
+    effect(() => {
+      const senshiElement = this.senshiElementSignal().nativeElement;
+      if (senshiElement) {
+        const senshiObsever = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            // console.log(entry.target.scrollHeight);
+            this.height.set(entry.target.scrollHeight);
+          }
+        });
+        senshiObsever.observe(senshiElement);
+      }
+    });
+  }
 
   ngOnInit(): void {
-    this.rerollAll();
+    // this.rerollAll();
   }
 
   ngAfterViewChecked(): void {
     // if (window.self !== window.top) this.getCurrentHeight(); 
+    setTimeout(() => {
+      console.log(this.height());
+      window.parent.postMessage({
+        height: this.height(),
+      }, "*");
+    }, 100)
   }
 
   rerollAll() {
     this.triggerReroll.set(!this.triggerReroll());
-    if (window.self !== window.top) this.getCurrentHeight();
+    // if (window.self !== window.top) {
+    // // }
+    //       setTimeout(() => this.getCurrentHeight(), 1000);
+
   }
 
   getNewJob(jobObj: JobObj) {
@@ -57,11 +83,9 @@ export class App implements OnInit, AfterViewChecked {
   }
 
   private getCurrentHeight() {
-    console.log('getCurrentHeight()');
     const senshiElement = document.getElementById('senshi-main-layout');
-    // senshiElement!.style.height = 'auto';
+    senshiElement!.style.height = 'auto';
     this.currentHeight = senshiElement?.scrollHeight ? senshiElement.scrollHeight : this.currentHeight;
-    console.log(this.currentHeight, senshiElement?.scrollHeight);
 
     window.parent.postMessage({
       height: this.currentHeight,
