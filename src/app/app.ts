@@ -60,6 +60,7 @@ export class App implements AfterViewChecked {
     const senshiElement = document.getElementById('senshi-main-layout');
     senshiElement!.style.height = 'auto';
     this.currentHeight = senshiElement?.scrollHeight ? senshiElement.scrollHeight : this.currentHeight;
+    console.log(this.currentHeight, senshiElement);
 
     window.parent.postMessage({
       height: this.currentHeight,
