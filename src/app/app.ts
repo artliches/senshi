@@ -50,7 +50,7 @@ export class App implements OnInit, AfterViewChecked {
       window.parent.postMessage({
         height: this.height(),
       }, "*");
-    }, 100)
+    }, 500)
   }
 
   rerollAll() {
