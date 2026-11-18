@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1795022769704,
+  "timestamp": 1795022862737,
   "index": "/senshi/index.csr.html",
   "assetGroups": [
     {
@@ -77,7 +77,7 @@
     "/senshi/icons/favicon-16x16.png": "379451b36ec4e487fe8c329cf6636d0acc8e3ea3",
     "/senshi/icons/favicon-32x32.png": "5ecc3c6aaa6241a0506225207b526e3c27858c41",
     "/senshi/index.csr.html": "371c3f55447034abc9cf1a2ae61d653f8a1031e5",
-    "/senshi/index.html": "79cf878424d57137814bf423a835f7e5dc75e97a",
+    "/senshi/index.html": "9c28b5f9cc862f6ed21a90b01ca042362d5e42ed",
     "/senshi/main-PDTVNWR7.js": "c3d0a33502254cfcb9a9cd4e6f04955f0dd36c92",
     "/senshi/manifest.webmanifest": "5b3afd1f5fc4c371ee722edb74899a540c5762a9",
     "/senshi/media/1550-6OZ4N3CA.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
