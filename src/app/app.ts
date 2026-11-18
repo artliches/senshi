@@ -1,4 +1,4 @@
-import { Component, signal, WritableSignal } from '@angular/core';
+import { afterNextRender, Component, signal, WritableSignal } from '@angular/core';
 import { SenshiIntro } from './senshi-intro/senshi-intro';
 import { SenshiJob } from './senshi-job/senshi-job';
 import { AbililtyValuesObj, JobObj } from '../../public/assets/models/senshi-interfaces';
@@ -14,11 +14,18 @@ import { SenshiEquipment } from './senshi-equipment/senshi-equipment';
   styleUrl: './app.scss'
 })
 export class App {
+    constructor() {
+    afterNextRender(() => {
+      if (window.self !== window.top) this.getCurrentHeight(); 
+    });
+  }
   currentJob: WritableSignal<JobObj> = signal({} as JobObj);
   triggerReroll: WritableSignal<boolean> = signal(false);
   showRolls: WritableSignal<boolean> = signal(false);
   abilityValuesSignal: WritableSignal<AbililtyValuesObj[]> = signal([]);
   hasHonourOrDishonour: WritableSignal<boolean|null> = signal(null);
+
+  currentHeight: number = 0;
 
   rerollAll() {
     this.triggerReroll.set(!this.triggerReroll());
@@ -43,5 +50,15 @@ export class App {
 
   print() {
     window.print();
+  }
+
+  private getCurrentHeight() {
+    const senshiElement = document.getElementById('senshi-main-layout');
+    senshiElement!.style.height = 'auto';
+    this.currentHeight = senshiElement?.scrollHeight ? senshiElement.scrollHeight : this.currentHeight;
+
+    window.parent.postMessage({
+      height: this.currentHeight,
+    }, "*");
   }
 }
