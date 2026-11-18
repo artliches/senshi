@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1795016089475,
+  "timestamp": 1795016452092,
   "index": "/senshi/index.csr.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/senshi/favicon.ico",
         "/senshi/index.csr.html",
         "/senshi/index.html",
-        "/senshi/main-3SWEIWDU.js",
+        "/senshi/main-C4WOGGZC.js",
         "/senshi/manifest.webmanifest",
         "/senshi/styles-LYF2ZKSW.css"
       ],
@@ -76,9 +76,9 @@
     "/senshi/icons/apple-touch-icon.png": "11a12d3f926d798d31ee2f065c480ffa4147afa0",
     "/senshi/icons/favicon-16x16.png": "379451b36ec4e487fe8c329cf6636d0acc8e3ea3",
     "/senshi/icons/favicon-32x32.png": "5ecc3c6aaa6241a0506225207b526e3c27858c41",
-    "/senshi/index.csr.html": "14a8363a854aeb69eb36e09f4888d410269d844e",
-    "/senshi/index.html": "b74382f4b3c07c053da12202b994a73f75c2a274",
-    "/senshi/main-3SWEIWDU.js": "e8fdfdfa948945fd6ccb53e4660ab9e24ceb41b1",
+    "/senshi/index.csr.html": "602781e4833283280ccf30a87f10a33fe6303c1f",
+    "/senshi/index.html": "08c2c7f6edf1520b163092b6b95456d206330045",
+    "/senshi/main-C4WOGGZC.js": "0b1af67309b9bebcda35a2220fe4920aa2336fed",
     "/senshi/manifest.webmanifest": "5b3afd1f5fc4c371ee722edb74899a540c5762a9",
     "/senshi/media/1550-6OZ4N3CA.ttf": "112a873edd999bf86896112bdc346c96d8499aea",
     "/senshi/media/Aquifer-QLY6TROL.ttf": "c8d7b542b1921f47a8dc8d942e210e29a77e121d",
