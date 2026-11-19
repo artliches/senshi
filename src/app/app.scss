@@ -186,9 +186,9 @@
     .senshi-main-layout {
         .senshi-body-layout {
             display: grid;
-            grid-template-columns: 1fr 65% 1fr;
-            grid-template-areas:
-                ".  center-section    .";
+            // grid-template-columns: 1fr 65% 1fr;
+            // grid-template-areas:
+            //     ".  center-section    .";
         }
         .senshi-body, .copyright-text {
             grid-area: center-section;

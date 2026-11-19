@@ -23,6 +23,7 @@ export class App implements OnInit, AfterViewChecked {
   currentHeight: number = 0;
   senshiElementSignal = viewChild.required<ElementRef>('senshiElement');
   height = signal(0);
+  readonly isInIFrame = signal<boolean>(window.top !== window.self);
 
   constructor() {
     effect(() => {
@@ -44,9 +45,7 @@ export class App implements OnInit, AfterViewChecked {
   }
 
   ngAfterViewChecked(): void {
-    // if (window.self !== window.top) this.getCurrentHeight(); 
     setTimeout(() => {
-      console.log(this.height());
       window.parent.postMessage({
         height: this.height(),
       }, "*");
@@ -55,9 +54,6 @@ export class App implements OnInit, AfterViewChecked {
 
   rerollAll() {
     this.triggerReroll.set(!this.triggerReroll());
-    // if (window.self !== window.top) {
-    // // }
-    //       setTimeout(() => this.getCurrentHeight(), 1000);
 
   }
 
