@@ -251,6 +251,36 @@ body {
             }
         }
     }
+
+    @media only screen and (min-width: (768px)) {
+        .section-body {
+            max-width: 90%;
+            &.honour {
+                max-width: 95%;
+            }
+        }
+
+        .solo-app {
+            .section-body {
+                max-width: unset;
+            }
+        }
+    }
+
+    @media only screen and (min-width: (1024px)) {
+        .section-body {
+            max-width: 95%;
+            &.honour {
+                max-width: 96%;
+            }
+        }
+
+        .solo-app {
+            .section-body {
+                max-width: unset;
+            }
+        }
+    }
 }
 
 a {
