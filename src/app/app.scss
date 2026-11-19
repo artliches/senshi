@@ -160,6 +160,17 @@
     }
 }
 
+@media screen and (min-width: 425px) {
+    .senshi-main-layout {
+        .senshi-header:not(.solo-app) {
+            justify-items: unset;
+            .subtitle-section {
+                padding-left: 2rem;
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 768px) {
     .senshi-main-layout {
         .senshi-header {
@@ -167,6 +178,12 @@
                 img.senshi-header-icon {
                     width: 25rem;
                 }
+            }
+        }
+        .senshi-header:not(.solo-app) {
+            justify-items: center;
+            .subtitle-section {
+                padding-left: 0rem;
             }
         }
     }
