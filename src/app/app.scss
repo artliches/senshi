@@ -162,10 +162,16 @@
 
 @media screen and (min-width: 425px) {
     .senshi-main-layout {
-        .senshi-header:not(.solo-app) {
+        .senshi-header {
             justify-items: unset;
             .subtitle-section {
                 padding-left: 2rem;
+            }
+        }
+        .senshi-header.solo-app {
+            justify-items: center;
+            .subtitle-section {
+                padding-left: 0rem;
             }
         }
     }
@@ -180,7 +186,7 @@
                 }
             }
         }
-        .senshi-header:not(.solo-app) {
+        .senshi-header {
             justify-items: center;
             .subtitle-section {
                 padding-left: 0rem;
