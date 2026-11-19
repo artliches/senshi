@@ -147,9 +147,9 @@ body {
         flex-direction: column;
         gap: 0.5rem;
         max-width: 80%;
-        &.honour {
-            max-width: 85%;
-        }
+        // &.honour {
+        //     max-width: 85%;
+        // }
     }
 
     .solo-app {
@@ -207,11 +207,11 @@ body {
     }
 
     @media only screen and (min-width: (375px)) {
-        .section-body {
-            &.honour {
-                max-width: 88%;
-            }
-        }
+        // .section-body {
+        //     &.honour {
+        //         max-width: 88%;
+        //     }
+        // }
 
         .solo-app {
             .section-body {
@@ -221,11 +221,11 @@ body {
     }
 
     @media only screen and (min-width: (425px)) {
-        .section-body {
-            &.honour {
-                max-width: 89%;
-            }
-        }
+        // .section-body {
+        //     &.honour {
+        //         max-width: 89%;
+        //     }
+        // }
 
         .solo-app {
             .section-body {
@@ -238,12 +238,12 @@ body {
         .all-features-flex {
             flex-direction: row;
         }
-        .section-body {
-            max-width: 93%;
-            &.honour {
-                max-width: 95%;
-            }
-        }
+        // .section-body {
+        //     max-width: 93%;
+        //     &.honour {
+        //         max-width: 95%;
+        //     }
+        // }
 
         .solo-app {
             .section-body {
@@ -253,12 +253,12 @@ body {
     }
 
     @media only screen and (min-width: (1024px)) {
-        .section-body {
-            max-width: 95%;
-            &.honour {
-                max-width: 96%;
-            }
-        }
+        // .section-body {
+        //     max-width: 95%;
+        //     &.honour {
+        //         max-width: 96%;
+        //     }
+        // }
 
         .solo-app {
             .section-body {
