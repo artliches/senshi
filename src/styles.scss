@@ -239,22 +239,7 @@ body {
             flex-direction: row;
         }
         .section-body {
-            max-width: 90%;
-            &.honour {
-                max-width: 95%;
-            }
-        }
-
-        .solo-app {
-            .section-body {
-                max-width: unset;
-            }
-        }
-    }
-
-    @media only screen and (min-width: (768px)) {
-        .section-body {
-            max-width: 90%;
+            max-width: 93%;
             &.honour {
                 max-width: 95%;
             }
