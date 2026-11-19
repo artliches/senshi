@@ -31,17 +31,16 @@ export class App implements OnInit, AfterViewChecked {
       if (senshiElement) {
         const senshiObsever = new ResizeObserver((entries) => {
           for (const entry of entries) {
-            // console.log(entry.target.scrollHeight);
             this.height.set(entry.target.scrollHeight);
           }
         });
         senshiObsever.observe(senshiElement);
       }
     });
+    afterNextRender(() => this.isInIFrame.set(window.self !== window.top))
   }
 
   ngOnInit(): void {
-    this.isInIFrame.set(window.self !== window.top);
   }
 
   ngAfterViewChecked(): void {
