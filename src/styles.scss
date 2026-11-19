@@ -142,7 +142,7 @@ body {
     }
 
     .section-body {
-        margin: 0 0.5rem;
+        margin-right: 1rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -152,11 +152,11 @@ body {
         // }
     }
 
-    // .solo-app {
-    //     .section-body {
-    //         max-width: unset;
-    //     }
-    // }
+    .solo-app {
+        .section-body {
+            margin: 0 1rem;
+        }
+    }
 
     .adjust-strong-size {
         font-size: 1.2rem;
