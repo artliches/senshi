@@ -18,7 +18,7 @@
         }
 
         &.solo-app {
-            justify-content: center;
+            justify-items: center;
             .subtitle-section {
                 padding-left: 0rem;
             }
@@ -72,7 +72,7 @@
 
             img.senshi-header-icon {
                 height: 13rem;
-                width: 20rem;
+                width: 24rem;
                 padding-right: 1rem;
                 grid-area: 1/1;
             }
@@ -173,7 +173,7 @@
 @media screen and (min-width: 768px) {
     .senshi-main-layout {
         .senshi-header {
-            justify-content: center !important;
+            justify-items: center;
             .subtitle-section {
                 padding-left: 0rem;
             }
