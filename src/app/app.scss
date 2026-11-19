@@ -160,6 +160,14 @@
     }
 }
 
+// @media only screen and (min-width: 768px) {
+//     img.senshi-header-icon {
+//         &:not(.solo-app) {
+//             max-width: 100%;
+//         }
+//     }
+// }
+
 @media only screen and (min-width: 1024px) {
     .senshi-main-layout {
         .senshi-body-layout {

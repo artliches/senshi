@@ -7,7 +7,7 @@
         <button [class]="{'chosen': hasHonourOrDishonour() === true}" (click)="setHonourOrDishonourToggles(true)" class="clickable shake honour-button">HONOUR</button>
         <button [class]="{'chosen': hasHonourOrDishonour() === false}" (click)="setHonourOrDishonourToggles(false)" class="clickable shake dishonour-button">DISHONOUR</button>
       </section>
-      <img class="senshi-header-icon" src="assets/icons/Senshi.webp" alt="SENSHI">
+      <img [class]="{'solo-app': !isInIFrame()}" class="senshi-header-icon" src="assets/icons/Senshi.webp" alt="SENSHI">
       <div class="reroll-section">
         <div (click)="rerollAll()" class="clickable shake">
           @if (hasHonourOrDishonour() === true) {
@@ -83,7 +83,7 @@
       <div><strong>SENSHI</strong> is an independent production by Slightly Reckless Games LTD and is not affiliated with Ockult Örtmästare Games or Stockholm Kartell. It is published under the MÖRK BORG Third Party License.</div>
       <div>MÖRK BORG is copyright Ockult Örtmästare Games and Stockholm Kartell.</div>
       <div>Web app by <a class="clickable" target="_blank" href="https://artliches.github.io/dungeons-coding">@codeLiches</a></div>
-      <div>v0.9621a: <i>prayers to the heavens</i></div>
+      <div>v0.9622a: <i>prayers to the heavens</i></div>
     </div>
   </span>
 </span>
