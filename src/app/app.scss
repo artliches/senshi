@@ -72,7 +72,7 @@
 
             img.senshi-header-icon {
                 height: 13rem;
-                width: 25rem;
+                width: 20rem;
                 padding-right: 1rem;
                 grid-area: 1/1;
             }
@@ -173,9 +173,9 @@
 @media screen and (min-width: 768px) {
     .senshi-main-layout {
         .senshi-header {
-            justify-content: center;
+            justify-content: center !important;
             .subtitle-section {
-                padding-left: 2rem;
+                padding-left: 0rem;
             }
         }
     }
