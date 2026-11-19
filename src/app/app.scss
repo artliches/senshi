@@ -12,17 +12,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         grid-gap: 1rem;
-
-        .subtitle-section {
-            padding-left: 2rem;
-        }
-
-        &.solo-app {
-            justify-items: center;
-            .subtitle-section {
-                padding-left: 0rem;
-            }
-        }
+        justify-items: center;
 
         .main-title-section {
             display: grid;
@@ -166,17 +156,6 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .senshi-main-layout {
-        .senshi-header {
-            justify-items: center;
-            .subtitle-section {
-                padding-left: 0rem;
-            }
         }
     }
 }
