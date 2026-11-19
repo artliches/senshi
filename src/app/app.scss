@@ -12,7 +12,17 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr;
         grid-gap: 1rem;
-        justify-items: center;
+
+        .subtitle-section {
+            padding-left: 2rem;
+        }
+
+        &.solo-app {
+            justify-content: center;
+            .subtitle-section {
+                padding-left: 0rem;
+            }
+        }
 
         .main-title-section {
             display: grid;
@@ -62,7 +72,7 @@
 
             img.senshi-header-icon {
                 height: 13rem;
-                width: 99vw;
+                width: 25rem;
                 padding-right: 1rem;
                 grid-area: 1/1;
             }
@@ -160,36 +170,12 @@
     }
 }
 
-@media screen and (min-width: 425px) {
-    .senshi-main-layout {
-        .senshi-header {
-            justify-items: unset;
-            .subtitle-section {
-                padding-left: 2rem;
-            }
-        }
-        .senshi-header.solo-app {
-            justify-items: center;
-            .subtitle-section {
-                padding-left: 0rem;
-            }
-        }
-    }
-}
-
 @media screen and (min-width: 768px) {
     .senshi-main-layout {
         .senshi-header {
-            .main-title-section {
-                img.senshi-header-icon {
-                    width: 25rem;
-                }
-            }
-        }
-        .senshi-header {
-            justify-items: center;
+            justify-content: center;
             .subtitle-section {
-                padding-left: 0rem;
+                padding-left: 2rem;
             }
         }
     }
