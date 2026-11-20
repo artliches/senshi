@@ -12,21 +12,21 @@
 
 @media screen and (min-width: 375px) {
     .section-body.iframe-app {
-        width: 95%;
+        width: 75%;
     }
 }
 
 @media screen and (min-width: 768px) {
     .section-body.iframe-app {
-        width: 98%;
+        width: 85%;
     }
 }
 
-@media screen and (min-width: 1024px) {
-    .section-body.iframe-app {
-        width: 100%;
-    }
-}
+// @media screen and (min-width: 1024px) {
+//     .section-body.iframe-app {
+//         width: 100%;
+//     }
+// }
 
 .stats-section, .vitals-section {
     display: flex;
