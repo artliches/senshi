@@ -8,17 +8,13 @@
     transform: rotate(-1deg);
 }
 
-.iframe-app {
-    .section-body {
-        width: 90%;
-    }
+.iframe-app.section-body {
+    width: 95%;
 }
 
 @media screen and (min-width: 768px) {
-    .iframe-app {
-        .section-body {
-            width: 95%;
-        }
+    .iframe-app.section-body {
+        width: 98%;
     }
 }
 
