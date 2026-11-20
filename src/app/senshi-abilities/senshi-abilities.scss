@@ -16,6 +16,12 @@
     }
 }
 
+@media screen and (min-width: 425px) {
+    .section-body.iframe-app {
+        width: 95%;
+    }
+}
+
 @media screen and (min-width: 768px) {
     .section-body.iframe-app {
         width: 100%;

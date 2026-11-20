@@ -31,36 +31,36 @@
     .iframe-app {
         .tenants-section {
             .clickable {
-                width: 88%;
+                width: 98%;
             }
             .tenant-closed-display {
-                width: 87%;
+                width: 97%;
             }
         }
     }
 }
 
-@media only screen and (min-width: 768px) {
-    .iframe-app {
-        .tenants-section {
-            .clickable {
-                width: 94%;
-            }
-            .tenant-closed-display {
-                width: 94%;
-            }
-        }
-    }
-}
+// @media only screen and (min-width: 768px) {
+//     .iframe-app {
+//         .tenants-section {
+//             .clickable {
+//                 width: 94%;
+//             }
+//             .tenant-closed-display {
+//                 width: 94%;
+//             }
+//         }
+//     }
+// }
 
 @media only screen and (min-width: 1024px) {
     .iframe-app {
         .tenants-section {
             .clickable {
-                width: 95%;
+                width: 99%;
             }
             .tenant-closed-display {
-                width: 95%;
+                width: 99%;
             }
         }
     }
