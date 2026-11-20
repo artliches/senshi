@@ -18,6 +18,8 @@ export class SenshiAbilities implements OnInit, OnChanges {
   hasHonourOrDishonour = input<boolean | null>(null);
   abilityValuesEmitter = output<AbililtyValuesObj[]>();
 
+  isInIFrame = input<boolean>(false);
+
   abilityValuesArray: AbililtyValuesObj[] = [];
 
   abilitiesArray: AbilityObj[] = [

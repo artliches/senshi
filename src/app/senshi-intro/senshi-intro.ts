@@ -13,6 +13,7 @@ export class SenshiIntro implements OnInit, OnChanges {
   private randomNumberService = inject(RandomNumber);
   currentJobName = input<string>('');
   triggerReroll = input<boolean>();
+  isInIFrame = input<boolean>();
 
   firstNameArray: string[] = [];
   firstNameObj = {

@@ -19,6 +19,7 @@ export class SenshiJob implements OnInit, OnChanges {
   showAllFeatures: WritableSignal<boolean> = signal(true);
   jobEmitter = output<JobObj>();
   triggerReroll = input<boolean>();
+  isInIFrame = input<boolean>();
 
   ngOnInit(): void {
     this.jobEmitter.emit(this.jobsObjSignal());

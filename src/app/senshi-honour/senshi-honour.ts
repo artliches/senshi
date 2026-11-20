@@ -10,4 +10,5 @@ import { TenantsObj } from '../../../public/assets/models/senshi-interfaces';
 export class SenshiHonour {
   currentTenants = input<TenantsObj>();
   showTenantsDetails: WritableSignal<boolean> = signal(false);
+  isInIFrame = input<boolean>();
 }

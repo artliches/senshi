@@ -142,19 +142,15 @@ body {
     }
 
     .section-body {
-        margin-right: 2rem;
+        margin: 0 1rem;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
-        // max-width: 80%;
-        // &.honour {
-        //     max-width: 85%;
-        // }
     }
 
-    .solo-app {
+    .iframe-app {
         .section-body {
-            margin: 0 1rem;
+            margin: 0rem;
         }
     }
 
@@ -204,70 +200,6 @@ body {
 
     button {
         border: none;
-    }
-
-    @media only screen and (min-width: (375px)) {
-        // .section-body {
-        //     &.honour {
-        //         max-width: 88%;
-        //     }
-        // }
-
-        .solo-app {
-            .section-body {
-                max-width: unset;
-            }
-        }
-    }
-
-    @media only screen and (min-width: (425px)) {
-        // .section-body {
-        //     &.honour {
-        //         max-width: 89%;
-        //     }
-        // }
-
-        .solo-app {
-            .section-body {
-                max-width: unset;
-            }
-        }
-    }
-
-    @media only screen and (min-width: (768px)) {
-        .all-features-flex {
-            flex-direction: row;
-        }
-        // .section-body {
-        //     max-width: 93%;
-        //     &.honour {
-        //         max-width: 95%;
-        //     }
-        // }
-
-        .solo-app {
-            .section-body {
-                max-width: unset;
-            }
-        }
-    }
-
-    @media only screen and (min-width: (1024px)) {
-        .section-body {
-            margin: unset;
-        }
-        // .section-body {
-        //     max-width: 95%;
-        //     &.honour {
-        //         max-width: 96%;
-        //     }
-        // }
-
-        .solo-app {
-            .section-body {
-                max-width: unset;
-            }
-        }
     }
 }
 

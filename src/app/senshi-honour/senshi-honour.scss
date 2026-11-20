@@ -2,6 +2,70 @@
 .section-body {
     margin: 0rem;
 }
+
+.iframe-app {
+    .tenants-section {
+        .clickable {
+            width: 83%;
+        }
+        .tenant-closed-display {
+            width: 80%;
+        }
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .iframe-app {
+        .tenants-section {
+            .clickable {
+                width: 86%;
+            }
+            .tenant-closed-display {
+                width: 85%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 425px) {
+    .iframe-app {
+        .tenants-section {
+            .clickable {
+                width: 88%;
+            }
+            .tenant-closed-display {
+                width: 87%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .iframe-app {
+        .tenants-section {
+            .clickable {
+                width: 94%;
+            }
+            .tenant-closed-display {
+                width: 94%;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .iframe-app {
+        .tenants-section {
+            .clickable {
+                width: 95%;
+            }
+            .tenant-closed-display {
+                width: 95%;
+            }
+        }
+    }
+}
+
 .tenants-section {
     transform: unset !important;
     padding: 0.5rem;

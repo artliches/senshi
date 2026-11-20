@@ -8,6 +8,20 @@
     transform: rotate(-1deg);
 }
 
+.iframe-app {
+    .section-body {
+        width: 90%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .iframe-app {
+        .section-body {
+            width: 95%;
+        }
+    }
+}
+
 .section-body {
     >div{
         &:nth-child(odd) {

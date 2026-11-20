@@ -1,5 +1,5 @@
 <div class="section-layout">
-    <div class="section-body honour">
+    <div [class]="{'iframe-app': isInIFrame()}" class="section-body">
         <div class="tenants-section">
             <div (click)="showTenantsDetails.set(!showTenantsDetails())" class="clickable shake">You must follow <strong class="underline tenants-title">{{currentTenants()?.title}}</strong></div>
             @if (showTenantsDetails()) {

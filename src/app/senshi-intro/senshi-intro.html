@@ -1,5 +1,5 @@
 <section class="section-layout">
-    <header class="section-header">
+    <header [class]="{'isInIFrame': isInIFrame()}" class="section-header">
         <h2>YOU ARE 
             <div
                 (click)="rerollAllObjects()"

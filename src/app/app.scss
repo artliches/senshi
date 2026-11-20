@@ -99,10 +99,6 @@
         }
     }
     .senshi-body-layout {
-        width: 80%;
-        &.solo-app {
-            width: 100%;
-        }
         .senshi-body {
             display: grid;
             grid-template-columns: 1fr;
@@ -189,10 +185,12 @@
     .senshi-main-layout {
         .senshi-body-layout {
             display: grid;
-            &.solo-app {
-                grid-template-columns: 1fr 65% 1fr;
-                grid-template-areas:
-                    ".  center-section    .";
+            grid-template-columns: 1fr 65% 1fr;
+            grid-template-areas:
+                ".  center-section    .";
+            &.iframe-app {
+                grid-template-columns: unset;
+                grid-template-areas: unset;
             }
         }
         .senshi-body, .copyright-text {

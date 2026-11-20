@@ -1,4 +1,7 @@
 .section-header {
+    &.isInIFrame{
+        width: 98%;
+    }
     h2 {
         display: flex;
         flex-wrap: wrap;
@@ -19,5 +22,11 @@
 .clickable {
     &:hover {
         transform: rotate(-3deg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .section-header {
+        width: 100%;
     }
 }
